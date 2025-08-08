@@ -1,233 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" >
-
-
-<!-- Mirrored from cdpn.io/thebabydino/debug/QwWQqeR by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Aug 2025 07:05:52 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  
-  
-  
-
-  <title> CIA </title>
-
-    <link rel="canonical" href="https://codepen.io/thebabydino/pen/QwWQqeR">
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;family=Saira:ital@0;1&amp;family=Sour+Gummy:wdth,wght@125,300&amp;display=swap" rel="stylesheet">
-  
-  
-  
-<style>
-body { container-type: inline-size }
-
-main {
-	--w: 100cqw; /* container content-box width */
-	--u: 6em; /* unit column width */
-	--s: max(.25rem, 1vmin); /* gap size */
-	--p: calc(var(--w) + var(--s)); /* numerator */
-	--q: calc(var(--u) + var(--s)); /* denominator */
-	--f: var(--p)/var(--q);
-	/* number of columns of width u that fit in w 
-	 * when having a gap space s between them */
-	--n: max(1, round(down, var(--f)));
-	display: grid;
-	/* compute row gap out of column one */
-	grid-gap: calc(.5*var(--s)*sqrt(3)) var(--s);
-	grid-template-columns: repeat(var(--n), 1fr);
-	justify-content: center;
-	margin: calc(.5*var(--u)) 0;
-	
-	a {
-		/* how many hex fit on odd (1st, 3rd...) rows
-		 * (a sort of mid index) */
-		--m: round(down, .5*var(--n));
-		/* index of hex among a pair of odd + even rows */
-		--j: mod(var(--i), var(--n) - 1);
-		/* 1 if on an even row (j > m) */
-		--e: clamp(0, var(--j) - var(--m) + 1, 1);
-		display: grid;
-		grid-column: 
-			/* mod() is index on every row, odd or even;
-			 * double it since ever hex spans 2 columns
-			 * add 1 since index is 0-based 
-			 * and column numbering is 1-based;
-			 * finally, add e to column start, 
-			 * which is 0 on odd rows, 1 on even ones */
-			calc(2*mod(var(--j), var(--m)) + 1 + var(--e))/
-			/* every hex stretches across two columns */
-			span 2;
-		overflow: hidden;
-		margin: calc(-25%/sqrt(3)) 0;
-		clip-path: 
-			polygon(50% 0, 150% 50%, 50% 100%, -50% 50%);
-	}
-}
-
-img {
-	width: 100%;
-	aspect-ratio: sqrt(3)/ 2;
-	object-fit: cover
-}
-
-/* only needed if dividing lengths not supported */
-@supports not (scale: calc(100cqh/3lh)) {
-	@property --p { /* numerator */
-		syntax: '<length-percentage>';
-		initial-value: 0px;
-		inherits: true
-	}
-
-	@property --q { /* denominator */
-		syntax: '<length-percentage>';
-		initial-value: 0px;
-		inherits: true
-	}
-	
-	main {
-		--f: round(tan(atan2(var(--p), var(--q))), .00001)
-	}
-}
-
-/* JUST OVERALL PAGE LAYOUT & PRETTIFYING */
-* { margin: 0 }
-
-html, body { display: grid }
-
-html {
-	overflow-x: hidden;
-	padding: .5em;
-	background: #1a1212;
-	color: #ededed
-}
-
-body {
-	justify-self: center;
-	width: clamp(200px, 100%, 1400px);
-	font: clamp(.625em, 3vmin, 1.25em)/ 1.25 saira, sans-serif;
-	text-align: center
-}
-
-h1, b {
-	font-family: sour gummy;
-	text-wrap: balance
-}
-
-main { filter: drop-shadow(2px 2px 5px #000) }
-
-a:is(:hover, :focus) { --hov: 1 }
-
-img {	
-	scale: calc(1 + var(--hov)*.25);
-	filter: saturate(var(--hov, 0));
-	transition: .65s ease-out
-}
-
-footer {
-	margin: 0 auto;
-	width: min(100%, 50em);
-	
-	a { color: gold }
-}
-</style>
-
-  
-  
-  
+  <title>Responsive CSS Grid – Books</title>
+  <style>
+    :root {
+      --columns: 3;
+      --yellow: rgba(238, 188, 31, 1);
+      --pink: rgba(255, 82, 145, 1);
+      --blue: rgba(64, 98, 187, 1);
+      --green: rgba(6, 141, 126, 1);
+      --white: rgba(248, 255, 229, 1);
+    }
+    body {
+      background-color: #182028;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      margin: 200px -40px;
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      grid-column-end: span 2;
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      margin-top: -50%;
+    }
+    li:nth-child(2n) {
+      grid-column-start: 2;
+    }
+    li::before, li::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: 50% 100%, 100% 100%;
+      background-position: left, right;
+      background-repeat: no-repeat;
+    }
+    li::before {
+      z-index: -10;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      background-image:
+        linear-gradient(-45deg, var(--yellow) 53.5%, var(--green) 53.5%, var(--green) 60%, var(--yellow) 60%),
+        linear-gradient(45deg, var(--yellow) 65.3%, var(--green) 65.3%, var(--green) 69.9%, var(--yellow) 69.9%);
+    }
+    li::after {
+      clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%, 80% 50%);
+      background-image:
+        linear-gradient(45deg, var(--yellow) 40%, var(--green) 40%),
+        linear-gradient(-45deg, var(--yellow) 30%, var(--green) 30%);
+    }
+    /* Color variations based on position */
+    li:nth-child(2n)::before {
+      background-image:
+        linear-gradient(-45deg, var(--pink) 53.5%, var(--blue) 53.5%, var(--blue) 60%, var(--pink) 60%),
+        linear-gradient(45deg, var(--pink) 65.3%, var(--blue) 65.3%, var(--blue) 69.9%, var(--pink) 69.9%);
+    }
+    li:nth-child(2n)::after {
+      background-image:
+        linear-gradient(45deg, var(--pink) 40%, var(--blue) 40%),
+        linear-gradient(-45deg, var(--pink) 30%, var(--blue) 30%);
+    }
+    li:nth-child(5n)::before {
+      background-image:
+        linear-gradient(-45deg, var(--green) 53.5%, var(--pink) 53.5%, var(--pink) 60%, var(--green) 60%),
+        linear-gradient(45deg, var(--green) 65.3%, var(--pink) 65.3%, var(--pink) 69.9%, var(--green) 69.9%);
+    }
+    li:nth-child(5n)::after {
+      background-image:
+        linear-gradient(45deg, var(--green) 40%, var(--pink) 40%),
+        linear-gradient(-45deg, var(--green) 30%, var(--pink) 30%);
+    }
+    li:nth-child(7n)::before, li:nth-child(7n-4)::before {
+      background-image:
+        linear-gradient(-45deg, var(--blue) 53.5%, var(--white) 53.5%, var(--white) 60%, var(--blue) 60%),
+        linear-gradient(45deg, var(--blue) 65.3%, var(--white) 65.3%, var(--white) 69.9%, var(--blue) 69.9%);
+    }
+    li:nth-child(7n)::after, li:nth-child(7n-4)::after {
+      background-image:
+        linear-gradient(45deg, var(--blue) 40%, var(--white) 40%),
+        linear-gradient(-45deg, var(--blue) 30%, var(--white) 30%);
+    }
+    li:nth-child(9n)::before, li:nth-child(9n-5)::before {
+      background-image:
+        linear-gradient(-45deg, var(--white) 53.5%, var(--green) 53.5%, var(--green) 60%, var(--white) 60%),
+        linear-gradient(45deg, var(--white) 65.3%, var(--green) 65.3%, var(--green) 69.9%, var(--white) 69.9%);
+    }
+    li:nth-child(9n)::after, li:nth-child(9n-5)::after {
+      background-image:
+        linear-gradient(45deg, var(--white) 40%, var(--green) 40%),
+        linear-gradient(-45deg, var(--white) 30%, var(--green) 30%);
+    }
+    img {
+      position: absolute;
+      width: 43%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -60%);
+      box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    img:hover {
+      transform: translate(-40%, -70%) rotateZ(25deg);
+    }
+    @media (min-width: 450px) {
+      ul {
+        margin: 190px 40px;
+      }
+    }
+    @media (min-width: 600px) {
+      :root { --columns: 5; }
+      li:nth-child(2n) { grid-column-start: auto; }
+      li:nth-child(4n-1) { grid-column-start: 2; }
+    }
+    @media (min-width: 900px) {
+      :root { --columns: 7; }
+      li:nth-child(4n-1) { grid-column-start: auto; }
+      li:nth-child(6n-2) { grid-column-start: 2; }
+    }
+    @media (min-width: 1200px) {
+      :root { --columns: 9; }
+      li:nth-child(6n-2) { grid-column-start: auto; }
+      li:nth-child(8n-3) { grid-column-start: 2; }
+    }
+    @media (min-width: 1500px) {
+      :root { --columns: 11; }
+      li:nth-child(8n-3) { grid-column-start: auto; }
+      li:nth-child(10n-4) { grid-column-start: 2; }
+    }
+    @media (min-width: 1800px) {
+      :root { --columns: 13; }
+      li:nth-child(10n-4) { grid-column-start: auto; }
+      li:nth-child(12n-5) { grid-column-start: 2; }
+    }
+    @media (min-width: 2100px) {
+      :root { --columns: 15; }
+      li:nth-child(12n-5) { grid-column-start: auto; }
+      li:nth-child(14n-6) { grid-column-start: 2; }
+    }
+  </style>
 </head>
-
 <body>
-  <header>
-
-  <p>Just click images to find the root cause of modern cybersecurity problems</p>
-</header>
-<main>
-  <a href="https://start.me/p/zp9jX0/xcode96" target="_blank" style="--i: 0">
-    <img src="img/2.jpg" alt="lion couple kissing on a brown rock" style="object-position: 47% 35%">
-  </a>
-
-  <a href="https://start.me/p/Om0BD6/company-technology-map" target="_blank" style="--i: 1">
-    <img src="img/1.jpg" alt="herd of Sri Lankan elephants walking away from a river" style="object-position: 75% 65%">
-  </a>
-
-  <a href="https://start.me/p/aLG0RN/cybersecurity-terms-and-definitions" target="_blank" style="--i: 2">
-    <img src="img/3.jpg" alt="close-up of a black cockatoo" style="object-position: 53% 43%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-group-of-camels-in-a-desert-uIzCnO-gOrw" target="_blank" style="--i: 3">
-    <img src="img/4.jpg" alt="camel and her new born calf walking in the Sahara desert" style="object-position: 65% 65%">
-  </a>
-
-  <a href="https://unsplash.com/photos/polar-bear-on-snow-covered-ground-during-daytime-AZ31hv9kdzE" target="_blank" style="--i: 4">
-    <img src="img/5.jpg" alt="polar bear on the snow, by the water, raised on the hind legs, front paws together" style="object-position: 50% 25%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-deer-with-antlers-in-a-field-jVvl_2cQO5s" target="_blank" style="--i: 5">
-    <img src="img/6.jpg" alt="waterbuck in a field, looking at the camera" style="object-position: 47%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-panda-bear-in-a-tree-e0mrn3XDatU" target="_blank" style="--i: 6">
-    <img src="img/7.jpg" alt="giant panda hanging from a tree branch" style="object-position: 47%">
-  </a>
-
-  <a href="https://unsplash.com/photos/zebra-standing-on-wheat-field-ZqYPM8i60F8" target="_blank" style="--i: 7">
-    <img src="img/8.jpg" alt="zebra standing on wheat field, looking back towards the camera" style="object-position: 65% 35%">
-  </a>
-
-  <a href="https://unsplash.com/photos/leopard-sitting-on-grass-field-3pekyY0-yOw" target="_blank" style="--i: 8">
-    <img src="img/9.jpg" alt="cheetah sitting in the grass under a blue sky">
-  </a>
-
-  <a href="https://unsplash.com/photos/white-and-black-penguin-on-gray-rock-o4snRPEZRRs" target="_blank" style="--i: 9">
-    <img src="img/10.jpg" alt="king penguin with a fluffy brown chick on grey rocks" style="object-position: 35%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-red-panda-is-sitting-in-a-tree-oVNDSIUQrdc" target="_blank" style="--i: 10">
-    <img src="img/11.jpg" alt="a red panda in a tree">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-leopard-lying-on-a-rock-VDESlNV85qE" target="_blank" style="--i: 11">
-    <img src="img/12.jpg" alt="pensive young leopard on a rock" style="object-position: 43% 47%">
-  </a>
-
-  <a href="https://unsplash.com/photos/blue-and-yellow-macaw-on-brown-tree-branch-during-daytime-wKFd2EhyRAY" target="_blank" style="--i: 12">
-    <img src="img/13.jpg" alt="two hyacinth macaws on a tree branch" style="object-position: 65% 35%">
-  </a>
-
-  <a href="https://unsplash.com/photos/brown-kangaroo-eziyddL2OR4" target="_blank" style="--i: 13">
-    <img src="img/14.jpg" alt="kangaroo in the grass">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-snow-leopard-sitting-on-top-of-a-rock-JXECZL83E6M" target="_blank" style="--i: 14">
-    <img src="img/40.jpg" alt="snow leopard sitting on top of a rock, its big fluffy tail hanging down" style="object-position: 50% 25%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-close-up-of-a-monkey-with-a-smile-on-its-face-uLkwLM7Uw48" target="_blank" style="--i: 15">
-    <img src="img/41.jpg" alt="close-up of a pensive male orangutan">
-  </a>
-
-  <a href="https://unsplash.com/photos/selective-focus-of-tiger-laying-on-ground-LNSIGPuZXIg" target="_blank" style="--i: 16">
-    <img src="img/17.jpg" alt="close-up of a pensive tiger lying on the ground" style="object-position: 57%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-brown-bear-standing-in-the-middle-of-a-forest-ErfqBlV3AEo" target="_blank" style="--i: 17">
-    <img src="img/42.jpg" alt="brown bear in the forest, sticking tongue out" style="object-position: 43% 35%">
-  </a>
-
-  <a href="https://unsplash.com/photos/a-close-up-of-a-panda-bear-2b1d3f4c-0e6f-4b8c-9d5e-7f0a1b2c3d4e" target="_blank" style="--i: 18">
-	<img src="img/43.jpg" alt="close-up of a panda bear with its mouth open, looking at the camera" style="object-position: 50% 25%">
-</main>
-
-</main>
-<footer><a></a>
-  <p><strong>One more thing.</strong> There are only two types of companies in the world: those that have been breached and know it and those that have been breached and don’t know it. — Ted Schlein <a href="https://ko-fi.com/anatudor" target="_blank">Unhackable</a>. Must read the company Technologies</p>
-</footer>
-  
-  
-  
+  <ul>
+    <!-- All images wrapped with the same target link -->
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg" alt="Book 10"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book02.jpg" alt="Book 2"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book03.jpg" alt="Book 3"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book04.jpg" alt="Book 4"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book05.jpg" alt="Book 5"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book06.jpg" alt="Book 6"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book07.jpg" alt="Book 7"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book08.jpg" alt="Book 8"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book09.jpg" alt="Book 9"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book01.jpg" alt="Book 1"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book11.jpg" alt="Book 11"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book13.jpg" alt="Book 13"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book12.jpg" alt="Book 12"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book14.jpg" alt="Book 14"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book15.jpg" alt="Book 15"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book16.jpg" alt="Book 16"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book17.jpg" alt="Book 17"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book18.jpg" alt="Book 18"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book19.jpg" alt="Book 19"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book20.jpg" alt="Book 20"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg" alt="Book 10"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book02.jpg" alt="Book 2"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book03.jpg" alt="Book 3"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book04.jpg" alt="Book 4"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book05.jpg" alt="Book 5"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book06.jpg" alt="Book 6"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book07.jpg" alt="Book 7"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book08.jpg" alt="Book 8"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book09.jpg" alt="Book 9"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book01.jpg" alt="Book 1"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book11.jpg" alt="Book 11"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book13.jpg" alt="Book 13"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book12.jpg" alt="Book 12"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book14.jpg" alt="Book 14"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book15.jpg" alt="Book 15"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book16.jpg" alt="Book 16"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book17.jpg" alt="Book 17"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book18.jpg" alt="Book 18"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book19.jpg" alt="Book 19"></a></li>
+    <li><a href="https://start.me/p/zp9jX0/xcode96" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book20.jpg" alt="Book 20"></a></li>
+  </ul>
 </body>
-
-
-<!-- Mirrored from cdpn.io/thebabydino/debug/QwWQqeR by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Aug 2025 07:05:52 GMT -->
 </html>
