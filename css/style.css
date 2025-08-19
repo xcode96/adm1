@@ -427,6 +427,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* --------------------------------------------------------------
+# Custom Hero Role Colors
+-------------------------------------------------------------- */
+.blue-text   { color: #00bfff !important; text-shadow: 0 0 8px #00bfff; }
+.red-text    { color: #ff4c4c !important; text-shadow: 0 0 8px #ff4c4c; }
+.orange-text { color: #ffa500 !important; text-shadow: 0 0 8px #ffa500; }
+
+/* Remove default underline for dynamic typed spans */
+#hero p span {
+  border-bottom: none !important;
+}
+
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
