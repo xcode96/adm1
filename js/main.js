@@ -132,8 +132,8 @@
   if (typed) {
     new Typed('.typed', {
       strings: [
-        "<span class='orange-text'>Independent Security Researcher</span>",
-        "<span class='blue-text'>System Security Engineer</span>",
+        "<span class='orange-text'>System Security Engineer</span>",
+        "<span class='blue-text'>Independent Security Researcher</span>",
         "<span class='red-text'>Red Teamer</span>"
       ],
       typeSpeed: 100,
@@ -256,5 +256,3 @@
   });
 
 })()
-
-
