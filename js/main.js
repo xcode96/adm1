@@ -101,7 +101,7 @@
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
-      e.preventDefault()
+      e.preventDefault();
 
       let body = select('body')
       if (body.classList.contains('mobile-nav-active')) {
@@ -126,18 +126,21 @@
   });
 
   /**
-   * Hero type effect
+   * Hero type effect (with colors + glow)
    */
   const typed = select('.typed')
   if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
     new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
+      strings: [
+        "<span class='blue-text'>Penetration Tester</span>",
+        "<span class='red-text'>Red Teamer</span>",
+        "<span class='orange-text'>Cybersecurity Analyst</span>"
+      ],
       typeSpeed: 100,
       backSpeed: 50,
-      backDelay: 2000
+      backDelay: 2000,
+      loop: true,
+      contentType: 'html' // important for colors
     });
   }
 
@@ -185,7 +188,6 @@
         });
       }, true);
     }
-
   });
 
   /**
@@ -254,5 +256,3 @@
   });
 
 })()
-
- 
