@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launching Soon</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0f172a; /* dark background */
+      color: #fff;
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #cbd5e1;
+    }
+
+    .countdown {
+      margin-top: 2rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #38bdf8;
+    }
+
+    /* Spotlight overlay */
+    #overlay {
+      position: absolute;
+      inset: 0;
+      background: black;
+      z-index: 20;
+      pointer-events: none;
+      mask-image: radial-gradient(circle 140px at 50% 50%, transparent 0%, black 200px);
+      -webkit-mask-image: radial-gradient(circle 140px at 50% 50%, transparent 0%, black 200px);
+      transition: mask-image 0.2s ease, -webkit-mask-image 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>🚀 We’re Launching Soon</h1>
+      <p>Something exciting is on the way. Stay tuned!</p>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+
+    // Spotlight follows mouse
+    window.addEventListener("mousemove", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      const pos = `${x}px ${y}px`;
+      overlay.style.maskImage = `radial-gradient(circle 140px at ${pos}, transparent 0%, black 200px)`;
+      overlay.style.webkitMaskImage = overlay.style.maskImage;
+    });
+
+    // Countdown Timer Example (Launch in 5 days)
+    const countdownEl = document.getElementById("countdown");
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 5);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "We’re Live!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `Launching in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
